@@ -390,7 +390,7 @@ namespace zgcLibCore
                     }
                     str1 = strValue.Length % 3 != 0 ? str1 + zgcHelper.NumberToString(i, false) + zgcHelper.Tail(strValue.Length % 3) : str1 + zgcHelper.NumberToString(i, false) + zgcHelper.Tail(strValue.Length);
                 }
-            label_15:;
+                label_15:;
             }
             string str3 = (str1 + " đồng").Trim();
             return str3.Substring(0, 1).ToUpper() + str3.Substring(1, str3.Length - 1);

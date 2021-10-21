@@ -1,31 +1,15 @@
-<<<<<<< HEAD
-﻿var __Debug = true;
+﻿
 var serviceBase = 'http://localhost:5000/callback';
 var usus = '';
+
+
 var _gbLanguage = "vn";
-//const _gbLanguage = "en";
-
-
 function _gcLoopkupI18(tableName, field) {
     if (typeof (_gbLanguageI18) === 'object') {
         var table = _gbLanguageI18[tableName];
         if (table !== undefined) {
             for (var m = 0; m < table._fieldsList.length; m++)
                 if (field === table._fieldsList[m].field) {
-                    return table._fieldsList[m][_gbLanguage];
-=======
-﻿
-var serviceBase = 'http://localhost:27083/callback';
-var usus = '';
-
-
-var _gbLanguage = "vn";
-function _gcLoopkupI18(table, field) {
-    if (typeof (_gbLanguageI18) == 'object') {
-        var table = _gbLanguageI18._dictSelf.get(table);
-        if (table != undefined) {
-            for (var m = 0; m < table._fieldsList.length; m++)
-                if (field == table._fieldsList[m].field) {
                     switch (_gbLanguage) {
                         case 'vn':
                             return table._fieldsList[m].vn;
@@ -42,7 +26,6 @@ function _gcLoopkupI18(table, field) {
                         case 'korea':
                             return table._fieldsList[m].korea;
                     }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 }
         }
         return field;
@@ -50,25 +33,6 @@ function _gcLoopkupI18(table, field) {
     else
         return field;
 }
-<<<<<<< HEAD
-function _gcI18c(lang) {
-    return lang[_gbLanguage];
-}
-
-
-function _gcI18(action) {
-    if (typeof (_gcActionStrDict) === 'object') {
-        for(var m=0;m<_gcActionStrDict.form_action.length; m++)
-        if(_gcActionStrDict.form_action[m].self === action)
-            {
-                return _gcActionStrDict.form_action[m].lang[_gbLanguage];
-            }
-    }
-    else
-        return action;
-}
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 function _gcSetSessionData() {
     window._appGc_Sesstion = {
         cur_gb_Account: '@Session["gcUserName"]', // có thời gian mã hóa tên của user để che lại
@@ -92,18 +56,11 @@ function _gcSetSessionData() {
 function _gcFormatFullDataTime(value) {
     return (value === null) ? '' : moment(parseDateJs(value)).format(_gbApp.defaultConfig.dateTimeFormat);
 }
-<<<<<<< HEAD
-function _gcFormatMoney(value, precition, en = false) {
-    if(typeof(value) === 'string')
-        value = parseFloat(value)
-    if (en)
-        return (value === null) ? '' : (value).formatMoney(precition, ',', '.');
+function _gcFormatMoney(value, precition,en=false) {
+    if(en)
+        return (value === null) ? '' : value.formatMoney(precition, ',', '.');
     else
-        return (value === null) ? '' : (value).formatMoney(precition, '.', ',');
-=======
-function _gcFormatMoney(value, precition) {
-    return (value === null) ? '' : value.formatMoney(precition, '.', ',');
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+        return (value === null) ? '' : value.formatMoney(precition, '.', ',');
 }
 function _gcRandomRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -146,7 +103,6 @@ function _gcGetFixedFields(fields, _listFields) {
     }
     return _listSeft;
 }
-<<<<<<< HEAD
 //-------------------------------------------------
 //Space
 var __Space = {
@@ -196,25 +152,16 @@ var __Space = {
 };
 //End Space
 //-------------------------------------------------
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 var _gbApp = //gobal object
 {
     defaultConfig: {
         datePickerFormat: "dd/mm/yyyy",
         dateFormat: "DD/MM/YYYY",
-<<<<<<< HEAD
-        dateTimeFormat: "DD-MM-YYYY HH:mm",
-        isoDateTimeFormat: "YYYY-MM-DD HH:mm"
-    },
-    __u: 0,
-    _curMainOjectName: "",
-=======
         dateTimeFormat: "HH:mm:ss DD/MM/YYYY",
         isoDateTimeFormat: "YYYY-MM-DDTHH:mm:ss.000"
     },
     __u: 0,
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+    _curMainOjectName: "",
     __name: "",
     __gcStack: [],
     listTables: [],
@@ -225,7 +172,6 @@ var _gbApp = //gobal object
     /*==========================================*/
     listOptions: [],
     listDataGrids: new Map(),
-<<<<<<< HEAD
     reset: function () {
         this.__u = 0;
         _curMainOjectName = "";
@@ -238,14 +184,11 @@ var _gbApp = //gobal object
         this.listOptions = [];
         this.listDataGrids = new Map();
     },
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     add: function (tablename, tableobj) {
         this.listTables.push(tablename);
         this.listTablesObjectJS.set(tablename, tableobj);
     },
     init: function () {
-<<<<<<< HEAD
         //_gbDictionary.init();
         //loading component to this instance
         this.loadComponent();
@@ -258,7 +201,7 @@ var _gbApp = //gobal object
         var $divInner = $('<div></div>')
             .addClass('form-control')
             .attr('id', 'bock_inner_exampleModal')
-            //.attr('style', 'display: none')
+            //.attr('style', 'display: none !important')
             .load("/js/htmlControl/modalObjectSetting.html");
 
         var $divInner2 = $('<div></div>')
@@ -266,39 +209,27 @@ var _gbApp = //gobal object
             .attr('id', 'bock_inner_exampleModal')
             .load("/js/htmlControl/CreateAllObjectDlg.html");
 
-
         $divInner.appendTo($('body'));
         $divInner2.appendTo($('body'));
-
         //-----------------------------
         //now loading instance html and java script;
     },
-    run: async function ($Container, $ContainerForm, searchform = false) {
-=======
-        _gbDictionary.init();
-    },
-    run:  function ($Container, $ContainerForm) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+    run: async function ($Container, $ContainerForm) {
         for (var u = 0; u < this.listTables.length; u++) {
 
             //load data for grid
             var tablesObjectJS = this.listTablesObjectJS.get(this.listTables[u]);
-<<<<<<< HEAD
             var ojbAjax = this.listTablesObjectJS.get(this.listTables[u])._listSelfTables[0];
-=======
-            var ojbAjax = tablesObjectJS._listSelfTables[0];
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             var _id = tablesObjectJS._id;
             //_gbApp.__name = _id;
 
             //PostRequest(ojbAjax, tablesObjectJS._id);
-<<<<<<< HEAD
             //get local data
             if (typeof (localStorage[tablesObjectJS._id]) !== 'undefined') {
                 _gbCaches.memory.set(tablesObjectJS._id, JSON.parse(localStorage[tablesObjectJS._id]));
 
                 await _gbCaches.load(tablesObjectJS._id).then(function () {
-                    _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm, searchform);
+                    _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm);
                     _gbCaches.saveToLocal();
                 });
             }
@@ -307,7 +238,7 @@ var _gbApp = //gobal object
                     _gbCaches.memory.set(tablesObjectJS._id, data.records);
 
                     await _gbCaches.load(tablesObjectJS._id).then(function () {
-                        _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm), searchform;
+                        _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm);
                         _gbCaches.saveToLocal();
                     });
                 }).catch(e => {
@@ -332,84 +263,11 @@ var _gbApp = //gobal object
 
                 _gbGrids.run(tablesObjectJS, $Container);
                 _gbGrids._createDataTable(tablesObjectJS._id);
-=======
-
-             _gbAjax.post(ojbAjax, tablesObjectJS._id).then(async function (data) {
-                _gbCaches.memory.set(tablesObjectJS._id, data.records);
-
-                await _gbCaches.load(tablesObjectJS._id);
-                _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
             }).catch(e => {
                 console.log(e);
             });
 
-        }
-    },
-<<<<<<< HEAD
-    buildform: async function ($Container, $ContainerForm, searchform = false) {
-=======
-    reload: async function ($Container, $ContainerForm) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
-        for (var u = 0; u < this.listTables.length; u++) {
-
-            //load data for grid
-            var tablesObjectJS = this.listTablesObjectJS.get(this.listTables[u]);
-<<<<<<< HEAD
-            var ojbAjax = this.listTablesObjectJS.get(this.listTables[u])._listSelfTables[0];
-            var _id = tablesObjectJS._id;
-
-            //get local data
-            if (typeof (localStorage[tablesObjectJS._id]) !== 'undefined') {
-                _gbCaches.memory.set(tablesObjectJS._id, JSON.parse(localStorage[tablesObjectJS._id]));
-
-                await _gbCaches.load(tablesObjectJS._id).then(function () {
-                    _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm, searchform, false);
-                    _gbCaches.saveToLocal();
-                });
-            }
-            else {//load data from server
-                await _gbAjax.post(ojbAjax, tablesObjectJS._id).then(async function (data) {
-                    _gbCaches.memory.set(tablesObjectJS._id, data.records);
-
-                    await _gbCaches.load(tablesObjectJS._id).then(function () {
-                        _gbControler.run(tablesObjectJS._id, $Container, $ContainerForm, searchform, false);
-                        _gbCaches.saveToLocal();
-                    });
-                }).catch(e => {
-                    console.log(e);
-                })
-
-            };
-
-        }
-    },
-};
-
-var _gbControler = {
-    run: function (tableName, $Container, $ContainerForm, searchform = false, grid = true) {
-        var table = _gbApp.listTablesObjectJS.get(tableName);
-        _gbForms.run(table, $ContainerForm, 0, searchform);
-        if (grid) {
-            _gbGrids.run(table, $Container);
-            _gbGrids._createDataTable(tableName);
-        }
-=======
-            var ojbAjax = tablesObjectJS._listSelfTables[0];
-            var _id = tablesObjectJS._id;
-            //_gbApp.__name = _id;
-            
-                await _gbAjax.get(ojbAjax, tablesObjectJS._id).then(async function (data) {
-                    _gbCaches.memory.set(tablesObjectJS._id, data.records);
-
-                    _gbGrids.run(tablesObjectJS, $Container);
-                    _gbGrids._createDataTable(tablesObjectJS._id);
-
-                }).catch(e => {
-                    console.log(e);
-                });
-    
         }
     }
 };
@@ -420,7 +278,6 @@ var _gbControler = {
         _gbForms.run(table, $ContainerForm, 0);
         _gbGrids.run(table, $Container);
         _gbGrids._createDataTable(tableName);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     }
 
 };
@@ -436,7 +293,6 @@ var _gbCaches = {
 
             //cache options
             if (!this.isContain(optionName)) {
-<<<<<<< HEAD
                 //get local data
                 if (typeof (localStorage[optionName]) !== 'undefined') {
                     _gbCaches.memory.set(optionName, JSON.parse(localStorage[optionName]));
@@ -454,16 +310,6 @@ var _gbCaches = {
                         console.log(e);
                     });
                 }
-=======
-                
-                await _gbAjax.post(objAjax, optionName).then(function (data) {
-                    var _optionName = tableName + _gbApp.listTablesObjectJS.get(tableName)._listRefTables[u].field;
-                    _gbCaches.memory.set(_optionName, data.records);
-
-                }).catch(e => {
-                    console.log(e);
-                });
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             }
             //------------------------------------
 
@@ -476,7 +322,6 @@ var _gbCaches = {
         if (this.isContain(key))
             return this.memory.get(key);
         return null;
-<<<<<<< HEAD
     },
     saveToLocal: function () {
         this.memory.forEach((value, key) => {
@@ -485,9 +330,6 @@ var _gbCaches = {
             localStorage[key] = JSON.stringify(value);
         })
     },
-=======
-    }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 };
 
 var _gbAjax = {
@@ -499,22 +341,14 @@ var _gbAjax = {
                 data: JSON.stringify(objAjax),
                 //async: false,
                 contentType: 'application/json',
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 success: function (data) {
                     data.optionName = optionName;
                     //_gbCaches.memory.set(optionName, data.records);
                     resolve(data);
                 },
                 url: serviceBase,
-<<<<<<< HEAD
                 error: function (err) {
-=======
-                error: function ( err) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     reject(err);
                 }
             })
@@ -529,11 +363,7 @@ var _gbAjax = {
                 data: JSON.stringify(objAjax),
                 //async: false,
                 contentType: 'application/json',
-<<<<<<< HEAD
 
-=======
-               
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 success: function (data) {
                     data.optionName = optionName;
                     //_gbCaches.memory.set(optionName, data.records);
@@ -546,7 +376,6 @@ var _gbAjax = {
             })
 
         });
-<<<<<<< HEAD
     },
     postN2: function (objAjax) {
         return new Promise(function (resolve, reject) {
@@ -577,8 +406,8 @@ var _gbAjax = {
             $.ajax({
                 type: "POST",
                 dataType: "text",
-                data: JSON.stringify(objAjax) + "[{header}]" + data,
-
+                data:  JSON.stringify(objAjax) +"[{header}]" + data,
+ 
                 contentType: false,
                 cache: false,
                 processData: false,
@@ -594,20 +423,12 @@ var _gbAjax = {
             })
 
         });
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     }
 
 }
 var _gbForms = {
     _typeForm: 0,
     _table: null,
-<<<<<<< HEAD
-    _selfFielsList: [],
-    _searchform:false,
-    _tailID: "",
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     _id: "",
     _$form: null,
     _$mainContainer: null,
@@ -615,10 +436,6 @@ var _gbForms = {
         var listIndexFields = [];
         var d = {};
         var form = null;
-<<<<<<< HEAD
-        this._selfFielsList = table._fieldsList;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         if (this._typeForm === 0)// edit form
         {
             form = table._editform;
@@ -630,17 +447,6 @@ var _gbForms = {
         for (u = 0; u < form.length; u++) {
             var row = form[u].row;
             for (var m = 0; m < row.length; m++)
-<<<<<<< HEAD
-                {
-                    //fix 07.2021
-                    if(this._selfFielsList[row[m]].edit)// trên form chỉ hiện thị các field <== edit = true nên get/set data chỉ lấy các dữ liệu này
-                        listIndexFields.push(row[m]);
-                }
-        }
-
-        //-------------------------------------------------------------
-       
-=======
                 listIndexFields.push(row[m]);
         }
 
@@ -653,110 +459,43 @@ var _gbForms = {
             }
             return;
         }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         //-------------------------------------------------------------
         for (var i = 0; i < listIndexFields.length; i++) {
             var index = listIndexFields[i];
             var field = table._fieldsList[index];
-<<<<<<< HEAD
             var $input;
             //--------------------------------------------------------
             var id = table._id;
-
-            var expandtype = (typeof (field['expandtype']) !== 'undefined') ? field['expandtype'] : '';
-
-            var fieldid = field.field + this._tailID + table._id;
             if (field.field.toLowerCase() === 'id') {// pass id
-                {
-                    $input = $("#" + id + "_form input#" + fieldid)[0];
-                    if(typeof($input) !== 'undefined')
-                        $input.value = rowsdata[index];//_gcFormatMoney(rowsdata[index], 2);
-                        else
-                            console.log(fieldid +"===> $input empty");
-                    }
+                if (typeof (table._autoId) !== 'undefined' && (table._autoId === false)) {
+                     $input = $("#" + id + "_form input#" + field.field)[0];
+                    $input.value = rowsdata[index];
+                }
             }
             else if ((typeof (field['type']) !== 'undefined') && (field.type === "datetime")) {
-                $input = $("#" + id + "_form input#" + fieldid + "_inputpicker");
-                if(typeof($input) !== 'undefined')
-                    {
-                        //$input.value = rowsdata[index];//_gcFormatMoney(rowsdata[index], 2);
-                        $input.flatpickr({enableTime: true,dateFormat: "d-m-Y H:i",  allowInput: true,wrap: false,time_24hr: true})
-                                .setDate(rowsdata[index], true);//
-
-                    }
-                else
-                    console.log(fieldid +"===> $input empty");
-
-                //$input.value = _gcFormatFullDataTime(rowsdata[index]);
-            }
-            else if ((typeof (field['type']) !== 'undefined') && ((field.type === "select") || (expandtype === "select"))) {
-                $input = $("#" + id + "_form select#" + fieldid + "_select")
-                if(typeof($input) !== 'undefined')
-                {
-                    $("#" + id + "_form select#" + fieldid + "_select").val(rowsdata[index]).trigger('change');
-                    //$input.value = rowsdata[index];//_gcFormatMoney(rowsdata[index], 2);
-                }
-                else
-                    console.log(fieldid +"===> $input empty");
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type === "area")) {
-                $input = $("#" + id + "_form area#" + fieldid)[0];
-                if(typeof($input) !== 'undefined')
-                    $input.value = rowsdata[index];//_gcFormatMoney(rowsdata[index], 2);
-                else
-                    console.log(fieldid +"===> $input empty");
-            }
-            else if ((typeof (field['type']) !== 'undefined') && ((field.type === "money")|| (expandtype === "money")) ) {
-                $input = $("#" + id + "_form input#" + fieldid)[0];
-                if(typeof($input) !== 'undefined')
-                    $input.value = rowsdata[index];//_gcFormatMoney(rowsdata[index], 2);
-                else
-                    console.log(fieldid +"===> $input empty");
-            }
-            else {
-                $input = $("#" + id + "_form input#" + fieldid)[0];
-                if(typeof($input) !== 'undefined')
-                    $input.value = rowsdata[index];
-                else
-                    console.log(fieldid +"===> $input empty");
-            }
-        }
-    },
-    getdataSearch: function (table, search = false) {
-=======
-            //--------------------------------------------------------
-            var id = table._id;
-            if (field.field.toLowerCase() == 'id') {// pass id
-                if (typeof (table._autoId) !== 'undefined' && (table._autoId == false)) {
-                    var $input = $("#" + id + "_form input#" + field.field)[0];
-                    $input.value = rowsdata[index];
-                }
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "datetime")) {
-                var $input = $("#" + id + "_form input#" + field.field + "_inputpicker")[0];
+                 $input = $("#" + id + "_form input#" + field.field + "_inputpicker")[0];
                 $input.value = _gcFormatFullDataTime(rowsdata[index]);
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "select")) {
-                var $input = $("#" + id + "_form select#" + field.field + "_select")[0];
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "select")) {
+                 $input = $("#" + id + "_form select#" + field.field + "_select")[0];
                 $input.value = rowsdata[index];
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "area")) {
-                var $input = $("#" + id + "_form area#" + field.field)[0];
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "area")) {
+                 $input = $("#" + id + "_form area#" + field.field)[0];
                 $input.value = rowsdata[index];
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "money")) {
-                var $input = $("#" + id + "_form input#" + field.field)[0];
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "money")) {
+                 $input = $("#" + id + "_form input#" + field.field)[0];
                 var value = $.trim($input.value);
                 $input.value = _gcFormatMoney(rowsdata[index], 2);
             }
             else {
-                var $input = $("#" + id + "_form input#" + field.field)[0];
+                 $input = $("#" + id + "_form input#" + field.field)[0];
                 $input.value = rowsdata[index];
             }
         }
     },
     getdata: function (table, data, _cAjax) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         var listIndexFields = [];
         var d = {};
         var form = null;
@@ -766,205 +505,51 @@ var _gbForms = {
         }
         else
             form = table._updateform;
-<<<<<<< HEAD
-        //for search form
-        if (search) {
-            this._searchform  = true;
-            form = table._searchform;
-            this._selfFielsList = table._fieldsSearch;
-            this._tailID = '_search';
-        }
-        else {
-            this._searchform  = false;
-            this._selfFielsList = table._fieldsList;
-            this._tailID = '';
-        }
-
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         var u = 0;
         //_editform
         for (u = 0; u < form.length; u++) {
             var row = form[u].row;
             for (var m = 0; m < row.length; m++)
-<<<<<<< HEAD
-            {
-                //fix 07.2021
-                if(this._selfFielsList[row[m]].edit)// trên form chỉ hiện thị các field <== edit = true nên get/set data chỉ lấy các dữ liệu này
-                    listIndexFields.push(row[m]);
-            }
-        }
-
-        var $input;
-        var value;
-        //-------------------------------------------------------------
-        //if define override fieldsList update
-       
-        //-------------------------------------------------------------
-        for (var i = 0; i < listIndexFields.length; i++) {
-            var field = this._selfFielsList[listIndexFields[i]];
-            if(field.create===false)
-                continue;
-            //--------------------------------------------------------
-            //isActive_searchOrderDetail
-            var id = table._id + this._tailID;
-            var fieldid = field.field + this._tailID + table._id;
-            var expandtype = (typeof (field['expandtype']) !== 'undefined') ? field['expandtype'] : '';
-            if (field.field.toLowerCase() === 'id') {// pass id
-                if (typeof (table._autoId) !== 'undefined' && (table._autoId === false)) {
-                    $input = $("#" + id + "_form input#" + fieldid)[0];
-                    if (typeof ($input) !== 'undefined')
-                    {
-                        value = $.trim($input.value);
-                        d[field.field] = (value === "") ? 0 : parseFloat(gcRev($input.value, ","));
-                    }
-                }
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type === "datetime")) {
-                $input = $("#" + id + "_form input#" + fieldid + "_inputpicker")[0];
-                if (typeof ($input) !== 'undefined')
-                    d[field.field] = $input.value;
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (expandtype === "select")) {
-                $select = $("#" + id + "_form select#" + fieldid + "_select");
-                //value = $.trim($input.value);
-                if (typeof ($select) !== 'undefined')
-                    d[field.field] = $select.select2('data');
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (expandtype=== "area")) {
-                $input = $("#" + id + "_form textarea#" + fieldid)[0];
-                if (typeof ($input) !== 'undefined')
-                    d[field.field] = $input.value;
-            }
-            else {
-                $input = $("#" + id + "_form input#" + fieldid)[0];
-                if (typeof ($input) !== 'undefined')
-                    d[field.field] = ($input === undefined) ? null : $input.value;
-            }
-        }
-        return d;
-    },
-    getdata: function (table, search = false) {
-        var listIndexFields = [];
-        var d = {};
-        var form = null;
-        if (this._typeForm === 0)// edit form
-        {
-            form = table._editform;
-        }
-        else
-            form = table._updateform;
-        //for search form
-        if (search) {
-            this._searchform  = true;
-            form = table._searchform;
-            this._selfFielsList = table._fieldsSearch;
-            this._tailID = '_search';
-        }
-        else {
-            this._searchform  = false;
-            this._selfFielsList = table._fieldsList;
-            this._tailID = '';
-        }
-
-        var u = 0;
-        //_editform
-        for (u = 0; u < form.length; u++) {
-            var row = form[u].row;
-            for (var m = 0; m < row.length; m++)
-            {
-                //fix 07.2021
-                if(this._selfFielsList[row[m]].edit)// trên form chỉ hiện thị các field <== edit = true nên get/set data chỉ lấy các dữ liệu này
-                    listIndexFields.push(row[m]);
-            }
-        }
-
-        var $input;
-        var value;
-        //-------------------------------------------------------------
-        //if define override fieldsList update
-       
-        //-------------------------------------------------------------
-        for (var i = 0; i < listIndexFields.length; i++) {
-            var field = this._selfFielsList[listIndexFields[i]];
-            if(field.create===false)
-                continue;
-            //--------------------------------------------------------
-            //isActive_searchOrderDetail
-            var id = table._id + this._tailID;
-            var fieldid = field.field + this._tailID + table._id;
-            var expandtype = (typeof (field['expandtype']) !== 'undefined') ? field['expandtype'] : '';
-            if (field.field.toLowerCase() === 'id') {// pass id
-                //if (typeof (table._autoId) !== 'undefined' && (table._autoId === false)) {
-                    $input = $("#" + id + "_form input#" + fieldid)[0];
-                    if (typeof ($input) !== 'undefined')
-                    {
-                        value = $.trim($input.value);
-                        d[field.field] = value;
-                    }
-                //}
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type === "datetime")) {
-                $input = $("#" + id + "_form input#" + fieldid + "_inputpicker")[0];
-                if (typeof ($input) !== 'undefined')
-                    d[field.field] = $.trim($input.value);
-            }
-            else if ((typeof (field['type']) !== 'undefined') && ((expandtype === "select")||(field['type']==='select'))) {
-                $input = $("#" + id + "_form select#" + fieldid + "_select")[0];
-                if (typeof ($input) !== 'undefined')
-                {
-                    value = $.trim($input.value);
-                    d[field.field] =  value;
-                }
-            }
-            else if ((typeof (field['type']) !== 'undefined') && (expandtype=== "area")) {
-                $input = $("#" + id + "_form textarea#" + fieldid)[0];
-                if (typeof ($input) !== 'undefined')
-                    d[field.field] = $.trim($input.value);
-            }
-            else {
-                $input = $("#" + id + "_form input#" + fieldid)[0];
-                if (typeof ($input) !== 'undefined')
-                    d[field.field] = ($input === undefined) ? null : $.trim($input.value);
-=======
                 listIndexFields.push(row[m]);
         }
 
+        var $input;
+        var value;
         //-------------------------------------------------------------
         //if define override fieldsList update
-        if (typeof table._fieldsListInsert !== 'undefined' && table._fieldsListInsert != null) {
+        if (typeof table._fieldsListInsert !== 'undefined' && table._fieldsListInsert !== null) {
             for (var i = 0; i < table._innerFieldInserts.length; i++) {
                 var field = table._innerFieldInserts[i];
                 //------------------------------------------------------------
                 //--------------------------------------------------------
                 var id = table._id;
-                if (field.field.toLowerCase() == 'id') {// pass id
-                    if (typeof (table._autoId) !== 'undefined' && (table._autoId == false)) {
-                        var $input = $("#" + id + "_form input#" + field.field)[0];
-                        var value = $.trim($input.value);
-                        d[field.field] = (value == "") ? 0 : parseFloat(gcRev($input.value, ","));
+                if (field.field.toLowerCase() === 'id') {// pass id
+                    if (typeof (table._autoId) !== 'undefined' && (table._autoId === false)) {
+                         $input = $("#" + id + "_form input#" + field.field)[0];
+                         value = $.trim($input.value);
+                        d[field.field] = (value === "") ? 0 : parseFloat(gcRev($input.value, ","));
                     }
                 }
-                else if ((typeof (field['type']) !== 'undefined') && (field.type == "datetime")) {
-                    var $input = $("#" + id + "_form input#" + field.field + "_inputpicker")[0];
+                else if ((typeof (field['type']) !== 'undefined') && (field.type === "datetime")) {
+                     $input = $("#" + id + "_form input#" + field.field + "_inputpicker")[0];
                     d[field.field] = ($input === undefined) ? null : $input.value;
                 }
-                else if ((typeof (field['type']) !== 'undefined') && (field.type == "select")) {
-                    var $input = $("#" + id + "_form select#" + field.field + "_select")[0];
-                    var value = $.trim($input.value);
-                    d[field.field] = (value == "") ? null : parseFloat(gcRev($input.value, ","));
+                else if ((typeof (field['type']) !== 'undefined') && (field.type === "select")) {
+                     $input = $("#" + id + "_form select#" + field.field + "_select")[0];
+                     value = $.trim($input.value);
+                    d[field.field] = (value === "") ? null : parseFloat(gcRev($input.value, ","));
                 }
-                else if ((typeof (field['type']) !== 'undefined') && (field.type == "area")) {
-                    var $input = $("#" + id + "_form area#" + field.field)[0];
+                else if ((typeof (field['type']) !== 'undefined') && (field.type === "area")) {
+                     $input = $("#" + id + "_form area#" + field.field)[0];
                     d[field.field] = $input.value;
                 }
-                else if ((typeof (field['type']) !== 'undefined') && (field.type == "money")) {
-                    var $input = $("#" + id + "_form input#" + field.field)[0];
-                    var value = $.trim($input.value);
-                    d[field.field] = (value == "") ? 0 : parseFloat(gcRev($input.value, ","));
+                else if ((typeof (field['type']) !== 'undefined') && (field.type === "money")) {
+                     $input = $("#" + id + "_form input#" + field.field)[0];
+                     value = $.trim($input.value);
+                    d[field.field] = (value === "") ? 0 : parseFloat(gcRev($input.value, ","));
                 }
                 else {
-                    var $input = $("#" + id + "_form input#" + field.field)[0];
+                     $input = $("#" + id + "_form input#" + field.field)[0];
                     d[field.field] = ($input === undefined) ? '' : $input.value;
                 }
             }
@@ -975,79 +560,54 @@ var _gbForms = {
             var field = table._fieldsList[listIndexFields[i]];
             //--------------------------------------------------------
             var id = table._id;
-            if (field.field.toLowerCase() == 'id') {// pass id
-                if (typeof (table._autoId) !== 'undefined' && (table._autoId == false)) {
-                    var $input = $("#" + id + "_form input#" + field.field)[0];
-                    var value = $.trim($input.value);
-                    d[field.field] = (value == "") ? 0 : parseFloat(gcRev($input.value, ","));
+            if (field.field.toLowerCase() === 'id') {// pass id
+                if (typeof (table._autoId) !== 'undefined' && (table._autoId === false)) {
+                     $input = $("#" + id + "_form input#" + field.field)[0];
+                     value = $.trim($input.value);
+                    d[field.field] = (value === "") ? 0 : parseFloat(gcRev($input.value, ","));
                 }
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "datetime")) {
-                var $input = $("#" + id + "_form input#" + field.field + "_inputpicker")[0];
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "datetime")) {
+                 $input = $("#" + id + "_form input#" + field.field + "_inputpicker")[0];
                 d[field.field] = $input.value;
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "select")) {
-                var $input = $("#" + id + "_form select#" + field.field + "_select")[0];
-                var value = $.trim($input.value);
-                d[field.field] = (value == "") ? null : parseFloat(gcRev($input.value, ","));
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "select")) {
+                 $input = $("#" + id + "_form select#" + field.field + "_select")[0];
+                 value = $.trim($input.value);
+                d[field.field] = (value === "") ? null : parseFloat(gcRev($input.value, ","));
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "area")) {
-                var $input = $("#" + id + "_form area#" + field.field)[0];
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "area")) {
+                 $input = $("#" + id + "_form area#" + field.field)[0];
                 d[field.field] = $input.value;
             }
-            else if ((typeof (field['type']) !== 'undefined') && (field.type == "money")) {
-                var $input = $("#" + id + "_form input#" + field.field)[0];
-                var value = $.trim($input.value);
-                d[field.field] = (value == "") ? 0 : parseFloat(gcRev($input.value, ","));
+            else if ((typeof (field['type']) !== 'undefined') && (field.type === "money")) {
+                 $input = $("#" + id + "_form input#" + field.field)[0];
+                 value = $.trim($input.value);
+                d[field.field] = (value === "") ? 0 : parseFloat(gcRev($input.value, ","));
             }
             else {
-                var $input = $("#" + id + "_form input#" + field.field)[0];
+                 $input = $("#" + id + "_form input#" + field.field)[0];
                 d[field.field] = ($input === undefined) ? null : $input.value;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             }
         }
         return d;
     },
     /* Set data the table.
     *************************************************************************/
-<<<<<<< HEAD
-    run: function (table, $Container, typeForm, searchform = false) {
-=======
     run: function (table, $Container, typeForm) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         //_listSelfTables
         this._id = table._id;
         this._table = table;
         this._typeForm = typeForm;
         this._$mainContainer = $Container;
-<<<<<<< HEAD
-        if (searchform) {
-            this._searchform  = true;
-            this._selfFielsList = table._fieldsSearch;
-            this._tailID = '_search';
-        }
-        else {
-            this._searchform  = false;
-            this._selfFielsList = table._fieldsList;
-            this._tailID = '';
-        }
-
-        this._createForm(searchform);
-        this._calGridForm(searchform);
-        //set class style
-        // nếu là form để search để tư do hoặc chỉ sét style
-        setClassAll(this._id+'_form', searchform);
+        this._createForm();
+        this._calGridForm();
     },
-    _createForm: function (searchform = false) {
-        if (searchform)
-            this._$form = $('<form novalidate></form>')
-                .addClass('form-horizontal bs-callout bs-callout-info gcformfixed')
-                .prependTo(this._$mainContainer);
-        else
-            this._$form = $('<form novalidate></form>')
-                .addClass('form-horizontal bs-callout bs-callout-info gcformfixed needs-validation')
-                .appendTo(this._$mainContainer);
-        this._$form.attr('id', this._table._id + this._tailID + '_form' );
+    _createForm: function () {
+        this._$form = $('<form></form>')
+            .addClass('form-horizontal bs-callout bs-callout-info gcformfixed')
+            .appendTo(this._$mainContainer);
+        this._$form.attr('id', this._table._id + '_form');
     },
     _divFormGroup: function (id, css) {
         var $div = $('<div></div>')
@@ -1057,7 +617,7 @@ var _gbForms = {
         //$div.attr('id', id + this._id);
         return $div;
     },
-    _divinput: function (id, css, allownull=false) {
+    _divinput: function (id, css) {
         var $div = $('<div></div>')
             .addClass('input-group')
             .addClass(css);
@@ -1067,69 +627,38 @@ var _gbForms = {
         return $div;
     },
     _labelFormGroup: function (id, css, labeltext) {
-        if (typeof _gcLoopkupI18 == 'function') {
-            var tmp = _gcLoopkupI18(this._table._id, id);
-            labeltext = (tmp === id) ? labeltext : tmp;
-        }
-=======
-        this._createForm();
-        this._calGridForm();
-    },
-    _createForm: function () {
-        this._$form = $('<form></form>')
-            .addClass('form-horizontal bs-callout bs-callout-warning')
-            .appendTo(this._$mainContainer);
-        this._$form.attr('id', this._table._id + '_form');
-    },
-    _divFormGroup: function (id, css) {
-        var $div = $('<div></div>')
-            .addClass('form-group')
-            .addClass(css);
-        $div.attr('id', id);
-        return $div;
-    },
-    _divinput: function (id, css) {
-        var $div = $('<div></div>')
-            .addClass('input-group')
-            .addClass(css);
-        $div.attr('id', id);
-        return $div;
-    },
-    _labelFormGroup: function (id, css, labeltext) {
         if (typeof _gcLoopkupI18 == 'function')
             labeltext = _gcLoopkupI18(this._table._id, id);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         var $label = $('<label></label>')
             .addClass('control-label')
             .addClass(css)
             .html(labeltext + ":");
-<<<<<<< HEAD
         //$label.attr('id', id);
         //fixed for multi build form 2021
         $label.attr('id', id + this._id);
         return $label;
     },
-    _divInputFormGroup: function (divcss, id, css, type, placehoder, listboxcss, allownull=false) {
-        var $div = $('<div></div>')
-            .addClass(divcss);
-        //$div.attr('id', id + '_div');
-        //fixed for multi build form 2021
-        $div.attr('id', id + this._id + '_div' + this._tailID);
-        var $input = this._inputFormGroup(id, css, type, placehoder, listboxcss,'', allownull);
-        //$input.appendTo($div);
-        return $input;
-    },
-    _divAreaFormGroup: function (divcss, id, css, type, placehoder, listboxcss,allownull=false) {
+    _divInputFormGroup: function (divcss, id, css, type, placehoder, listboxcss) {
         var $div = $('<div></div>')
             .addClass(divcss);
         //$div.attr('id', id + '_div');
         //fixed for multi build form 2021
         $div.attr('id', id + this._id + '_div');
-        var $input = this._addAreaFormGroup(id, css, type, placehoder,allownull);
+        var $input = this._inputFormGroup(id, css, type, placehoder, listboxcss);
         //$input.appendTo($div);
         return $input;
     },
-    _divInputFormGroupAddOn: function (divcss, id, css, type, placehoder, addon, listboxcss, allownull=false) {
+    _divAreaFormGroup: function (divcss, id, css, type, placehoder, listboxcss) {
+        var $div = $('<div></div>')
+            .addClass(divcss);
+        //$div.attr('id', id + '_div');
+        //fixed for multi build form 2021
+        $div.attr('id', id + this._id + '_div');
+        var $input = this._addAreaFormGroup(id, css, type, placehoder);
+        //$input.appendTo($div);
+        return $input;
+    },
+    _divInputFormGroupAddOn: function (divcss, id, css, type, placehoder, addon, listboxcss) {
         var $div = $('<div></div>')
             .addClass(divcss);
         //$div.attr('id', id + '_divadon');
@@ -1138,35 +667,6 @@ var _gbForms = {
 
         var $divGroup = this._divinput("", "");
 
-        var expand = id + this._id + '_basicaddon';
-=======
-        $label.attr('id', id);
-        return $label;
-    },
-    _divInputFormGroup: function (divcss, id, css, type, placehoder, listboxcss) {
-        var $div = $('<div></div>')
-            .addClass(divcss);
-        $div.attr('id', id + '_div');
-        var $input = this._inputFormGroup(id, css, type, placehoder, listboxcss);
-        $input.appendTo($div);
-        return $div;
-    },
-    _divAreaFormGroup: function (divcss, id, css, type, placehoder, listboxcss) {
-        var $div = $('<div></div>')
-            .addClass(divcss);
-        $div.attr('id', id + '_div');
-        var $input = this._addAreaFormGroup(id, css, type, placehoder);
-        $input.appendTo($div);
-        return $div;
-    },
-    _divInputFormGroupAddOn: function (divcss, id, css, type, placehoder, addon, listboxcss) {
-        var $div = $('<div></div>')
-            .addClass(divcss);
-        $div.attr('id', id + '_divadon');
-
-        var $divGroup = this._divinput("", "");
-
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         //-------------------------------------
         var $span;
         if (typeof (addon) === 'object') {
@@ -1180,13 +680,8 @@ var _gbForms = {
             $span = this._addOnSpanFull(text, scss, icon);
         }
         else
-<<<<<<< HEAD
-            $span = this._addOnSpan(addon, expand);
-        var $input = this._inputFormGroup(id, css, type, placehoder, listboxcss, expand, allownull);
-=======
             $span = this._addOnSpan(addon);
         var $input = this._inputFormGroup(id, css, type, placehoder, listboxcss);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
         $input.appendTo($divGroup);
         $span.appendTo($divGroup);
@@ -1194,74 +689,47 @@ var _gbForms = {
         $divGroup.appendTo($div);
         return $div;
     },
-<<<<<<< HEAD
-    _inputFormGroup: function (id, css, type, placehoder, listboxcss, expand = '', allownull=false) {
-        var $input = $('<input></input>')
-            .addClass('form-control')
-            .attr('aria-describedby', expand)
-            .addClass(listboxcss)
-            .addClass(css);
-        //$input.attr('id', id);
-        $input.attr('id', id + this._id);
-
-        if(!allownull)
-            $input.attr('required', true);
-=======
     _inputFormGroup: function (id, css, type, placehoder, listboxcss) {
         var $input = $('<input></input>')
             .addClass('form-control')
             .addClass(listboxcss)
             .addClass(css);
-        $input.attr('id', id);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+        //$input.attr('id', id);
+        $input.attr('id', id + this._id);
+
         $input.attr('name', id);
         $input.attr('type', type);
         $input.attr('placehoder', placehoder);
         return $input;
     },
-<<<<<<< HEAD
-    _addAreaFormGroup: function (id, css, type, placehoder,allownull=false) {
-=======
     _addAreaFormGroup: function (id, css, type, placehoder) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
         var $input = $('<textarea></textarea>')
             .addClass('form-control')
             .addClass(css);
-<<<<<<< HEAD
         //$input.attr('id', id);
         $input.attr('id', id + this._id);
-        if(!allownull)
-            $input.attr('required', true);
-=======
-        $input.attr('id', id);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+
         $input.attr('name', id);
         $input.attr('type', type);
         $input.attr('placehoder', placehoder);
         return $input;
     },
-<<<<<<< HEAD
-    _buttonSave: function (id, css, icon, name, type='submit') {
-        var $button = $('<button type="{0}">'.format(type) + name + '</button>')
+    _buttonSave: function (id, css, icon, name) {
+        var $button = $('<button type="button">' + name + '</button>')
             .addClass(css);
         //$button.attr('id', id);
         $button.attr('id', id + this._id);
 
         var $span = this._addSpan(icon).appendTo($button);
+        //$button.text(name + $span.html());
         return $button;
     },
-    _addSelect: function (id, css, key, option, field, search=false) {
-        var $select = $('<select data-live-search="true" name="states[]" ></select>')
+    _addSelect: function (id, css, key, option, field) {
+        var $select = $('<select data-live-search="true" ></select>')
             .addClass(css);
-            $select.attr('id', id + this._id + '_select');
-            $select.attr('name', id + this._id + '_select');
-        //name="states[]" multiple="multiple"
-        if(search)
-        $select = $('<select data-live-search="true" name="states[]" multiple="multiple"></select>')
-            .addClass(css);
-            $select.attr('id', id + this._id + '_select');
-            $select.attr('name', id + this._id + '_select');
+        $select.attr('id', id + this._id + '_select');
+        $select.attr('name', id + this._id + '_select');
 
         //$select.attr('id', id + '_select');
         //$select.attr('name', id + '_select');
@@ -1269,22 +737,6 @@ var _gbForms = {
         var mergeCss = (typeof (option["mergeCss"])) !== 'undefined' ? option["mergeCss"][0] : null;
         var precition = 2;
         //
-=======
-    _buttonSave: function (id, css, icon, name) {
-        var $button = $('<button type="button">' + name + '</button>')
-            .addClass(css);
-        $button.attr('id', id);
-
-        var $span = this._addSpan(icon).appendTo($button);
-        //$button.text(name + $span.html());
-        return $button;
-    },
-    _addSelect: function (id, css, key, option, field) {
-        var $select = $('<select data-live-search="true" data-size="10"></select>')
-            .addClass(css);
-        $select.attr('id', id + '_select');
-        $select.attr('name', id + '_select');
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         var data;
         if (_gbCaches.memory.get(key) !== undefined) {
             data = _gbCaches.memory.get(key);
@@ -1292,7 +744,6 @@ var _gbForms = {
                 var token = VNConvertVNKODAU(data[u].length > 1 ? data[u][1] : data[u][0]);
                 var mergename = option.mergename;
                 var name = "";
-<<<<<<< HEAD
                 for (var m = 0; m < mergename.length; m++) {
                     //format data[u][mergename[m]]
                     var val = data[u][mergename[m]];
@@ -1312,10 +763,6 @@ var _gbForms = {
                     else
                         name += (" | " + val);
                 }
-=======
-                for (var m = 0; m < mergename.length; m++)
-                    name += data[u][mergename[m]] + "    | ";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 var $option = $('<option></option>')
                     .attr('data-tokens', token)
                     .attr('value', data[u][0])
@@ -1328,48 +775,19 @@ var _gbForms = {
         }
         return $select;
     },
-<<<<<<< HEAD
-    _addInput: function (id, css, allownull=false) {
-        var $input = $('<input></input>')
-            .addClass(css);
-        //$span.attr('id', id);
-        if(!allownull)
-            $input.attr('required', true);
-        $input.attr('id', id + this._id);
-        $input.attr('name', id);
-        return $input;
-    },
-    _addInputPicker: function (id, css, allownull=false) {
-        var $input = $('<input></input>')
-            .addClass(css);
-        //$span.attr('id', id);
-        if(!allownull)
-            $input.attr('required', true);
-        $input.attr('id', id );
-        $input.attr('name', id);
-        return $input;
-    },
-    _addArea: function (id, css, allownull=false) {
-        var $span = $('<textarea></textarea>')
-            .addClass(css);
-        //$span.attr('id', id);
-        if(!allownull)
-            $input.attr('required', true);
-
-        $span.attr('id', id + this._id);
-=======
     _addInput: function (id, css) {
         var $span = $('<input></input>')
             .addClass(css);
-        $span.attr('id', id);
+        //$span.attr('id', id);
+        $span.attr('id', id + this._id);
         $span.attr('name', id);
         return $span;
     },
     _addArea: function (id, css) {
         var $span = $('<textarea></textarea>')
             .addClass(css);
-        $span.attr('id', id);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+        //$span.attr('id', id);
+        $span.attr('id', id + this._id);
         $span.attr('name', id);
         return $span;
     },
@@ -1378,14 +796,11 @@ var _gbForms = {
             .addClass(css);
         return $span;
     },
-<<<<<<< HEAD
     _addI: function (css) {
         var $span = $('<i></i>')
             .addClass(css);
         return $span;
     },
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     _addOnSpanFull: function (addon, css, icon) {
         var $span = $('<span></span>')
             .addClass('input-group-addon')
@@ -1394,30 +809,6 @@ var _gbForms = {
             .html(addon);
         return $span;
     },
-<<<<<<< HEAD
-    _addOnSpan: function (addon, id) {
-        var $span = $('<span></span>')
-            .addClass('input-group-text')
-            .attr('id', id)
-            .html(addon);
-        var $div = $('<div></div>')
-            .addClass('input-group-prepend');
-        $span.appendTo($div);
-        return $div;
-    },
-    //<span class="input-group-addon">@</span>
-    _createField: function (index, labelclass, groupclass, $divRow, searchform = false) {
-        try {
-            var idRow = "";
-            var css = "", type = "text", placehoder = "";
-            var field = this._selfFielsList[index];
-
-            var allownull = (typeof (field['allownull']) !== 'undefined')? field['allownull']: false;
-            var id = field.field + this._tailID;
-            var expandtype = (typeof (field.expandtype) !== 'undefined') ? field.expandtype : '';
-
-            var labeltext = field.name;
-=======
     _addOnSpan: function (addon) {
         var $span = $('<span></span>')
             .addClass('input-group-addon')
@@ -1435,116 +826,41 @@ var _gbForms = {
 
             var id = this._table._fieldsList[index].field;
             var labeltext = this._table._fieldsList[index].name;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             var listboxcss = "";
             var $label = this._labelFormGroup(id, labelclass, labeltext).appendTo($divRow);
 
+            //if (appDivRow===true)
+            //    $label.appendTo($divRow);
+
             var $div;
-<<<<<<< HEAD
-            if ((typeof (field['type']) !== 'undefined') && (field.type === "datetime")) {
-=======
-            if ((typeof (this._table._fieldsList[index]['type']) !== 'undefined') && (this._table._fieldsList[index].type == "datetime")) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+            if ((typeof (this._table._fieldsList[index]['type']) !== 'undefined') && (this._table._fieldsList[index].type === "datetime")) {
                 //listboxcss = 'gc-style-form-combo';
                 $div = $('<div></div>')
                     .addClass(groupclass);
                 $div.attr('id', id + '_div');
                 //end form group
 
-<<<<<<< HEAD
-                var $inputgroup = this._divinput(id + "_datetimepicker", "date",'', allownull);
-                var $_addInput = this._addInputPicker(id + this._id + "_inputpicker", "form-control ", allownull);
-                //var $_addInput = this._addInput(id + "_inputpicker", "form-control form-control-sm");
+                var $inputgroup = this._divinput(id + "_datetimepicker", "date");
+                var $_addInput = this._addInput(id + "_inputpicker", "form-control form-control-sm");
                 var $_addSpan = this._addI("bi-alarm");
                 $_addSpan.css({ "font-size": "1.1rem", "color": "cornflowerblue" });
-=======
-                var $inputgroup = this._divinput(id + "_datetimepicker", "date");
-                var $_addInput = this._addInput(id + "_inputpicker", "form-control");
-                var $_addSpan = this._addSpan("input-group-addon glyphicon glyphicon-time");
-
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
                 $_addInput.appendTo($inputgroup);
                 $_addSpan.appendTo($inputgroup);
 
-<<<<<<< HEAD
                 //$inputgroup.appendTo($div);
                 //fix 2021
                 $inputgroup.appendTo($divRow);
-=======
-                $inputgroup.appendTo($div);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
                 var sr = document.createElement('script');
                 sr.type = 'text/javascript';
                 sr.innerHTML = '$(function () { '
-<<<<<<< HEAD
-                    + ' $("#' + id + this._id + '_inputpicker' + '").flatpickr({enableTime: true,dateFormat: "d-m-Y H:i", defaultDate:new Date(), allowInput: true,wrap: false,time_24hr: true,});'
+                    + ' $("#' + id + '_inputpicker' + this._id + '").flatpickr({});'
                     + '        });';
-                //cho phép hiển thị range để dùng// và không cho phép query quá 1 đến 2 tháng
-                if(this._searchform)
-                    sr.innerHTML = '$(function () { '
-                        + ' $("#' + id + this._id + '_inputpicker' + '").flatpickr({enableTime: true,dateFormat: "d-m-Y H:i",allowInput: true,wrap: false,time_24hr: true, mode: "range", defaultDate:[new Date().fp_incr(-1) ,new Date()]});'
-                        + '        });';
+
 
                 $($divRow).append(sr);
                 //$div.appendTo($divRow);
-
-                return $divRow;
-            }
-            //convinent cho 2 phiên bản v1.0, và version 2.0
-            else if ((typeof (field['type']) !== 'undefined') && ((field.type == "select") || (expandtype == "select"))) {
-                //listboxcss = 'gc-style-form-combo';
-                $div = $('<div></div>')
-                    .addClass('');
-                $div.attr('id', id + '_div');
-                var key = this._table._id + field.option.field;
-                var option = field.option;
-                var $select = this._addSelect(id, 'selectpicker  form-control form-control', key, option, 0, searchform);
-
-                var $_addSpan = this._addSpan("input-group-addon")
-                                .attr('id', '_add_icon_action_'+this._table._id  +"__p__"+id)
-                                .attr('style', "cursor:pointer");
-                //var $buttion = this._buttonSave(this._id + 'action_add', 'btn btn-info', 'glyphicon glyphicon-save', '<i class="bi bi-search"></i>  ').appendTo($_addSpan);
-                var $_addIcon = this._addI("bi-plus-circle");
-                $_addIcon.css({ "font-size": "1.1rem", "color": "#28a745" }).appendTo($_addSpan);
-                //fix 2021
-                $select.appendTo($div);
-                $_addSpan.appendTo($div);  
-
-                $div.appendTo($divRow);  
-
-                var srpicker = document.createElement('script');
-                srpicker.type = 'text/javascript';
-                
-                var special = '';
-                if(field.field === 'OrderID')
-                    special = 'width:"200px",';
-                srpicker.innerHTML = '$(function () { '
-                    + ' $("#' + id + this._id + '_select' + '").select2({ theme: "bootstrap", '+special+' containerCssClass: ":all:" });'
-                    //+ ' $("#' + id + this._id + '_select' + '").select2({ theme: "bootstrap4"});'
-                    + '        });';
-                
-                    srpicker.innerHTML += '$(function () { '
-                    //+ ' $("#' + id + this._id + '_select' + '").attr("style","min-width:200px !important");'
-                    + ' $( "span[class*=\'select2-container\']").attr("style","min-width:190px !important; max-width: 338px !important");'
-                    + '        });';
-
-                $($divRow).append(srpicker);
-
-                return $divRow;
-            }
-            else if ((typeof (field['type']) !== 'undefined') && ((field.type == "area") || (expandtype == "area"))) {
-                //listboxcss = 'gc-style-form-combo';
-
-                var $select = this._divAreaFormGroup(groupclass, id, css, type, placehoder,'', allownull).appendTo($divRow);
-=======
-                    + ' $("#' + id + '_inputpicker").flatpickr({});'
-                    + '        });';
-
-
-                $($div).append(sr);
-                $div.appendTo($divRow);
 
                 return $divRow;
             }
@@ -1555,26 +871,36 @@ var _gbForms = {
                 $div.attr('id', id + '_div');
                 var key = this._table._id + this._table._fieldsList[index].option.field;
                 var option = this._table._fieldsList[index].option;
-                var $select = this._addSelect(id, 'selectpicker  form-control ', key, option, 0);
-                $select.appendTo($div);
-                $div.appendTo($divRow);
+                var $select = this._addSelect(id, 'selectpicker  form-control form-control-sm', key, option, 0);
+
+                //$select.appendTo($div);
+                //$div.appendTo($divRow);
+                //fix 2021
+                $select.appendTo($divRow);
+
+                var srpicker = document.createElement('script');
+                srpicker.type = 'text/javascript';
+                srpicker.innerHTML = '$(function () { '
+                    + ' $("#' + id + this._id + '_select' + '").select2({ dropdownCssClass: "smalldrop", width: "auto" });'
+                    + '        });';
+
+                $($divRow).append(srpicker);
+
                 return $divRow;
             }
             else if ((typeof (this._table._fieldsList[index]['type']) !== 'undefined') && (this._table._fieldsList[index].type == "area")) {
                 //listboxcss = 'gc-style-form-combo';
 
                 var $select = this._divAreaFormGroup(groupclass, id, css, type, placehoder).appendTo($divRow);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 return $divRow;
             }
 
             else {
-<<<<<<< HEAD
-                if ((typeof (field['addon']) !== 'undefined'))
-                    $div = this._divInputFormGroupAddOn(groupclass, id, css, type, placehoder, field['addon'], listboxcss, allownull).appendTo($divRow);
+                if ((typeof (this._table._fieldsList[index]['addon']) !== 'undefined'))
+                    $div = this._divInputFormGroupAddOn(groupclass, id, css, type, placehoder, this._table._fieldsList[index]['addon'], listboxcss).appendTo($divRow);
 
                 else
-                    $div = this._divInputFormGroup(groupclass, id, ' form-control', type, placehoder, listboxcss, allownull).appendTo($divRow);
+                    $div = this._divInputFormGroup(groupclass, id, ' form-control-sm', type, placehoder, listboxcss).appendTo($divRow);
                 return $divRow;
             }
         }
@@ -1583,23 +909,7 @@ var _gbForms = {
         }
     },
 
-    _calGridForm: function (searchform = false) {
-=======
-                if ((typeof (this._table._fieldsList[index]['addon']) !== 'undefined'))
-                    $div = this._divInputFormGroupAddOn(groupclass, id, css, type, placehoder, this._table._fieldsList[index]['addon'], listboxcss).appendTo($divRow);
-
-                else
-                    $div = this._divInputFormGroup(groupclass, id, css, type, placehoder, listboxcss).appendTo($divRow);
-                return $divRow;
-            }
-        }
-        catch (error) {
-            console.log(index + '|' + this._table._id);
-        }
-    },
-
     _calGridForm: function () {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         if (this._typeForm === 0)// edit form
         {
             var u = 0;
@@ -1607,183 +917,101 @@ var _gbForms = {
             for (u = 0; u < this._table._editform.length; u++) {
                 var row = this._table._editform[u].row;
                 var idRow = this._id + 'div' + u;
-<<<<<<< HEAD
                 var $divRow = null;
                 var labelclass;
                 if (row.length === 1)// 1 element
                 {
-                    $divRow = this._divFormGroup(idRow, "form-group mb-2");
+                    $divRow = this._divFormGroup(idRow, "form-group");
                     //label - col-sm-2
                     //imput - col-sm-10
                     labelclass = "col-sm-2", groupclass = "col-sm-6";
                     //check field true for create form
                     $divGroup1 = this._divFormGroup(idRow, "form-group  col-sm-6");
-                    this._createField(row[0], labelclass, groupclass, $divGroup1, searchform);
-                    if (this._selfFielsList[row[0]].edit === true)
+                    this._createField(row[0], labelclass, groupclass, $divGroup1);
+                    if (this._table._fieldsList[row[0]].edit === true)
                         $divGroup1.appendTo($divRow);
 
-=======
-                var $divRow = this._divFormGroup(idRow, "");
-                var labelclass;
-                if (row.length === 1)// 1 element
-                {
-                    //label - col-sm-2
-                    //imput - col-sm-10
-                    labelclass = "col-sm-2", groupclass = "col-sm-10";
-
-                    this._createField(row[0], labelclass, groupclass, $divRow);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     $divRow.appendTo(this._$form);
                 }
                 if (row.length === 2)// 2 element * 6
                 {
-<<<<<<< HEAD
-                    $divRow = this._divFormGroup(idRow, "form-row mb-2");
+                    $divRow = this._divFormGroup(idRow, "form-row");
 
-                    //label - col-sm-2
-                    //imput - col-sm-4
-                    labelclass = "col-sm-2", groupclass = "";//"col-sm-4";
-                    $divGroup1 = this._divFormGroup(idRow, "form-group  col-sm-6");
-                    this._createField(row[0], labelclass, groupclass, $divGroup1, searchform);
-                    $divGroup2 = this._divFormGroup(idRow, "form-group   col-sm-6");
-                    this._createField(row[1], labelclass, groupclass, $divGroup2, searchform);
-
-                    if (this._selfFielsList[row[0]].edit === true)
-                        $divGroup1.appendTo($divRow);
-                    if (this._selfFielsList[row[1]].edit === true)
-                        $divGroup2.appendTo($divRow);
-
-=======
                     //label - col-sm-2
                     //imput - col-sm-4
                     labelclass = "col-sm-2", groupclass = "col-sm-4";
-                    this._createField(row[0], labelclass, groupclass, $divRow);
-                    this._createField(row[1], labelclass, groupclass, $divRow);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+                    $divGroup1 = this._divFormGroup(idRow, "form-group  col-sm-6");
+                    this._createField(row[0], labelclass, groupclass, $divGroup1);
+                    $divGroup2 = this._divFormGroup(idRow, "form-group   col-sm-6");
+                    this._createField(row[1], labelclass, groupclass, $divGroup2);
+
+                    if (this._table._fieldsList[row[0]].edit === true)
+                        $divGroup1.appendTo($divRow);
+                    if (this._table._fieldsList[row[1]].edit === true)
+                        $divGroup2.appendTo($divRow);
+
                     $divRow.appendTo(this._$form);
                 }
                 if (row.length === 3)// 2 element * 2
                 {
-<<<<<<< HEAD
-                    $divRow = this._divFormGroup(idRow, "form-row mb-2");
+                    $divRow = this._divFormGroup(idRow, "form-row");
                     //label - col-sm-2
                     //imput - col-sm-2
                     labelclass = "col-sm-2", groupclass = "col-sm-2";
                     $divGroup1 = this._divFormGroup(idRow, "form-group  col-sm-4");
-                    this._createField(row[0], labelclass, groupclass, $divGroup1, searchform);
+                    this._createField(row[0], labelclass, groupclass, $divGroup1);
                     $divGroup2 = this._divFormGroup(idRow, "form-group  col-sm-4");
-                    this._createField(row[1], labelclass, groupclass, $divGroup2, searchform);
+                    this._createField(row[1], labelclass, groupclass, $divGroup2);
                     $divGroup3 = this._divFormGroup(idRow, "form-group  col-sm-4");
-                    this._createField(row[2], labelclass, groupclass, $divGroup3, searchform);
+                    this._createField(row[2], labelclass, groupclass, $divGroup3);
 
-                    if (this._selfFielsList[row[0]].edit === true)
+                    if (this._table._fieldsList[row[0]].edit === true)
                         $divGroup1.appendTo($divRow);
-                    if (this._selfFielsList[row[1]].edit === true)
+                    if (this._table._fieldsList[row[1]].edit === true)
                         $divGroup2.appendTo($divRow);
-                    if (this._selfFielsList[row[2]].edit === true)
+                    if (this._table._fieldsList[row[2]].edit === true)
                         $divGroup3.appendTo($divRow);
 
-=======
-                    //label - col-sm-2
-                    //imput - col-sm-2
-                    labelclass = "col-sm-2", groupclass = "col-sm-2";
-                    this._createField(row[0], labelclass, groupclass, $divRow);
-                    this._createField(row[1], labelclass, groupclass, $divRow);
-                    this._createField(row[2], labelclass, groupclass, $divRow);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     $divRow.appendTo(this._$form);
                 }
                 if (row.length === 4)// 2 element * 1
                 {
-<<<<<<< HEAD
-                    $divRow = this._divFormGroup(idRow, "form-row mb-2");
+                    $divRow = this._divFormGroup(idRow, "form-row");
                     //label - col-sm-2
                     //imput - col-sm-1
                     labelclass = "col-sm-2", groupclass = "col-sm-1";
                     $divGroup1 = this._divFormGroup(idRow, "form-group  col-sm-3");
-                    this._createField(row[0], labelclass, groupclass, $divGroup1, searchform);
+                    this._createField(row[0], labelclass, groupclass, $divGroup1);
                     $divGroup2 = this._divFormGroup(idRow, "form-group  col-sm-3");
-                    this._createField(row[1], labelclass, groupclass, $divGroup2, searchform);
-                    $divGroup3 = this._divFormGroup(idRow, "form-group  col-sm-3", searchform);
-                    this._createField(row[2], labelclass, groupclass, $divGroup3, searchform);
+                    this._createField(row[1], labelclass, groupclass, $divGroup2);
+                    $divGroup3 = this._divFormGroup(idRow, "form-group  col-sm-3");
+                    this._createField(row[2], labelclass, groupclass, $divGroup3);
                     $divGroup4 = this._divFormGroup(idRow, "form-group  col-sm-3");
-                    this._createField(row[3], labelclass, groupclass, $divGroup4, searchform);
+                    this._createField(row[3], labelclass, groupclass, $divGroup4);
 
-                    if (this._selfFielsList[row[0]].edit === true)
+                    if (this._table._fieldsList[row[0]].edit === true)
                         $divGroup1.appendTo($divRow);
-                    if (this._selfFielsList[row[1]].edit === true)
+                    if (this._table._fieldsList[row[1]].edit === true)
                         $divGroup2.appendTo($divRow);
-                    if (this._selfFielsList[row[2]].edit === true)
+                    if (this._table._fieldsList[row[2]].edit === true)
                         $divGroup3.appendTo($divRow);
-                    if (this._selfFielsList[row[3]].edit === true)
+                    if (this._table._fieldsList[row[3]].edit === true)
                         $divGroup4.appendTo($divRow);
 
-=======
-                    //label - col-sm-2
-                    //imput - col-sm-1
-                    labelclass = "col-sm-2", groupclass = "col-sm-1";
-                    this._createField(row[0], labelclass, groupclass, $divRow);
-                    this._createField(row[1], labelclass, groupclass, $divRow);
-                    this._createField(row[2], labelclass, groupclass, $divRow);
-                    this._createField(row[3], labelclass, groupclass, $divRow);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     $divRow.appendTo(this._$form);
                 }
             }
             var idRow = this._id + 'div' + u;
-<<<<<<< HEAD
             var $divRow = this._divFormGroup(idRow, "form-group");
-=======
-            var $divRow = this._divFormGroup(idRow, "");
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
             var $div = $('<div></div>')
                 .addClass('col-sm-offset-2 col-sm-10');
 
-<<<<<<< HEAD
-            if (searchform) {
-                this._buttonSave(this._id + '_action_search_', 'btn btn-info', 'glyphicon glyphicon-save', '<i class="bi bi-search"></i> {0}  '.format(_gcI18('Search')), 'button').appendTo($div);
-                //script for buttton 
-            }
-            else {
-                this._buttonSave(this._id + '_action_save_', 'btn btn-success mr-sm-2', 'glyphicon glyphicon-edit', '<i class="bi bi-plus-circle"></i> {0}  '.format(_gcI18('AddNew')), 'button').appendTo($div);
-    
-                this._buttonSave(this._id + '_action_update_', 'btn btn-warning mr-sm-2', 'glyphicon glyphicon-edit', '<i class="bi bi-vector-pen"></i> {0}  '.format(_gcI18('Update')), 'button').appendTo($div);
-                this._buttonSave(this._id + '_action_print_', 'btn btn-primary mr-sm-2', 'glyphicon glyphicon-edit', '<i class="bi bi-printer-fill"></i> {0}  '.format(_gcI18('Print')), 'button').appendTo($div);
-
-                this._buttonSave(this._id + '_action_back_', 'btn btn-info mr-sm-2', 'glyphicon glyphicon-save', '<i class="bi bi-skip-start-circle"></i> {0}  '.format(_gcI18('Back')), 'button').appendTo($div);
-                
-
-            }
-
-            $div.appendTo($divRow);
-
-            //script for buttton 
-            var sr = document.createElement('script');
-            sr.type = 'text/javascript';
-            sr.innerHTML = ' '
-                + ' $("button[id*=\'' + this._id + '_action\']").click(function(){\r\n'
-                + '    if(typeof(_gbSubControl)!=="undefined")\r\n'
-                + '        if(typeof(_gbSubControl.API)!=="undefined")\r\n'
-                + '            _gbSubControl.API(this);\r\n'
-                + '});\r\n';
-
-                sr.innerHTML += ' '
-                + ' $("span[id*=\'_add_icon_action_' + this._id + '\']").click(function(){\r\n'
-                + '    if(typeof(_gbSubControl)!=="undefined")\r\n'
-                + '        if(typeof(_gbSubControl.ADDICON)!=="undefined")\r\n'
-                + '            _gbSubControl.ADDICON(this);\r\n'
-                + '});\r\n';
-
-            $($divRow).append(sr);
-
-=======
             this._buttonSave(this._id + '_save', 'btn btn-info', 'glyphicon glyphicon-save', 'Tạo mới  ').appendTo($div);
 
             this._buttonSave(this._id + '_update', 'btn btn-success', 'glyphicon glyphicon-edit', 'Cập nhật  ').appendTo($div);
 
             $div.appendTo($divRow);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             $divRow.appendTo(this._$form);
         }
         else {//update form
@@ -1809,29 +1037,17 @@ var _gbGrids = {
     },
     /* Creates the table.
         *************************************************************************/
-<<<<<<< HEAD
-    _createTable: function (className='table table-striped table-bordered') {
-=======
     _createTable: function () {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         var $div = $('<div class=""></div>')
             .appendTo(this._$mainContainer);
         $div.attr('id', this._table._id + '_griddiv');
         $div.appendTo(this._$mainContainer);
 
         this._$table = $('<table></table>')
-<<<<<<< HEAD
-            //.addClass(this._table.className)
-            .addClass(className)
-            .appendTo($div);
-
-        this._$table.attr('id', this._table._id + '_TableData');
-=======
             .addClass(this._table.className)
             .appendTo($div);
 
-        this._$table.attr('id', this._table._id);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+        this._$table.attr('id', this._table._id + '_TableData');
         this._$table.css('width', '100%');
 
         this._createTableHead();
@@ -1934,22 +1150,12 @@ var _gbGrids = {
         for (var i = 0; i < this._table._fieldsList.length; i++) {
             var field = this._table._fieldsList[i];
             if (field.list) {
-<<<<<<< HEAD
-                var viewName = field.name;
-                if (typeof _gcLoopkupI18 == 'function')
-                    viewName = _gcLoopkupI18(this._table._id, field.name);
-                //var width = '';
-                //if (i == 0)
-                //    width = '80px';
-                var $headerCell = this._createHeaderCellForField(viewName, field, '');
-=======
                 if (typeof _gcLoopkupI18 == 'function')
                     field.name = _gcLoopkupI18(this._table._id, field.name);
                 //var width = '';
                 //if (i == 0)
                 //    width = '80px';
                 var $headerCell = this._createHeaderCellForField(field.name, field, '');
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 $headerCell.appendTo($tr);
             }
         }
@@ -1957,28 +1163,17 @@ var _gbGrids = {
     /* Creates a header cell for given field.
         *  Returns th jQuery object.
         *************************************************************************/
-<<<<<<< HEAD
-    _createHeaderCellForField: function (viewName, field, width) {
-        //field.width = field.width || '10%'; //default column width: 10%.
-        var $th = $('<th></th>')
-            .css('width', width)
-            .data('fieldName', field.field)
-            .attr('self', field.field)
-            .html(viewName);
-=======
     _createHeaderCellForField: function (fieldName, field, width) {
         //field.width = field.width || '10%'; //default column width: 10%.
         var $th = $('<th></th>')
             .css('width', width)
             .data('fieldName', fieldName)
             .html(fieldName);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         if (width != '')
             $th.css('width', width + ' !important');
         return $th;
     },
     _formatData: function (data, tableName) {
-<<<<<<< HEAD
         try {
             var newData = data;
             var table = _gbApp.listTablesObjectJS.get(tableName);
@@ -2093,107 +1288,6 @@ var _gbGrids = {
         catch (error) {
             console.log(error + tableName)
         }
-=======
-        var newData = data;
-        var table = _gbApp.listTablesObjectJS.get(tableName);
-        //------------------------------------------------------------------
-        //user define format data
-        if (typeof (table._innerFormatData) == 'function')
-            return table._innerFormatData(data);
-
-        //------------------------------------------------------------------
-
-        var indexDate = [];
-        for (var idx = 0; idx < table._fieldsList.length; idx++) {
-            if ((typeof (table._fieldsList[idx]['type']) !== 'undefined') && (table._fieldsList[idx].type === "datetime"))
-                indexDate.push(idx);
-        }
-
-        //if define override fieldsList
-        //var _innerFields = [];
-        if (typeof table._fieldsListOverride !== 'undefined' && table._fieldsListOverride != null) {
-            if (typeof table._innerFields === 'undefined' || typeof table._innerFields === undefined || table._innerFields === null) {
-                table._innerFields = _gcGetFixedFields(table._fieldsListOverride, table._fieldsList);
-            }
-        }
-        for (var u = 0; u < newData.length; u++) {
-            //if define override fieldsList
-            if (typeof table._fieldsListOverride !== 'undefined' && table._fieldsListOverride != null) {
-                for (var p = 0; p < table._innerFields.length; p++) {
-                    var value = newData[u][p];
-
-
-                    //process data
-                    var precition = 0;
-                    //--------------------------------------------------
-                    if ((typeof (table._innerFields[p]['type']) !== 'undefined') && (table._innerFields[p].type === "datetime"))
-                        newData[u][p] = (newData[u][p] == null) ? '' : moment(parseDateJs(newData[u][p])).format(_gbApp.defaultConfig.dateTimeFormat);
-                    else if ((typeof (table._innerFields[p]['type']) !== 'undefined') && (table._innerFields[p].type === "money")) {
-                        if ((typeof (table._innerFields[p]['precition']) !== 'undefined'))
-                            precition = table._innerFields[p].precition;
-                        try {
-                            newData[u][p] = (newData[u][p] == null) ? '' : newData[u][p].formatMoney(precition, '.', ',');
-                        }
-                        catch (ex) {
-                            console.log(newData[u][p] + " | " + typeof (table._innerFields[p]['type']) + " | " + table._innerFields[p]['type'])
-                        }
-
-                    }
-                    else if ((typeof (table._innerFields[p]['type']) !== 'undefined') && (table._innerFields[p].type === "userdefine")) {
-                        if (typeof (table._innerUserDefineDraw) == 'function')
-                            newData[u][p] = table._innerUserDefineDraw(table, newData[u], p, table._innerFields[p]);
-                    }
-                    if (value === null)
-                        newData[u][p] = '';
-                    //color
-                    if ((typeof (table._innerFields[p]['color']) !== 'undefined')) {
-                        newData[u][p] = "<span style='color:" + table._innerFields[p].color + "'>" + newData[u][p] + "</span>";
-
-                    }
-                }
-                continue;
-            }
-            //------------------------------------------------------
-            //automatic
-            var jdx = 0;
-            for (jdx = 0; jdx < indexDate.length; jdx++) {
-                newData[u][indexDate[jdx]] = (newData[u][indexDate[jdx]] == null) ? '' : moment(parseDateJs(newData[u][indexDate[jdx]])).format(_gbApp.defaultConfig.dateTimeFormat);
-            }
-            var j = 0;
-
-            for (j = 0; j < table._fieldsList.length; j++) {
-                var value = newData[u][j];
-
-
-                //if (typeof (newData[u][j]) !== 'undefined')
-                //    newData[u][j] = '';
-                var precition = 0;
-                //money
-                if ((typeof (table._fieldsList[j]['type']) !== 'undefined') && (table._fieldsList[j].type === "money")) {
-
-                    if ((typeof (table._fieldsList[j]['precition']) !== 'undefined'))
-                        precition = table._fieldsList[j].precition;
-                    try {
-                        newData[u][j] = (newData[u][j] == null) ? '' : ( (typeof (newData[u][j]) === "number")? newData[u][j].formatMoney(precition, '.', ',') : newData[u][j]) ;
-                    }
-                    catch (ex) {
-                        console.log(newData[u][j] + " | " + typeof (table._fieldsList[j]['type']) + " | " + table._fieldsList[j]['type'])
-                    }
-                }
-                else if ((typeof (table._fieldsList[j]['type']) !== 'undefined') && (table._fieldsList[j].type === "userdefine")) {
-                    if (typeof (table._innerUserDefineDraw) == 'function')
-                        newData[u][j] = table._innerUserDefineDraw(table, newData[u], j, table._fieldsList[j]);
-                }
-
-                if (value === null)
-                    newData[u][j] = '';
-                if ((typeof (table._fieldsList[j]['color']) !== 'undefined')) {
-                    newData[u][j] = "<span style='color:" + table._fieldsList[j].color + "'>" + newData[u][j] + "</span>";
-
-                }
-            }
-        }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         return newData;
     },
     _createDataTable: function (tableName) {
@@ -2248,21 +1342,7 @@ var _gbGrids = {
                     dataSrc: this._table._inderGroup
                 }
             }
-<<<<<<< HEAD
-            //_gbFormAction.optionGrids.data = newData;
-            var option = (_gbLanguage==='vn')?_gbFormAction.optionGrids: _gbFormAction.optionGridsEn;
-					option.data = newData;
-            _gbApp.listDataGrids.set(tableName, $('#' + tableName + '_TableData').DataTable( option ));
-            
-            $('#' + tableName + '_TableData' + ' tbody').on('dblclick', 'tr', function (event) {
-                //var objName = $(this).attr('data-table');
-                //var btnType = this.id;
-                $("#"+$(this).parents()[1].id).DataTable().rows(this).select();
-                if (typeof (_gbFormAction._innerProcessClick) !== 'undefined')
-                    _gbFormAction._innerProcessClick(tableName,  event, this);
-                console.log(tableName);
-=======
-            _gbApp.listDataGrids.set(tableName, $('#' + tableName).DataTable({
+            _gbApp.listDataGrids.set(tableName, $('#' + tableName + '_TableData').DataTable({
                 searchHighlight: true,
                 responsive: true,
                 dom: 'CBftilp',// goog 19/03
@@ -2307,7 +1387,7 @@ var _gbGrids = {
                 //"rowGroup": group
             })
             );
-            $('#' + tableName + ' tbody').on('click', 'button', function (event) {
+            $('#' + tableName + '_TableData' + ' tbody').on('click', 'button', function (event) {
                 var tablename = $(this).attr('data-table');
                 var btnType = this.id;
                 var table = _gbApp.listDataGrids.get(tablename);
@@ -2316,7 +1396,6 @@ var _gbGrids = {
                 if (typeof (tableJS._innerProcessClick) == 'function')
                     tableJS._innerProcessClick(table, tableJS, data, event, this);
                 //    alert(data[0] + "'s " + btnType + " is: " + data[1] + event + tablename);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 event.stopPropagation();
                 return false;
             });
@@ -2348,22 +1427,11 @@ var _gbGrids = {
             //});
 
             //------------------------------
-<<<<<<< HEAD
-            if((_gbLanguage==='vn'))
-            {
-                $('button.buttons-colvis').html('Hiện / Ẩn cột');
-                $('button.buttons-print').html('In ấn');
-                $('button.buttons-copy').html('Sao chép');
-                $('button.buttons-excel').html('Xuất Excel');
-                $('button.buttons-pdf').html('Xuất PDF');
-            }
-=======
             $('button.buttons-colvis').html('Hiện / Ẩn cột');
             $('button.buttons-print').html('In');
             $('button.buttons-copy').html('Sao chép');
             $('button.buttons-excel').html('Xuất Excel');
             $('button.buttons-pdf').html('Xuất PDF');
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
             //_gbApp.listDataGrids.get(tableName).on('responsive-resize', function (e, datatable, columns) {
             //    var count = columns.reduce(function (a, b) {
@@ -2538,7 +1606,6 @@ var _gbc = {
     },
     pTd: function (d, td, df) {
         var r = '';
-<<<<<<< HEAD
         if (td === 1 || td === 2 || td === 3 || td === 4) {
             r = d == null ? df : (d + '');
         } else if (td == 5) {
@@ -2546,15 +1613,6 @@ var _gbc = {
         } else if (td === 6) {
             r = d == null ? df : gcFormatStr(d + '');
         } else if (td === 7) {
-=======
-        if (td == 1 || td == 2 || td == 3 || td == 4) {
-            r = d == null ? df : (d + '');
-        } else if (td == 5) {
-            r = d == null ? df : (typeof d == 'string' ? _parseDate(d + '').format('dd/MM/yyyy HH:mm:ss') : d.format('dd/MM/yyyy HH:mm:ss'));
-        } else if (td == 6) {
-            r = d == null ? df : gcFormatStr(d + '');
-        } else if (td == 7) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             r = d == null ? df : (typeof d == 'string' ? _parseDate(d + '').format('dd/MM/yyyy') : d.format('dd/MM/yyyy'));
         }
         return r;
@@ -2568,18 +1626,13 @@ var _gbc = {
         $(".item").hover(function () { $(this).siblings().children().css("display", "block"); },
             function () { $(this).siblings().children().css("display", "none"); });
         $(".LegBottom").children().css("display", "none");
-<<<<<<< HEAD
         if (typeof gc_fn_Gobal_ConfigRightLoadListObject === 'function') { gc_fn_Gobal_ConfigRightLoadListObject(); }
-=======
-        if (typeof gc_fn_Gobal_ConfigRightLoadListObject == 'function') { gc_fn_Gobal_ConfigRightLoadListObject(); }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         $("#gc_gobal_PagerTopID").show();
         $('#gc_gb_MessageInfomation').html("<i class='glyphicon glyphicon-ok '></i>&nbsp;<strong>Đã tải dữ liệu thành công.</strong> ");
         _gbc.$gbCTab.removeClass('loaderleft');
         modalcenter.close();
         modal.close();
     }
-<<<<<<< HEAD
 };
 
 var __SettingObjectModal =
@@ -2784,25 +1837,25 @@ var __CreateObjectModal =
         //--------------------------------------
         this._addFormRowCol($ul, userRole);
         //tạo danh sách list Item
-
+        
         $ul.appendTo($form);
         $form.appendTo($targetObj);
     },
     createObject: function () {
 
         var listObjText = $("#" + this.objName + '_objRowColCreate')[0].value;
-
+        
         //console.log(listObjectSpaces);
         __ParserSpaces.init(listObjectSpaces);
         __ParserSpaces.Parser();
-
+        
         //_gbAjax.postN2(sqlRequest).then(function (data) {
         //    console.log(data);
         //});
     },
     saveToObject: function () {
-
-
+        
+        
 
     },
     _addFormRowCol: function ($targetObj, userRole) {
@@ -2815,7 +1868,7 @@ var __CreateObjectModal =
                 .addClass('form-control')
                 //.attr('type', 'text')
                 .attr('id', this.objName + '_objRowColCreate')
-                .attr("rows", '100')
+                .attr("rows",'100')
                 //.html(JSON.stringify(this.objForm._editform));
                 .load("/js/Instances/allObject.js")
             $inputCreate.appendTo($liCreate);
@@ -2832,79 +1885,40 @@ var __defineGroup = {
     //Sau khi bạn định nghĩa xong bạn có thể định nghĩa 1 account bất kỳ bằng
     //account:{ref:true, mainObject:adminGroup,listChildObject:{adminGroup.listChildObject[0,2,3,4], sellerGroup.listChidObject[3,4,6]} }
     AdminGroup: {
-        lang:{en: "AdminGroup", vn: "Quản lý", kmer: "បន្ថែម​ថ្មី"},
         //trang chính vào
         mainObject: {
-            _id: "gcGobal_INCOM_Receipt", instance: "self", showsearchbar: true, showIcon: "bi-server", showInstanceName: "Nhập đơn hàng",
-            lang:{en: "Receipt", vn: "Nhập đơn hàng", kmer: "បន្ថែម​ថ្មី"},
+            _id: "gcGobal_INCOM_Receipt", instance: "self", showsearchbar: true, showIcon: "bi-server", showInstanceName: "Nhập đơn hàng"
         },
         //add to menu
         listChildObject: [
             {
                 _id: "gcGobal_CUST_Customer", instance: "self", showIcon: "bi-geo-fill", showsearchbar: true, showInstanceName: "Khách hàng",
-                lang:{en: "Customer", vn: "Nhập đơn hàng", kmer: "បន្ថែម​ថ្មី"},
                 //Định nghĩa list children ở đây
             },
             {
                 _id: "gcGobal_ACCOUNT_Account", instance: "self", showIcon: "bi-lightbulb-fill", showsearchbar: true, showInstanceName: "Tài khoản",
-                lang:{en: "Account", vn: "Tài khoản", kmer: "បន្ថែម​ថ្មី"},
             },
             {
                 _id: "gcGobal_STOCK_gcProductList", instance: "self", showIcon: "bi-gift", showsearchbar: true, showInstanceName: "Hàng hóa",
-                lang:{en: "Product", vn: "Hàng hoá", kmer: "បន្ថែម​ថ្មី"},
             },
-            {
-                _id: "Business", instance: "self", showIcon: "bi-alarm", showsearchbar: true, showInstanceName: "Doanh nghiệp",
-                lang:{en: "Business", vn: "Doanh nghiệp", kmer: "បន្ថែម​ថ្មី"},
-            },
-            {
-                _id: "OrderDetail", instance: "self", showIcon: "bi-app", showsearchbar: true, showInstanceName: "Chi tiết Order ",
-                lang:{en: "OrderDetail", vn: "Chi tiết ORDER", kmer: "បន្ថែម​ថ្មី"},
-            },
-            {
-                _id: "Users", instance: "self", showIcon: "bi-archive", showsearchbar: true, showInstanceName: "Tài khoản ",
-                lang:{en: "Users", vn: "Tài khoản", kmer: "បន្ថែម​ថ្មី"},
-            },
-            {
-                _id: "Languages", instance: "self", showIcon: "bi-bell", showsearchbar: true, showInstanceName: "Ngôn ngữ ",
-                lang:{en: "Languages", vn: "Ngôn ngữ", kmer: "បន្ថែម​ថ្មី"},
-            },
-            {
-                _id: "SMS", instance: "self", showIcon: "bi-bag-dash", showsearchbar: true, showInstanceName: "Tin nhắn ",
-                lang:{en: "SMS", vn: "Tin nhắn", kmer: "បន្ថែម​ថ្មី"},
-            },
-            {
-                _id: "Promotions", instance: "self", showIcon: "bi-basket", showsearchbar: true, showInstanceName: "Khuyến mãi ",
-                lang:{en: "Promotions", vn: "Khuyến mãi", kmer: "បន្ថែម​ថ្មី"},
-            },
-            {
-                _id: "PromotionDetail", instance: "self", showIcon: "bi-bug", showsearchbar: true, showInstanceName: "Chi tiết khuyến mãi ",
-                lang:{en: "PromotionDetail", vn: "Chi tiết Khuyến mãi", kmer: "បន្ថែម​ថ្មី"},
-            },
-            
         ],
 
     },
     SellerGroup: {
         //trang chính vào
         mainObject: {
-            lang:{en: "SellerGroup", vn: "Quản lý", kmer: "បន្ថែម​ថ្មី"},
             _id: "gcGobal_CUST_Customer", instance: "self", showsearchbar: true, showIcon: "bi-server", showInstanceName: "Nhập đơn hàng",
-            lang:{en: "Receipt", vn: "Nhập đơn hàng", kmer: "បន្ថែម​ថ្មី"},
         },
         //add to menu
         listChildObject: [
             {
                 _id: "gcGobal_CUST_Customer", instance: "self", showIcon: "bi-geo-fill", showsearchbar: true, showInstanceName: "Khách hàng",
-                lang:{en: "Customer", vn: "Nhập đơn hàng", kmer: "បន្ថែម​ថ្មី"},
             },
             {
                 _id: "gcGobal_STOCK_gcProduct_Input", instance: "self", showIcon: "bi-lightbulb-fill", showsearchbar: true, showInstanceName: "Tài khoản",
-                lang:{en: "Input", vn: "Nhập đơn hàng", kmer: "បន្ថែម​ថ្មី"},
             },
             {
                 _id: "gcGobal_STOCK_gcProductList", instance: "self", showIcon: "bi-gift", showsearchbar: true, showInstanceName: "Hàng hóa",
-                lang:{en: "Product", vn: "Nhập đơn hàng", kmer: "បន្ថែម​ថ្មី"},
             },
         ],
     },
@@ -2942,13 +1956,11 @@ var __GroupRight = {
     init: function ($targetObj, objectGroup, userRole = 'self') {
         var mainObject = objectGroup.mainObject;
         var listChildObject = objectGroup.listChildObject;
-        var showName = _gcI18c(mainObject.lang);
-        this.addItem(mainObject._id, showName, $targetObj, mainObject.showIcon, userRole);
+        this.addItem(mainObject._id, mainObject.showInstanceName, $targetObj, mainObject.showIcon, userRole);
         //--------------------------------------------
         for (var i = 0; i < listChildObject.length; i++) {
             var ChildObject = listChildObject[i];
-            var showName = _gcI18c(ChildObject.lang);
-            this.addItem(ChildObject._id, showName, $targetObj, ChildObject.showIcon, userRole);
+            this.addItem(ChildObject._id, ChildObject.showInstanceName, $targetObj, ChildObject.showIcon, userRole);
 
         }
         //this.addItem('StocInputkGroup', 'Nhập hàng', $targetObj, userRole);
@@ -2966,8 +1978,7 @@ var __GroupRight = {
             .addClass('nav-link text-dark bs-callout bs-callout-info')
             .attr("style", "padding:7px !important;")
             .attr("id", 'navmenu_link_' + id)
-            .attr("objectid", id)
-            .attr("objectname", name)
+            .attr("ObjectName", id)
             .attr("href", '#')
             .html('<i class="bi ' + classIcon + '" style="color:orange"></i>' + name);
 
@@ -2994,6 +2005,4 @@ var __GroupRight = {
 
 
     }
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 };

@@ -56,11 +56,11 @@ namespace WebCore.Core
 
             //else xử lý bình thường
             return Process(request);
-
+            
         }
 
         // POST api/<callback>
-
+  
         [HttpPost]
         public object Post()
         {
@@ -72,17 +72,17 @@ namespace WebCore.Core
 
                 String deepData = "";
                 //if contain header => process file text quá khổ
-                if (request.Contains("[{header}]"))
+                if(request.Contains("[{header}]"))
                 {
                     var index = request.IndexOf("[{header}]");
-                    deepData = request.Substring(index + 10, request.Length - (index + 10));// tru 10 ki tu [{header}]
+                    deepData = request.Substring(index+10, request.Length - (index+10));// tru 10 ki tu [{header}]
                     request = request.Substring(0, index);
                 }
-
+           
                 string PhysicalApplicationPath = _host.WebRootPath;
                 // xử lý cho Cross data
                 List<object> objectList = CheckCrossData(request);
-                if (objectList.Count > 0)
+                if (objectList.Count>0)
                 {
                     zgcServives.LmtServices s = new zgcServives.LmtServices();
                     s.PhysicalApplicationPath = PhysicalApplicationPath;
@@ -118,7 +118,7 @@ namespace WebCore.Core
 
         // PUT api/<callback>/5
         [HttpPut("{id}")]
-        public void Put([FromBody] string value)
+        public void Put( [FromBody] string value)
         {
         }
 
@@ -200,6 +200,6 @@ namespace WebCore.Core
             };
         }
 
-
+        
     }
 }

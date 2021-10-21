@@ -8,11 +8,8 @@
 4./ Đổi tên zgcSpaceAPI.Core
 5./ Thêm bảng UserDevAuth trên gcDatabase không để bảng Table này bên Database Ứng dụng; Dùng để kiểm tra quyền
 
-<<<<<<< HEAD
    Lưu Minh Tùng thằng này ok kkk
 
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 6./
 Cài đặt:
 Bạn cài NuGet:
@@ -276,7 +273,6 @@ hạn chế tối đa load lại chúng => Cho dù bạn refesh lại dữ liệ
 ===> Khởi động khi chương trình mới bắt đầu để các trang trong có bị reload cũng không load lại chúng.
 Như các bản Sản Phẩm/ Bảng Đơn vị tính/ Dịch vụ/ Nhân viên/ Nhà cung cấp/ Kho hàng/ Chi nhánh
 ===> Để hạn chế bị Cache và tránh đăng nhập bạn có thể Reload lại thông tin này Bên trong: RELOAD Space
-<<<<<<< HEAD
 
 
 19/./
@@ -608,192 +604,8 @@ Bạn có thể sử dụng table cho đơn giản
 Thay vì bạn khai báo tường minh bạn có thể get listfield từ căn bản sau đó thay đổi và gán lại biến để sử dung gọi cho print và view
 vấn đề là tạo ra cho đủ cột kể cả cột ref
 
-//Header report đã xử lý xong lập 1 loạt các header và load chúng vào sau đó lựa chọn và thiết kết cho đẹp
-bạn chỉ cần truyền dãy tham số cần truyền là xong....
-
-các key search : like, value: string => value, range: number => option: group
-
-42./ thêm expandtype vào field để định nghĩa cho các thông số ngoài tự động như: area,editor, money, addon,... bất kỳ control nào muốn mở rộng dể parser.
-addon được hiểu là Lập 1 div append như sau: Bạn phải add vào 3 thẻ div để show chúng cho 1 input điều này đáng để làm cho form đẹp  vì chúng cần thế.
-
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at" style="font-size: 1.1rem; color: cornflowerblue;"></i></span>
-  </div>
-</div>
-
-thêm vào thuộc tính deco:"class='bi bi-at' style='font-size: 1.1rem; color: cornflowerblue;'" <== thêm 1 icon 
 
 
-43./ Tạo các hàm click sự kiện cho form và search trong bản thân script sinh ra và ở ngoài chỉ cần gọi các điểm nhập cho chúng
-cấu trúc như sau:
-
-https://select2.github.io/select2-bootstrap-theme/4.0.3.html
-
-44./
-The inline form above feels "compressed", and will look much better with Bootstrap's spacing utilities. The following example adds a right margin (.mr-sm-2) to each input on all devices (small and up). And a margin bottom class (.mb-2) is used to style the input field when it
-
-45./ //loading component to instance
-        $.fn.modal.Constructor.prototype._enforceFocus = function() {}; // some error with flatflicker and more
-46./ muốn debug file js attach => viết lỗi => chúng sẽ add vào debug
-
-47./ Định nghĩa FormAction để xử lý chung...
-Định nghĩa Dictionary for action text và các vấn đề show text chung _gcActionStrDict{
-    formaction:[
-        self: "AddNew", en: "Add New", vn: "Thêm mới", kmer: "បន្ថែម​ថ្មី"
-    ]
-}
-48./ Tìm ra cách làm và chấm công cho nhân sự như sau:
-1./ Loading theo bộ phận
-2./ Dữ liệu của nhân viên là 1 array[] được lưu là 1 dãy json mỗi nhân viên có tối đa 31 ngày json
-3./ Mỗi item sẽ chứa thông tin khác nhau: bao gồm: itemBasic:{day:"",work:on/off, addhour:{from:a,to:b,hour:2}, action:["DITRE", LAMTHEM,""], ngayle:on/off, thaisan:on/of,..}
-4./ Mỗi nhân viên sẽ có công làm theo sản phẩm là 1 list Item 31 ngày list này là 1 json, ứng với mỗi 
-itemWorks:{day:"",action:byself/bygroup,product:{name:"abc",amount:2.6,unit:"kg", note:""}, group:{amount:234,from:a, to:b, numpersons:9}
-5./ Mỗi nhân viên có 2 field Basic,Works,AddValues, SalaryByBasic,SalaryByWorks for 1 month.
-6./ Bạn có AddValues: Phụ cấp tiền xăng xe, cơm, điện thoại vv...
-7./ Sau khi có lương Chính tính lương khác theo option: trừ BHXH, BHYT, Công đoàn, Trợ cấp, Thuế TNC, Giảm trừ, 
-Đối với 1 người mà nói bạn nên lưu thành json cho họ các thông tin
-8./ Sau đó tính toán bảng lương => cho từng người thuộc bộ phận
-9./ Xuất bảng lương dự tính ==> Chờ submit và xác Nhận ==> Lưu bảng lương cuối cùng của tháng.
-10./ Tiến hành In bảng lương và report theo từng nhân viên.
-11./ Mỗi khi nhập liệu bạn tiến hành chọn ngày từ 1->31 ===> Mỗi ngày bạn chọn sản phẩm tổ đội sẽ làm để nhập vd: cá, cơm, băng chuyền,....=> submit sẽ tiến hành chạy ô nhập liệu
-nhập công sản phẩm , bạn có thể chia làm 2 loại công theo tổ và công theo từng cá nhân.
-12./ xuất dữ liệu báo cáo sản phẩm làm của nhân viên hằng ngày hằng tháng và tổng kết năm
-13./ xuất dữ liệu nhân sự năm.
 
 
-49./ Chức năng import sẽ mở dialog lên chọn file và lựa chọn cách đưa dữ liệu vào như sau: 
-==> load dữ liệu vào table ==> run check => báo số dòng lỗi, 
-==> checkbox => replaceall, không chèn mới nếu tồn tại,...
 
-
-50/ Cập nhật thêm câu lệnh truyền tham số tupples vào để insert 1 lần nhiều dữ liệu hoặt cập nhật nhiều dữ liệu;
-
-51./ 
-var bTransfer = curObjDict.ContainsKey("bTransfer")? (bool)curObjDict["bTransfer"] : false;
-var typeOp = curObjDict.ContainsKey("typeOp")? (string)curObjDict["typeOp"] : ""; //[ifCmd/forCmd/hasCmd]
-var Rules = curObjDict.ContainsKey("Rules")? (object[])curObjDict["Rules"] :  null;
-var data = (object[])rs.Records;
-//Rules có định dạng [{},{}]
-//{applyFunc:1, bStop:{self:true, condition:{result:"null"}}, d:{field:null, field,null}, c:{field:null,field:null}, checkFieldCondition:{[{self:Values, op:"equal/in/beetween/notequal/lessequal/greatequal", values:[1,9]}]}}
-//{applyFunc:2, bStop:{self:false, condition:{result:"object"}}, d:{field:null, field,null}, c:{field:null,field:null}, checkFieldCondition:{[{self:Values, op:"equal/in/beetween/notequal/lessequal/greatequal", values:[1,9]}]}}
-if(typeOp=="ifCmd")
-
-now we  call
-Requests = {
-    requesti = {
-        jSonFormat: true;// must be have
-        bTransfer: true, typeOp:"hasCmd", 
-        Rules:[
-            {applyFunc:1, bStop:{self:true, condition:{result:"null"}}, d:{}, c:{}}
-            {applyFunc:2, bStop:{self:false, condition:{result:"object"}}, d:{}, c:{id:""} }}
-        ]
-    }
-};
-
-
-52./ Cải tiến cho các field cài đặt sẳn => Bạn đưa chúng vào list field PrimaryField:{isUser,isValid,createDate,updateDate,..}
-Các đối tượng này bạn khai báo thuộc tính dể sinh ra file js và biểu diễn chúng thành các giá trị gán độc lập như sau:
-1./ Tự điền các thông tin này từ client hay server cho các giá field đã quy định 
-2./ gán đối tượng vào giá trị của chúng
-3. Tại client và server chúng ta có Hàm để load hoặc tính toán các giá trị này bằng đặt tả gía trị là object 
-isUser:{self:"client/server", func:"getUserAUTO", param:[]}
-CodebyDate:{self:"client/server", func:"getCodeAUTO", param:["HD", ]}
-CodebyBranch:{self:"client/server", func:"getCodeAUTO", param:[]}
-CodebyGobal:{self:"client/server", func:"getCodeAUTO", param:[]} // tính phiếu dựa vào get COUNT() tổng số phiếu : việc này bạn phải làm sau lệnh Insert 
-=> để chắc chắn tạo được phiếu và bạn => tạo phiếu bằng cách get COUNT() với điều kiện Id<= Id mà bạn vừa insert vào 
-=> có 2 cách để làm 1 là tính toán tự động ; 2 là bạn lấy chúng từ stock tạo sẳn bạn dựa vào vị trí code number theo get COUNT() đã tính.
-Trong trường hợp nó là Mã theo Chi nhánh thì bạn cũng lấy tương tự và truyền mã đó vào ==> Vì sao bạn phải quản lý STOCK code vì họ muốn quản lý và loại trừ chúng
-=> khi các code bị huỷ bị xoá hoặc return bằng 1 cách nào đó hoặc đơn giản là CODE đó họ đã thu tiền hay chưa hoặc CODE đó họ đã đi/ khởi hành hay chưa
-=> Trong hầu hết các trường hợp thì bạn sinh tự động 
-=> Nhưng 1 số trường hợp bạn phải reset code hằng năm thì sinh tự động phải viết lại
-
-=========================================
-Sau khi lãnh hội việc này xong bạn sẽ thấy cần phải build lại dữ liệu test 1 cách hợp lý 
-1./ Bạn định nghĩa các đối tượng sẽ sinh trong vòng đầu tiên : chúng là các đối tượng danh mục và hầu như không có khoá ngoại
-2./ Bạn bắt đầu sinh vòng hai cho các bảng khác.
-3./ Để tránh out of word bạn buộc phải load toàn bộ danh mục về để tạo chính xác dữ liệu và không bị over hoặc bạn push chúng vào stackdata và get chúng về.
-4./ Bạn định nghĩa thêm các mối qua hệ phụ thuộc cho các khoá ngoại như sau: ví dụ bảng dịch vụ nhưng chúng có phân loại theo Bussiness tức là key dịch vụ có thể có 
-100 dòng như đối với Business A chỉ có 8 dòng nhưng bạn get random trong 100 dòng làm cho dữ liệu rác => Bạn phải drop dữ liệu xuống thành 8 dòng và lấy random trên chúng
-để làm điều này bạn phải làm ngược như sau : A là đối tượng Main để bạn scan ví dự Business 
-===> Bạn scan all Business => Bạn tạo all dịch vụ cho Business
-===> Bạn scan all Business => load all services dịch vụ cho Business ==> Bạn tạo order cho các service thuộc business này
-===>  Tương tự cho các đối tượng promotion, Setting language, Staff, ....
-
-Làm sao bạn định nghĩa các Rules này::??? Bạn có định nghĩa relation rồi nhưng ngữ nghĩa bạn chưa định nghĩa chúng
-Sematic: [
-    {
-        main: 'Business' ,
-        submain: 'Order' ,//<= load all order of Business
-        submain: 'Services' ,//<= load all Services of Business
-        self: 'OrderDetail' //<== Ngữ nghĩa cho OrderDetail
-    },
-    {
-        main: 'Business' ,
-        self: 'Order'// <= Ngữ nghĩa cho Order
-    },
-    {
-        main: 'Business' ,
-        self: 'Langguage'// <= Ngữ nghĩa cho Langguage
-    },
-    {
-        main: 'Business' ,
-        self: 'Staff'// <= Ngữ nghĩa cho Staff
-    },
-    {
-        main: 'Business' ,
-        self: 'Services'// <= Ngữ nghĩa cho Services
-    },
-    {
-        main: 'Business' ,
-        self: 'Promotion'// <= Ngữ nghĩa cho Promotion
-    },
-    {
-        main: 'Business' ,
-        submain: 'Promotion',
-        self: 'PromotionDetail'// <= Ngữ nghĩa cho PromotionDetail
-    },
-    {
-        main: 'Business' ,
-        self: 'SMS'// <= Ngữ nghĩa cho SMS
-    },
-    {
-        main: 'Business',
-        submain: 'SMS',
-        self: 'SMSSetting'// <= Ngữ nghĩa cho SMSSetting
-    },
-    {
-        main: 'Business',
-        submain: 'SMS',
-        self: 'SMSSetting'// <= Ngữ nghĩa cho SMSSetting
-    },
-]
-===> Như bạn đã thấy nGữ nghĩa là quan trọng nhất Chúng giúp bạn hiểu rõ relation và mọi thứ bạn cần.
-
-Bây giờ thay đổi quan điểm cho việc Bán sản phẩm:
-
-==> Bạn định nghĩa đúng 1 object Product => Trong này chúng sẽ chứa Goods, Services, Cards, Member, ... Alll Dựa vào Catogories của Product
-==> Bạn định nghĩa trong mục Order có ProductId là đủ vì sao làm được ??? 
-==> 1 Product Bạn load để về client sẽ chia làm các phần: Sản phẩm:..../ Dịch vụ:,..... Membercard:...
-Và làm được điều này: dễ dàng 
-Giải quyết member card như sau: => sau khi bạn mua 1 dịch vụ member Cards => Bạn lấy code từ mục Cards==> Chúng cũng có catogories để bạn quản.
-===>    1 order được mix nhiều loại dịch vụ và member card vì thực tế là vậy. Trong 1 số trường hợp chúng là 1 loại đơn.
-===>  Trong trường hợp dịch vụ thì người quản lý hay Object Company muốn quản Who do this? Tức product này có phần mở rộng để phải nhập thông tin này vào 
-có thể lưu thành: OrderDetail_Services hoặc OrderDetail_Cards
-==> Bạn phải load thông tin Detail cho server để người dùng chọn Staff to do: bạn phải lưu trữ nhiều Staff và có rules tính toán Staff khác nhau như: 
-1./ chia đều
-2./ chia theo level: Main/ level
-==> Ví dụ mailisa là gồm: StaffTodo, StaffConsultant
-==> Sau đó tính lương sản phẩm dựa vào đây
-3./ Đối với Member thì có OrderDetail_Cards chứa Code Card và các thông tin như : Ngày Issue: Expire, NumServices,...
-Và có thể phát sinh thêm các cái sau này...
-==> Bạn phải có chỗ để khai báo điều này để client có thể render chúng 
-
-53./
-
-// Cau truc: $op OR $x=1 , co the su dung dau ngoac gom nhom cho menh de truoc a:"($x=3"; b:"$op OR $x=3)"
-
-
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea

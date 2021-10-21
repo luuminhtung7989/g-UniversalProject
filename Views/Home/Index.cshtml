@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<<<<<<< HEAD
 <link rel="stylesheet" href="~/mysitecss/css/style.css">
 <!-- Demo CSS -->
 <link rel="stylesheet" href="~/mysitecss/css/demo.css">
@@ -23,31 +22,12 @@
     </div>
 </div>
 
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 <div class="row">
     <div class="col-md-12">
 
         <form class="form-inline">
             <div class="">
-<<<<<<< HEAD
-                
-                <div class="input-group mb-3">
-  
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at" style="font-size: 1.1rem; color: cornflowerblue;"></i></span>
-  </div>
-</div>
-
-                <div class="input-group-prepend" >
-                    <span class="input-group-text" id="basic-addon1"> * </span>
-                </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 <div>
                     <label for="txtURL">URL: </label>
                     <input style="max-width: 1024px; width:900px !important" class="form-control " id="URL" name="URL" type="text" placeholder="Type your name" value='/callback/'>
@@ -68,11 +48,7 @@
 
                 <label for="txtName">---------------------------------------SystemFunction: </label>
                 <button type="button" id="SystemFunction">Call API - Run a System Function </button>
-<<<<<<< HEAD
                 <input style="max-width: 1024px; width:900px !important" class="form-control " id="SystemFunctionvalue" name="SystemFunction" type="text" placeholder="Type your name" value='{"APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",   "AjaxObj":{"a": "Run", "P": "CreateSetupNext","c": { "Price": 29500, "Status": "DONE" },"Transfer": true,"Override": false,"ModelDb": "CanteenDb", "jSonFormat": "1"}}'>
-=======
-                <input style="max-width: 1024px; width:900px !important" class="form-control " id="SystemFunction" name="SystemFunction" type="text" placeholder="Type your name" value='{"APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",   "AjaxObj":{"a": "Run", "P": "CreateSetupNext","c": { "Price": 29500, "Status": "DONE" },"Transfer": true,"Override": false,"ModelDb": "CanteenDb", "jSonFormat": "1"}}'>
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
 
@@ -96,11 +72,7 @@
 </div>
 
 
-<<<<<<< HEAD
 
-=======
-           
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 <footer>
     <div class="content-wrapper">
         <div class="float-left">
@@ -110,7 +82,6 @@
 </footer>
 
 <script src="/lib/jquery/dist/jquery.js"></script>
-<<<<<<< HEAD
 <script src="~/js/ClassCore/KernelCell.js?f=199s99"></script>
 
 
@@ -132,41 +103,14 @@
         $('.selectpicker').select2();
     });
 
-=======
-
-
-<script>
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     $("#txtName").keyup(function () {
         $.getJSON("/api/hello/" + this.value)
             .then(function (r) {
                 $("#result").html(r.Result);
             });
     });
-<<<<<<< HEAD
     
  
-=======
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    function getKeyByValue(obj, val) {
-        for (var key in obj) {
-            if (obj.hasOwnProperty(key) && obj[key] == val) {
-                return key;
-            }
-        }
-    }
-    function parseJsonDate(jsonDateString) {
-        return new Date(parseInt(jsonDateString.replace('/Date(', '')));
-    }
-
-    function getValueByKey(obj, key) {
-        if (obj.hasOwnProperty(keyin)) {
-            return obj[keyin];
-        }
-    }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     function dumJson(obj, br) {
         var result = "<div>";
         $.each(obj, function (key, value) {
@@ -193,7 +137,6 @@
                 str += "<div style='color:red'>Object</div> " + u + "======================<br/>";
 
                 if ((obj.records) != null)
-<<<<<<< HEAD
                     if (typeof (obj.records) == "object")
                         for (m = 0; m < obj.records.length; m++) {
                             str += dumJson(obj.records[m], true);
@@ -201,15 +144,6 @@
                         }
                     else
                         str += "<div style='color:green'>Result obj.records is: " + (obj.records) + "--------------------------------------</div><br/>";
-=======
-                if (typeof (obj.records) == "object")
-                    for (m = 0; m < obj.records.length; m++) {
-                        str += dumJson(obj.records[m], true);
-                        str += "<div style='color:green'>row at " + (m + 1) + "</div><br/>";
-                    }
-                else
-                    str += "<div style='color:green'>Result obj.records is: " + (obj.records) + "--------------------------------------</div><br/>";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
                 str += "<div style='color:red'>[End Object " + u + "]</div> <br/>";
             }
@@ -219,7 +153,6 @@
             str = ""; var b = true;
             str += "<div style='color:red'>Object I</div> ======================<br/>";
             if ((data.records) != null)
-<<<<<<< HEAD
                 if (typeof (data.records) == "object")
                     for (u = 0; u < data.records.length; u++) {
                         str += dumJson(data.records[u], true);
@@ -228,16 +161,6 @@
                     }
                 else
                     str += "<div style='color:green'>Result obj.records is: " + (data.records) + "--------------------------------------</div><br/>";
-=======
-            if (typeof (data.records) == "object")
-                for (u = 0; u < data.records.length; u++) {
-                    str += dumJson(data.records[u], true);
-                    b = false;
-                    str += "<div style='color:green'>row at " + (u + 1) + "--------------------------------------</div><br/>";
-                }
-            else
-                str += "<div style='color:green'>Result obj.records is: " + (data.records) + "--------------------------------------</div><br/>";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
             if (b)
                 str = "Result:<b>" + data.records + "</b>";
@@ -313,11 +236,7 @@
             a: "SQL",
             insert: "1",
             table: "gcGobal_QA_Table",
-<<<<<<< HEAD
             d: { Code: 'Call Insert', Name: 'Test' },
-=======
-            d: {Code:'Call Insert', Name:'Test'},
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             ModelDb: "CanteenDb",
             jSonFormat: "1"
         },
@@ -330,11 +249,7 @@
             update: "1",
             table: "gcGobal_QA_Table",
             d: { Code: 'Đậu rồng làm cái kia sai', Name: 'Test update Tùng' },
-<<<<<<< HEAD
             c: { Id: 131 },
-=======
-            c: {Id:131},
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             ModelDb: "CanteenDb",
             jSonFormat: "1"
         },
@@ -371,11 +286,7 @@
         {
             a: "API",
             name: "ProcessStockList",
-<<<<<<< HEAD
             param: { Id: 133, Name: "Kiểm tra gọi API có trúng không! Gọi trực tiếp ProcessStockList" },
-=======
-            param: { Id: 133, Name:"Kiểm tra gọi API có trúng không! Gọi trực tiếp ProcessStockList"},
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             ModelDb: "CanteenDb",
             jSonFormat: "1"
         },
@@ -412,7 +323,6 @@
         },
         APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
     };
-<<<<<<< HEAD
 
     var sqlRequest9 = {
         AjaxObj:
@@ -436,15 +346,6 @@
     var objcallmultiRequestNew = { CrossData: true, MultiRequest: objTmpNew };
 
     //objcallmultiRequestNew =
-=======
-    var builder = {
-        BuildClass_JS: true, AjaxObj: { ModelDb: "CanteenDb" }
-    };
-    var objTmpNew = [builder, sqlRequest8, sqlRequest7, sqlRequest6,sqlRequest5, sqlRequest4, sqlRequest3, sqlRequest2, sqlRequest, sqlRequestPage]
-    var objcallmultiRequestNew = { CrossData: true, MultiRequest: objTmpNew };
-
-    //objcallmultiRequestNew = 
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     $('#CallAPIFIX').click(function () {
         var name = $('#Param').val();
         var data = { Param: (name) };
@@ -725,7 +626,6 @@
             $('#result').html('');
         }
     }
-<<<<<<< HEAD
 
     $(document).ready(function () {
         sessionStorage["passUser"] = true;
@@ -755,6 +655,4 @@
         });
 
     });
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 </script>

@@ -11,8 +11,8 @@ var __ParserSpaces = {
     init: function (listObjectSpaces) { this.self = listObjectSpaces },
     Parser: async function () {
         this.strTable = '';
-        //await this.ParserCreateDB();
-        //await this.ParserObjectJsSpace();
+        await this.ParserCreateDB();
+        await this.ParserObjectJsSpace();
 
         var testMd5 = md5("123456");
         console.log(testMd5);
@@ -20,7 +20,7 @@ var __ParserSpaces = {
 
         //---------------------------------------------------
         //add data test
-        //await this.PushDataTEST();
+        await this.PushDataTEST();
         //-------------------------------------------------
         //loading js to App
         reloadJs('/js/htmlControl/AdminGroup/Seller/Business/htmlCtrlJs/Business.js');
@@ -47,20 +47,10 @@ var __ParserSpaces = {
         }
         );
 
-        await this.LoadcomponentHeader($("#gc_MainForm2"));
-
-        //__StackBag._$HeaderSelf = $divInner3;
         __StackBag._ObjName = _gbApp._curMainOjectName;
         __StackBag.initStackInfo(_gbSubDictionary[_gbApp._curMainOjectName]._fieldsList);
-        __StackBag._ReportHeader.id = "Business_HeaderReceiptPrinter";
-        __StackBag._ReportHeader.params[0] = "HD-00827938";
-        __StackBag._ReportHeader.params[1] = new Date().toISOString();
-
-        __StackBag._attachReportHeader($("#gc_MainForm2"));
-        getRQcode("qrcode", "17829");
-
         console.log(__StackBag._createTable($("#gc_MainForm2")));
-        __StackBag._totalAll.indexs = [];
+
         var sqlRequest = _gbSubDictionary[_gbApp._curMainOjectName]._listSelfTables[0];
         await _gbAjax.postN2(sqlRequest).then(function (data) {
             console.log(data);
@@ -70,9 +60,7 @@ var __ParserSpaces = {
         reloadJs('/js/htmlControl/AdminGroup/Seller/OrderDetail/htmlCtrlJs/OrderDetail.js');
 
         __StackBag._ObjName = "OrderDetail";
-        __StackBag.initStackInfo(_gbSubDictionary["OrderDetail"]._fieldsReport);
-        $("#OrderDetail_HeaderReport").html($("#OrderDetail_HeaderReport").html().format(new Date().toISOString(), new Date().toISOString()));
-        $("#OrderDetail_HeaderReport").appendTo($("#gc_MainForm2"));
+        __StackBag.initStackInfo(_gbSubDictionary["OrderDetail"]._fieldsReportList);
         console.log(__StackBag._createTable($("#gc_MainForm2")));
         __StackBag._totalAll.indexs[0] = 7;
         __StackBag._totalAll.indexs[1] = 8;
@@ -91,36 +79,26 @@ var __ParserSpaces = {
         sqlRequest = __StackBag.getInsertDataRequest('AppCoreDb');
         await _gbAjax.postN2(sqlRequest).then(function (data) {
             console.log(data);
-
+            
         });
 
-
-        sqlRequest = __StackBag.getUpdateDataRequest('AppCoreDb', { Id: 5 });
+      
+        sqlRequest = __StackBag.getUpdateDataRequest('AppCoreDb', {Id:5});
         await _gbAjax.postN2(sqlRequest).then(function (data) {
             console.log(data);
-
+            
         });
-
-        sqlRequest = __StackBag.getDeleteDataRequest('AppCoreDb', { Id: 6 });
+    
+        sqlRequest = __StackBag.getDeleteDataRequest('AppCoreDb', {Id:6});
         await _gbAjax.postN2(sqlRequest).then(function (data) {
             console.log(data);
-
+            
         });
 
         await this.SavetoJsFile("Business", $("#divGrid2").html(), '_grid.html');
         await this.SavetoJsFile("Business", $("#gc_MainForm2").html(), '_form.html');
 
 
-    },
-    LoadcomponentHeader: async function ($Container) {
-        $('#bock_inner_HeaderReport').remove();
-        var $divInner3 = $('<div></div>')
-            .addClass('form-control')
-            .attr('id', 'bock_inner_HeaderReport')
-            .attr('style', 'display: none');
-
-        $divInner3.html(await fetchHtmlAsText("/js/htmlControl/HeaderReportTemplate.html"));
-        $divInner3.appendTo($Container);
     },
     SavetoDb: async function (strTable) {
         var sqlRequest = {
@@ -275,21 +253,14 @@ var __ParserSpaces = {
 
 
         var strCol = '';
-        var strColSearch = '';
         var strForm = '';
         var strColView = '';
         var ui = 0;
         for (var i = 0; i < columns.length; i++) {
             var column = columns[i];
-            //strCols: strCols, strSearch:strSearch}
-            var objRet = __parserUtility.parse1ColumnJS(i, column, SQLtype, LanguageShow, listRefTable);
-            strCol += objRet.strCols;
-            strColSearch += objRet.strSearch;
-
-            if (i < columns.length - 1) {
+            strCol += __parserUtility.parse1ColumnJS(i, column, SQLtype, LanguageShow, listRefTable);
+            if (i < columns.length - 1)
                 strCol += ",\r\n";
-                strColSearch += ",\r\n";
-            }
 
             //-------------------------
             //-------------------------
@@ -317,8 +288,7 @@ var __ParserSpaces = {
 
         subScope += '\t\t_fieldsList: [\r\n{0}\r\n\t\t],\r\n'.format(strCol);
         subScope += '\t\t_fieldsReport: [\r\n{0}\r\n\t\t],\r\n'.format(strCol);
-
-        subScope += '\t\t_fieldsSearch: [\r\n{0}\r\n\t\t],\r\n'.format(strColSearch);
+        subScope += '\t\t_fieldsSearch: [\r\n{0}\r\n\t\t],\r\n'.format(strCol);
 
         subScope += '\t\t_editform: [\r\n{0}\r\n\t\t],\r\n'.format(strForm);
         subScope += '\t\t_searchform: [\r\n{0}\r\n\t\t],\r\n'.format(strForm);
@@ -363,7 +333,7 @@ var __ParserSpaces = {
         //connectionObject
         //---------------------------------------------
         if (flagChild) {
-            var scope = 'var _gbSubDictionary = {\r\n';//.format(this._ObjName);
+            var scope = 'var _gbSubDictionary = {\r\n';
             scope += listObjectStr;
             scope += '\r\n};';
             return scope;
@@ -872,7 +842,7 @@ var __parserUtility = {
                 strMerge = "[1,2,3,4]";
             var tempObj = {};
             tempObj.field = column;
-            tempObj.refStr = '{ field: "{0}", mergename: {1}, objAjax: { AjaxObj: { a: "fGet{2}", c: { }, _f: "{3}",_gb: " ORDER BY Id Desc", ModelDb: "{4}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }'.format(
+            tempObj.refStr = '{ field: "{0}", mergename: {1}, objAjax: { AjaxObj: { a: "fGet{2}", c: { }, _f: "{3}", ModelDb: "{4}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }'.format(
                 column, strMerge, refObject, (refColum + "," + refObjectShow).replace('"', ''), ModelDb
             );
             listRefTable[i] = tempObj;
@@ -881,9 +851,9 @@ var __parserUtility = {
     },
 
     parserSelfTable: function (objName, listCols, Model) {
-        var str1 = '\t\t\t{ AjaxObj: { a: "fGet{0}", _f: "*", _gb: " ORDER BY Id Desc", ModelDb: "{1}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },\r\n'.format(objName, Model);
-        var str2 = '\t\t\t{ AjaxObj: { a: "fGet{0}", _f: "{1}", _gb: " ORDER BY Id Desc", ModelDb: "{2}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },\r\n'.format(objName, listCols, Model);
-        var str3 = '\t\t\t{ AjaxObj: { a: "fGet{0}", _f: "{1}", _gb: " ORDER BY Id Desc", ModelDb: "{2}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },'.format(objName, listCols, Model);
+        var str1 = '\t\t\t{ AjaxObj: { a: "fGet{0}", _f: "*", _gb: "", ModelDb: "{1}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },\r\n'.format(objName, Model);
+        var str2 = '\t\t\t{ AjaxObj: { a: "fGet{0}", _f: "{1}", _gb: "", ModelDb: "{2}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },\r\n'.format(objName, listCols, Model);
+        var str3 = '\t\t\t{ AjaxObj: { a: "fGet{0}", _f: "{1}", _gb: "", ModelDb: "{2}" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },'.format(objName, listCols, Model);
         return str1 + str2 + str3;
     },
     parse1ColumnJS: function (index, column, SQLtype, languageUI, listRefTable) {
@@ -891,13 +861,12 @@ var __parserUtility = {
         var typeOp = column.type;
         var type = typeOp.self;
         var len = typeOp.len;
-        var allownull = (typeof (column['allownull']) !== 'undefined') ? column['allownull'] : 'false';
+        var allownull = column.allownull;
         var identify = column.identify;
         var defaultvalue = column.defaultvalue;
         var auto = column.auto;
         var strCol = nameCol + " ";
         var primarykey = column.primarykey;
-        var search = (typeof (column.search) !== 'undefined') ? column.search : '';
         var en = column.en;
         var vn = column.vn;
         var lang = en;
@@ -908,7 +877,7 @@ var __parserUtility = {
         var patterm2 = '\t\t\t/*{0}*/{ field: "{1}", name: "{2}", create: false, edit: false, list: false, type: "{3}", {4} {5}}';
 
         var strExpand = "";
-        var expandtype = (typeof (column['expandtype']) !== 'undefined') ? column['expandtype'] : '';
+        var expandtype = "";
         if (nameCol.toUpperCase() === "ID")
             expandtype = "hidden";
 
@@ -917,37 +886,25 @@ var __parserUtility = {
         //process for string
         var returnStr = patterm1;
         if ((nameCol === "isValid") || (nameCol === "isCreatedDate") || (nameCol === "isUpdatedDate") || (nameCol === "isPartFull"))
-            if(search==='')
-                returnStr = patterm2;
+            returnStr = patterm2;
 
         var str5 = "";
         //find ref colum
         for (var i = 0; i < listRefTable.length; i++) {
             var refObj = listRefTable[i];
             if (refObj.field === nameCol) {
-                //str5 = ', fkey:{obj:"{0}", fcol:"{1}}"}'.format(refObj.refObjects, refObj.refColum)+ ", option:" + refObj.refStr;
-                str5 = ", fkey:true , option:" + refObj.refStr;
+                str5 = ', fkey:{obj:"{0}", fcol:"{1}}"}'.format(refObj.refObjects, refObj.refColum)+ ", option:" + refObj.refStr;
                 expandtype = 'select';
             }
         }
         strExpand = ' expandtype:"{0}"'.format(expandtype);
         // xử lý số double
         if (type.self === 'double') {
-            expandtype = (typeof (column['expandtype']) !== 'undefined') ? column['expandtype'] : 'money';
+            expandtype = (typeof (type['expandtype']) !== 'undefined') ? type['expandtype'] : 'money';
             str5 = " prediction:" + ((typeof (type['prediction']) !== 'undefined') ? type['prediction'] : '2');
         }
-        //-----------------------
-        //allow null
-        str5 += ", allownull:{0}".format(allownull);
-
-        var strCols = returnStr.format(index, nameCol, lang, type, strExpand, str5);
-        var strSearch = returnStr.format(index, nameCol, lang, type, strExpand, str5 + ',search:"' + search + '"');
-        //for search 
-        //thêm 1 hàng cho chính field này để thực hiện range
-        //fix sử dụng date picker range và text query trên form 12/07/2021
-        //if (search === "range")
-        //    strSearch += ",\r\n" + returnStr.format(index, nameCol, lang, type, strExpand, str5 + ',search:"' + search + '"');
-        return { strCols: strCols, strSearch: strSearch };
+        returnStr = returnStr.format(index, nameCol, lang, type, strExpand, str5)
+        return returnStr;
     },
     parse1Column: function (column, SQLtype) {
         var name = column.self;
@@ -1024,7 +981,6 @@ var __parserUtility = {
 };
 
 var __DataTEST = {
-    
     dictionary: {
         abc: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'n', 'm', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z', 'w'],
         abcnum: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'n', 'm', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z', 'w', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
@@ -1176,203 +1132,24 @@ var __StackBag = {
     //dùng để điều chỉnh và hiển thị lưới
     _showFooter: true, // show header ở cuối, false ản
     //biến này lưu trữ trạng tháí cột sumary: position: top,bottom,both, index là dãy vị trí sẽ tính tổng indexs:[1,5,6], values:[]
-    _totalAll: { position: "both", indexs: [], values: [], title: "Total" },
+    _totalAll: { position: "both", indexs: [], values: [], title:"Total" },
     //-------------------------------
-
-    //-------------------------------
-    //HỖ trợ parser từ form search 1 số field bị bỏ trống nên ta lược giản
-    parserSearchForm: function (data) {
-        var c = {};
-        for (var i = 0; i < this._StackData.length; i++) {
-            var stackData = this._StackData[i];
-            var colName = stackData.self;
-            var type = stackData.type;
-            if (typeof (data[colName]) !== 'undefined' && (data[colName] !== null)) {
-                if (type === "string") {
-                    if (data[colName].length > 0)
-                        c[colName] = " $x LIKE N'%" + data[colName] + "%'";
-                }
-                else if (type === "datetime") {
-                    if (data[colName].length > 0)
-                    {
-                        var range = data[colName].split('to');
-                        if(range.length>1)
-                        {
-                            if(_gbLanguage==='vn')
-                            {
-                                range[0] = moment(range[0], _gbApp.defaultConfig.dateTimeFormat).format(_gbApp.defaultConfig.isoDateTimeFormat);//isoDateTimeFormat
-                                range[1] = moment(range[1], _gbApp.defaultConfig.dateTimeFormat).format(_gbApp.defaultConfig.isoDateTimeFormat);//isoDateTimeFormat
-                                
-                            }
-                            c[colName] = " $x BETWEEN " + "'{0}' AND '{1}'".formatArr(range);
-                        }    
-                        else 
-                        {
-                            if(_gbLanguage==='vn')
-                            {
-                                range[0] = moment(range[0], _gbApp.defaultConfig.dateTimeFormat).format(_gbApp.defaultConfig.isoDateTimeFormat);//isoDateTimeFormat
-                            }
-                            c[colName] = "'{0}'".format(range[0]);
-                        }
-                    }
-                }
-                else {
-                    //colection nếu thông tin cho phép chọn nhiều
-                    if (typeof (data[colName]) === 'object') {
-                        if (data[colName].length === 1)
-                            c[colName] = data[colName][0].id;
-                        else if (data[colName].length > 1){
-                            var arrValues = '';
-                            for (var u = 0; u < data[colName].length; u++) {
-                                arrValues += data[colName][u].id;
-                                if (u < data[colName].length - 1)
-                                    arrValues += ',';
-                            }
-                            c[colName] = "$x IN(" + arrValues + ")";
-                        }
-                    }
-                    else if (data[colName].length > 0)
-                    {
-                        c[colName] = data[colName];
-                    }
-                }
-            }
-        }
-        return c;
-    },
-    //HỖ trợ parser từ form search 1 số field bị bỏ trống nên ta lược giản
-    parserForm: function (data) {
-        //Bạn luôn nhớ rằng số field trên form có thể nhỏ hơn thông tin gốc StackData
-        var c = {};
-        for (var i = 0; i < this._StackData.length; i++) {
-            var stackData = this._StackData[i];
-            var colName = stackData.self;
-            var type = stackData.type;
-            if (typeof (data[colName]) !== 'undefined' && (data[colName] !== null)) {
-                if (type === "string") {
-                    if (data[colName].length > 0)
-                        c[colName] =  data[colName] ;
-                }
-                else if (type === "datetime") {
-                    if (data[colName].length > 0)
-                    {
-                        var range = data[colName].split('to');// cho phép range nhưng lưu data chưa đúng cần phải đồng bộ
-                        c[colName] = data[colName];// kiểm tra kiểu ngày tháng để chuyển đổi kiểu
-                        if(_gbLanguage==='vn')
-                        {
-                            c[colName] = moment(data[colName], _gbApp.defaultConfig.dateTimeFormat).format(_gbApp.defaultConfig.isoDateTimeFormat);//isoDateTimeFormat
-                        }
-                    }
-                }
-                else {
-                    //colection nếu thông tin cho phép chọn nhiều
-                    if (typeof (data[colName]) === 'object') {
-                        if (data[colName].length === 1)
-                            c[colName] = data[colName][0].id;
-                        else if (data[colName].length > 1){
-                            var arrValues = '';
-                            for (var u = 0; u < data[colName].length; u++) {
-                                arrValues += data[colName][u].id;
-                                if (u < data[colName].length - 1)
-                                    arrValues += ',';
-                            }
-                            c[colName] =  arrValues;
-                        }
-                    }
-                    else if (data[colName].length > 0)
-                    {
-                        //kiểm tra 2 kiểu double, bigint, int để remove khoảng cách
-                        //var token = (_gbLanguage==='vn')? ',': '.';
-                        //var value = gcRev($(this).val(), token);
-                        if ( (type === "bigint") || (type === "int") || (type === "double"))
-                        {
-                            var token = (_gbLanguage==='vn')? ',': '.';
-                            var value = gcRev(data[colName], token);
-                            c[colName] = value;
-                        }
-                        else 
-                            c[colName] = data[colName];
-                    }
-                }
-            }
-        }
-        return c;
-    },
-    ValidNull:function(data){
-        //Bạn luôn nhớ rằng số field trên form có thể nhỏ hơn thông tin gốc StackData   
-        var c = [];
-        for (var i = 0; i < this._StackData.length; i++) {
-            var stackData = this._StackData[i];
-            var colName = stackData.self;
-            var type = stackData.type;
-            var allownull = stackData.allownull;
-            //có tồn tại data
-            if (typeof (data[colName]) !== 'undefined') {
-                if(!allownull)//không cho phép null
-                {
-                    //kiểm tra nếu data null => invalid
-                    if(data[colName].length<=0)
-                    {
-                        c[c.length] = stackData;
-                        c[c.length-1]['indalidnull'] = true;
-                    }    
-                }
-                //kiểm tra định dạng cơ bản
-                if(!this.IsValidBasic(data[colName], type))
-                {
-                    c[c.length] = stackData;
-                    c[c.length-1]['indalidtype'] = type;
-                }
-                //kiểm tra dữ liệu range: phạm vi cho number
-                //kiểm tra dữ liệu kiểu định nghĩa cho form => Reg cho form kiểm tra định nghĩa expandtion: "Email"
-            }
-        }
-        return c;
-    },
-    IsValidBasic: function(value, type){
-        var bCheck = true;
-        return bCheck;
-    },
-    //trả về dữ liệu sau khi change
-    getDataGridChange: function(row, data,objName, type='update'){
-        var rowNew = row;
-        var $listColumns =  $("#"+objName+"_TableData thead tr th");
-        for(var u = 0; u<$listColumns.length; u++)
-        {
-            var $column = $($listColumns[u]);
-            var colName = $column.attr('self');
-            var index = $column.attr('data-column-index');
-            //bug for new data
-            if(typeof(index)==='undefined')
-                if(colName.toUpperCase() ==='ID')
-                    index = 0;
-            //---------------
-            if(typeof(data[colName]) !=='undefined')// tồn tại data
-            {
-                rowNew[index] = data[colName];
-            }
-            else 
-            {
-                rowNew[index] = null;
-            }
-        }
-        return rowNew;
-    },
     //-------------------------------
     //Thông tin dùng để hiển thị Header of Report
-    _$HeaderSelf: null,
-    _ReportHeader: { id: "Business_HeaderReceiptReport", params: [] },
-    _attachReportHeader: function ($Container) {
-        var $s = $("#" + this._ReportHeader.id);
-        $s.html($s.html().formatArr(this._ReportHeader.params));
-        $s.appendTo($Container);
-    },
+    _ReportHeader: {title:"Report of ORDER", classHeader:""},
     //-------------------------------
     Transfer: function (arrRecords) {
         this._arrRecords = arrRecords;
     },
 
-   
+    //-------------------------------------------
+    //đưa vào dãy dữ liệu là 1 record => push chúng lên stack để có thể => chuyển data lên form hay chuyển data xuống db
+    plushData: function (record) {
+        for (var i = 0; i < record.length; i++) {
+            getFormatData(i, record[i]);
+        }
+        this._StackData;
+    },
     reLoadTable: function ($Container, option) {
         this._createTable($Container, option);
         this.plushDataTable(this._arrRecords, true);
@@ -1411,8 +1188,7 @@ var __StackBag = {
         return this._$table;
     },
     ShowTotalTable: function () {
-        //var $tr = $('<tr style="background-color: #C6E0B4"></tr>');
-        var $tr = $('<tr class="bg-warning"></tr>');
+        var $tr = $('<tr style="background-color: #C6E0B4"></tr>');
         var bFirst = false;
         var colspan = this._totalAll.indexs[0];//init
         for (var i = 0; i < this._StackData.length; i++) {
@@ -1425,23 +1201,23 @@ var __StackBag = {
                     if (i === this._totalAll.indexs[j]) {
                         if (!bFirst) {
                             // thêm colspan="sub"
-                            $td = $('<td  colspan="{0}">{1}</td>'.format(colspan, this._totalAll.title));
+                            $td = $('<td style="border: 1px solid; border-collapse; text-align: right;" colspan="{0}">{1}</td>'.format(colspan,this._totalAll.title));
                             $td.appendTo($tr);
                             bFirst = true;
                         }
                         value = this.getFormatData(i, this._totalAll.values[j]);
-                        var $td = $('<td style="font-weight:bold;">{0}</td>'.format(this._StackData[i]["formatview"]));
+                        var $td = $('<td style="border: 1px solid; border-collapse; font-weight:bold;">{0}</td>'.format(this._StackData[i]["formatview"]));
                         $td.appendTo($tr);
                     }
                 //end
 
                 if (value === '' && bFirst) {
-                    $td = $('<td></td>');
+                    $td = $('<td style="border: 1px solid; border-collapse"></td>');
                     $td.appendTo($tr);
                 }
             }
             else
-                colspan = colspan - 1;
+                colspan = colspan -1;
         }
         this._$table.find('tbody').append($tr);
     },
@@ -1453,7 +1229,7 @@ var __StackBag = {
             //check gridShow is true tức show trên lưới
             if (this._StackData[i].gridShow) {
                 this.getFormatData(i, record[i]);
-                var $td = $('<td >{0}</td>'.format(this._StackData[i]["formatview"]));
+                var $td = $('<td style="border: 1px solid; border-collapse">{0}</td>'.format(this._StackData[i]["formatview"]));
                 $td.appendTo($tr);
             }
         }
@@ -1464,7 +1240,7 @@ var __StackBag = {
     plushDataToDB: function (record) {
         //trong 1 số trường hợp record length> this._StackData.length như là các view => truyền data về
         for (var i = 0; i < this._StackData.length; i++) {
-            this.getFormatData(i, record[i]);
+                this.getFormatData(i, record[i]);
         }
     },
     //Lấy format dữ liệu cho 2 chiều, format cho db và formatview cho form, grid
@@ -1498,15 +1274,6 @@ var __StackBag = {
             this._StackData[i]["formatview"] = "{0}".format(data);
         }
 
-    },
-     //-------------------------------------------
-    //đưa vào dãy dữ liệu là 1 record => push chúng lên stack để có thể => chuyển data lên form hay chuyển data xuống db
-    plushData: function (record) {
-        //trong 1 số trường hợp record length> this._StackData.length như là các view => truyền data về
-        for (var i = 0; i < this._StackData.length; i++) {
-            this.getFormatData(i, record[i]);
-        }
-        this._StackData;
     },
     initStackInfo2: function (record) {
         this._StackData = [];
@@ -1546,7 +1313,6 @@ var __StackBag = {
             var colName = (typeof (column.field) !== 'undefined') ? column.field : column.self;
             var expandtype = (typeof (column.expandtype) !== 'undefined') ? column.expandtype : '';
             var prediction = (typeof (column.prediction) !== 'undefined') ? column.prediction : 2;
-            var allownull =   (typeof (column.allownull) !== 'undefined') ? column.allownull : false;// rổng được xem là không cho phép null
             //thuộc tính list:false tức không hiển thị cột này, không khai báo gì là true
             var gridShow = (typeof (column.list) !== 'undefined') ? column.list : true;
 
@@ -1555,7 +1321,6 @@ var __StackBag = {
             stackData["type"] = type;
             stackData["expandtype"] = expandtype;
             stackData["prediction"] = prediction;
-            stackData["allownull"] = allownull;
             if (type === "string") {
                 stackData["format"] = "N'{0}'";
                 stackData["formatview"] = "{0}";
@@ -1641,7 +1406,7 @@ var __StackBag = {
         this._arrStrDataFormat = arrStrDataFormat;
         return arrStrDataFormat;
     },
-    getInsertDataRequest: function (model) {
+    getInsertDataRequest: function(model){
         //{ AjaxObj: { a: "fGetOrderDetail", exV:"view_ListOrderDetail", _f: "*", 
         //_gb: " ORDER BY OrderID, ServicesID, StaffID", ModelDb: "AppCoreDb" }, 
         //APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
@@ -1654,12 +1419,12 @@ var __StackBag = {
         for (var i = 0; i < this._StackData.length; i++) {
             var stackData = this._StackData[i];
             //loại bỏ ID là key auto gen <= để chính xác thì nên lưu auto:true vào field để chúng bỏ qua
-            if (stackData.self.toUpperCase() !== 'ID')
+            if(stackData.self.toUpperCase() !== 'ID')
                 jsonRequest.AjaxObj.d[stackData.self] = stackData.data;
         }
         return jsonRequest;
     },
-    getUpdateDataRequest: function (model, condition) {
+    getUpdateDataRequest: function(model, condition){
         //{ AjaxObj: { a: "fGetOrderDetail", exV:"view_ListOrderDetail", _f: "*", 
         //_gb: " ORDER BY OrderID, ServicesID, StaffID", ModelDb: "AppCoreDb" }, 
         //APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
@@ -1673,12 +1438,12 @@ var __StackBag = {
         for (var i = 0; i < this._StackData.length; i++) {
             var stackData = this._StackData[i];
             //loại bỏ ID là key auto gen <= để chính xác thì nên lưu auto:true vào field để chúng bỏ qua
-            if (stackData.self.toUpperCase() !== 'ID')
+            if(stackData.self.toUpperCase() !== 'ID')
                 jsonRequest.AjaxObj.d[stackData.self] = stackData.data;
         }
         return jsonRequest;
     },
-    getDeleteDataRequest: function (model, condition) {
+    getDeleteDataRequest: function(model, condition){
         //{ AjaxObj: { a: "fGetOrderDetail", exV:"view_ListOrderDetail", _f: "*", 
         //_gb: " ORDER BY OrderID, ServicesID, StaffID", ModelDb: "AppCoreDb" }, 
         //APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
@@ -1689,7 +1454,7 @@ var __StackBag = {
         jsonRequest.AjaxObj['c'] = condition;//{Id: ID};
         jsonRequest.AjaxObj['ModelDb'] = model;
         jsonRequest['APIkey'] = 'kUcHUoWsxLPrIJy$rTcbeG5k';
-
+        
         return jsonRequest;
     },
 
@@ -1843,283 +1608,4 @@ var __StackBag = {
             $th.css('width', width + ' !important');
         return $th;
     },
-};
-
-var _
-//-------------------------------------------------
-//xử lý các action form
-var _gbFormAction ={
-    optionGrids:{
-        searchHighlight: true,
-        responsive: true,
-        dom: 'CBftilp',// goog 19/03
-        data: null,
-        buttons: [
-            'colvis', 'excel', 'print'
-        ],
-        scrollX: true,
-        scrollCollapse: true,
-        colReorder: true,
-        bDrawing:true,
-        //fixedHeader: true,
-        select: true,
-        "language": {
-            "lengthMenu": "Xem _MENU_ hàng",
-            "info": "Trang _PAGE_ / _PAGES_ ",
-            "infoEmpty": "Không tìm thấy dữ liệu",
-            "infoFiltered": "(Đang lọc từ _MAX_ bản ghi)",
-            "loadingRecords": "Tải dữ liệu...",
-            "processing": "Đang xử lý...",
-            "search": "Tìm kiếm:",
-            "zeroRecords": "Không tìm thấy dữ liệu",
-            "paginate": {
-                "first": "Đầu",
-                "last": "Cuối",
-                "next": "Sau",
-                "previous": "Trước"
-            },
-        },
-        //------------------------------------------------------------
-        //row group
-        "order": [0, 'desc'],
-        //"rowGroup": group
-    },
-    optionGridsEn:{
-        searchHighlight: true,
-        responsive: true,
-        dom: 'CBftilp',// goog 19/03
-        data: null,
-        buttons: [
-            'colvis', 'excel', 'print'
-        ],
-        scrollX: true,
-        scrollCollapse: true,
-        colReorder: true,
-        bDrawing:true,
-        //fixedHeader: true,
-        select: true,
-        //------------------------------------------------------------
-        //row group
-        "order": [0, 'desc'],
-        //"rowGroup": group
-    },
-    _innerProcessClick: function(objName, event, object){
-        //alert(objName);
-        var obj = _gbSubDictionary[objName];
-		if (typeof (obj) === 'undefined')
-			obj = _gbDictionary[objName];
-
-		console.log(obj + ' action ' + objName);
-
-		//----------------------------------------------
-		//save data 
-		if (typeof (obj) !== 'undefined') {
-			
-			//var data = _gbForms.getdata(obj);
-			__StackBag._ObjName = objName;
-			//get grid
-			var table = $("#{0}_TableData".format(objName)).DataTable();
-			var rows = table.rows( { selected: true } );
-			var count = rows.count();
-			if(count>=0)
-			{
-				console.log(count + rows.data()[0]);
-				//we set to __StackBag() list data, now using init2
-				var record = rows.data()[0]
-				__StackBag.initStackInfo(obj._fieldsList);	
-				__StackBag.plushData(record);
-				console.log(__StackBag._StackData)
-				_gbForms.setdata(obj,record)
-			}	
-        }
-    },
-};
-
-var _gcActionStrDict = {
-    form_action:[
-        {
-            self: "Add", lang:{en: "Add", vn: "Thêm mới", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Add new {0} successfull.", vn: "Thêm mới {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: add new {0}  {1}.", vn: "Nhắc: thêm mới {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Add new {0} fail.", vn: "Thêm mới {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-         self: "AddNew", lang:{en: "Add New", vn: "Thêm mới", kmer: "បន្ថែម​ថ្មី"},
-         msg:[
-             { self: "success", lang:{en: "Add new {0} successfull.", vn: "Thêm mới {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-             { self: "warning", lang:{en: "Warning: add new {0}  {1}.", vn: "Nhắc: thêm mới {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-             { self: "error", lang:{en: "Add new {0} fail.", vn: "Thêm mới {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-            ]
-        },
-        {
-            self: "Update", lang:{en: "Update", vn: "Cập nhật", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Update {0} successfull.", vn: "Cập nhật {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: update {0}  {1}.", vn: "Nhắc: cập nhật {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Update {0} fail.", vn: "Cập nhật {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Save", lang:{en: "Save", vn: "Lưu", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Save {0} successfull.", vn: "Lưu {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: save {0}  {1}.", vn: "Nhắc: lưu {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Save {0} fail.", vn: "Lưu {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Next", lang:{en: "Next", vn: "Tiếp tục", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Next {0} successfull.", vn: "Tiếp tục {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: next {0}  {1}.", vn: "Nhắc: Tiếp tuc {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Next {0} fail.", vn: "Tiếp tục {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Back", lang:{en: "Back", vn: "Quay lại", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Back {0} successfull.", vn: "Quay lại {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: back {0}  {1}.", vn: "Nhắc: quay lại {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Back {0} fail.", vn: "Quay lại {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Search", lang:{en: "Search", vn: "Tìm kiếm", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Search {0} successfull.", vn: "Tìm kiếm {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: search {0}  {1}.", vn: "Nhắc: tìm kiếm {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Search {0} fail.", vn: "Tìm kiếm {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Transfer", lang:{en: "Update", vn: "Chuyển", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Transfer {0} successfull.", vn: "Chuyển {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Transfer {0}  {1}.", vn: "Nhắc: Chuyển {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Transfer {0} fail.", vn: "Chuyển {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Tranfer all", lang:{en: "Transfer all", vn: "Chuyển hết", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Transfer all {0} successfull.", vn: "Chuyển hết {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: transfer all {0}  {1}.", vn: "Nhắc: chuyển hết {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Transfer all {0} fail.", vn: "Chuyển hết {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Receive", lang:{en: "Receive", vn: "Nhận", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Receive {0} successfull.", vn: "Nhận {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: receive {0}  {1}.", vn: "Nhắc: nhận {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Receive {0} fail.", vn: "Nhận {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Delete", lang:{en: "Delete", vn: "Xoá", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Delete {0} successfull.", vn: "Xoá {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: delete {0}  {1}.", vn: "Nhắc: Xoá {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Delete {0} fail.", vn: "Xoá {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Detail", lang:{en: "Detail", vn: "Chi tiết", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Load detail {0} successfull.", vn: "Tải chi tiết {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: load detail {0}  {1}.", vn: "Nhắc: Tải chi tiết {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Load detail {0} fail.", vn: "Tải chi tiết {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Setting", lang:{en: "Setting", vn: "Cài đặt", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Setting {0} successfull.", vn: "Cài đặt {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: setting {0}  {1}.", vn: "Nhắc: Cài đặt {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Setting {0} fail.", vn: "Cài đặt {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Load", lang:{en: "Load", vn: "Tải", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Load {0} successfull.", vn: "Tải {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: load {0}  {1}.", vn: "Nhắc: tải {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Load {0} fail.", vn: "Tải {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Info", lang:{en: "Info", vn: "Thông tin", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Load information {0} successfull.", vn: "Tải thông tin {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: load information {0}  {1}.", vn: "Nhắc: tải thông tin {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Load information {0} fail.", vn: "Tải thông tin {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Run", lang:{en: "Run", vn: "Chạy", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Run {0} successfull.", vn: "Chạy {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Run {0}  {1}.", vn: "Nhắc: chạy {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Run {0} fail.", vn: "Chạy {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Payment", lang:{en: "Payment", vn: "Thanh toán", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Payment {0} successfull.", vn: "Thanh toán {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Payment {0}  {1}.", vn: "Nhắc: thanh toán {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Payment {0} fail.", vn: "Thanh toán {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Debt", lang:{en: "Debt", vn: "Ghi nợ", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Debt {0} successfull.", vn: "Ghi nợ {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Debt {0}  {1}.", vn: "Nhắc: ghi nợ {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Debt {0} fail.", vn: "Ghi nợ {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Print", lang:{en: "Print", vn: "In ấn", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Print {0} successfull.", vn: "In ấn {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Print {0}  {1}.", vn: "Nhắc: In ấn {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Print {0} fail.", vn: "In ấn {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Import", lang:{en: "Import", vn: "Nhập liệu", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Import {0} successfull.", vn: "Nhập liệu {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Import {0}  {1}.", vn: "Nhắc: nhập liệu {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Import {0} fail.", vn: "Nhập liệu {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "ImportExcel", lang:{en: "Import Excel", vn: "Nhập liệu Excel", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Import {0} from Excel successfull.", vn: "Nhập liệu {0} từ Excel thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Import {0} from Excel  {1}.", vn: "Nhắc: nhập liệu {0} từ Excel {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Import {0} from Excel fail.", vn: "Nhập liệu {0} từ Excel thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "Export", lang:{en: "Export", vn: "Xuất dữ liệu", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Export liệu {0} successfull.", vn: "Xuất dữ liệu {0} thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: Export {0}  {1}.", vn: "Nhắc: xuất dữ liệu {0} {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Export {0} fail.", vn: "Xuất dữ liệu {0} thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-        {
-            self: "ExportExcel", lang:{en: "Export Excel", vn: "Xuất Excel", kmer: "បន្ថែម​ថ្មី"},
-            msg:[
-                { self: "success", lang:{en: "Export {0} to Excel successfull.", vn: "Xuất dữ liệu {0}  Excel thành công", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "warning", lang:{en: "Warning: export {0} from Excel  {1}.", vn: "Nhắc: xuất dữ liệu {0}  Excel {1}", kmer: "បន្ថែម​ថ្មី"}},
-                { self: "error", lang:{en: "Export {0} from Excel fail.", vn: "Xuất dữ liệu {0}  Excel thất bại", kmer: "បន្ថែម​ថ្មី"}}
-               ]
-        },
-    ],
 };

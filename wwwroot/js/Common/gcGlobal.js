@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -236,9 +235,6 @@ var md5 = function (string) {
 }
 //end MD5
 
-=======
-﻿// open new window
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 function ow(link)
 {
     var winSize = ",width=" + (screen.availWidth).toString() + ",height=" + (screen.availHeight).toString();
@@ -253,47 +249,8 @@ function ows(link,width,height)
     var ControlBar="fullscreen=no,menubar=no, toolbar=no, scrollbars=yes,top=0,left=0, titlebar=no, resizable=yes,status=no,location=no ";
     window.open(link,'',ControlBar+winSize);
 }
-<<<<<<< HEAD
 
 
-=======
-function toggleDisplay(blockId, titleId)
-{
-    
-	var block = document.getElementById(blockId);
-	var title = document.getElementById(titleId);
-	if (block.className.indexOf("qsfNone") == -1)
-	{
-		block.className = block.className + " qsfNone";
-		title.className = "qsfSubtitleCollapsed";
-	}
-	else
-	{
-		block.className = block.className.replace(/qsfNone/, "");
-		title.className = "qsfSubtitle";
-	}
-	
-	return false;
-}
-function toggleListLab(blockId, titleId)
-{
-    
-	var block = document.getElementById(blockId);
-	var title = document.getElementById(titleId);
-	if (block.className.indexOf("qsfNone") == -1)
-	{
-		block.className = "qsfNone";
-		title.className = "qsfSubtitleCollapsed";
-	}
-	else
-	{
-		block.className = block.className.replace(/qsfNone/, "");
-		title.className = "qsfSubtitle";
-	}	
-	return false;
-	 
-}
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 function processCode(str)
 {
     for (var i = 0; i < str.length; i++) {
@@ -328,12 +285,7 @@ function labListToHidewAll(hiddenContainsListId)
    
     
 }
-<<<<<<< HEAD
 
-=======
-function Process(tail) {
-}
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
  var hasChanges, inputs, dropdowns, editedRow;
@@ -550,7 +502,6 @@ function setSelection(obj,s,e){
  }
 
 Number.prototype.formatMoney = function (decPlaces, thouSeparator, decSeparator) {
-<<<<<<< HEAD
     try {
 
 
@@ -585,19 +536,6 @@ String.prototype.replaceAll = function (find, replace) {
     return str.replace(new RegExp(find.replace(/[-\\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
 };
 String.prototype.replaceAll = function (s,d) {
-=======
-    var n = this,
-        decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
-        decSeparator = decSeparator == undefined ? "." : decSeparator,
-        thouSeparator = thouSeparator == undefined ? "," : thouSeparator,
-        sign = n < 0 ? "-" : "",
-        i = parseInt(n = Math.abs(+n || 0).toFixed(decPlaces)) + "",
-        j = (j = i.length) > 3 ? j % 3 : 0;
-    return sign + (j ? i.substr(0, j) + thouSeparator : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thouSeparator) + (decPlaces ? decSeparator + Math.abs(n - i).toFixed(decPlaces).slice(2) : "");
-};
-
- String.prototype.ra = function (s,d) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
      var t = this;
      var i = t.indexOf(s);
      while (i > -1) {
@@ -614,25 +552,6 @@ String.prototype.replaceAll = function (s,d) {
     }
     return formatted;
 };
-<<<<<<< HEAD
-String.prototype.formatArr = function(_array){
-    var formatted = this;
-    for (var i = 0; i < _array.length; i++) {       
-         var reg = new RegExp("\\{" + i + "\\}", "gi");             
-         formatted = formatted.replace(reg, _array[i]);
-    }
-    return formatted;
-}
-String.prototype.formatHTML = function() {
-    var formatted = this;
-    for (var i = 0; i < arguments.length; i++) {
-        var regexp = new RegExp('\\{{'+i+'\\}}', 'gi');
-        formatted = formatted.replace(regexp, arguments[i]);
-    }
-    return formatted;
-};
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 String.prototype.f2 = function () {
     var formatted = this;
     for (var i = 0; i < arguments.length; i++) {
@@ -947,7 +866,6 @@ function  VNConvertVNKODAU(str)
     }
     else {
         //console.log(str +' không phải là kiểu chuỗi kiểm tra vì sao nha!!! - Hàm VNConvertVNKODAU');
-<<<<<<< HEAD
         if (str === null)
             return null;
         return str.toString();
@@ -958,7 +876,7 @@ function reloadJs(src) {
     src2 = $('script[src$="' + src + '"]').attr("src");
     $('script[src$="' + src2 + '"]').remove();
     
-    $('<script/>').attr('src', src ).appendTo('head');
+    $('<script/>').attr('src', src + '?v='+Math.random()).appendTo('head');
 }
 //reloadJs("~/js/ClassCore/CanteenDb.js");
 //This will not have any path related issues.
@@ -978,100 +896,3 @@ async function loadHome() {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = await fetchHtmlAsText("home.html");
 }
-
-function getRQcode(id, str){
-    $("#"+id).html('');
-    var qrcode = new QRCode(document.getElementById(id), 
-    {
-        text:"http://qr.axmsoft.com/qrscan?id="+str+'&s='+md5(str+''),
-        width:150,
-        height:150,
-        colorDark:"#000000",
-        colorLight:"#ffffff",
-        correctLevel:QRCode.CorrectLevel.H
-    });
-    //qrcode.clear();
-    //qrcode.makeCode("http://qr.axmsoft.com/qrscan?id="+str+'&s='+md5(str+''));
-    
-}
-
-// Loop over them and prevent submission
-function removeProp(object, keyParam){
-        Object.keys(object).forEach(function(key) {  if(key===keyParam) delete object[key]; });
-}
-
-function delay(delayInms) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(2);
-      }, delayInms);
-    });
-}
-
-function setCookie(cname,cvalue,exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
-  
-  function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-
-  /************************************************************************
-* Xử lý chuyển table html thành file excel                              *
-*************************************************************************/
-var tableToExcel = (function () {
-    var uri = 'data:application/vnd.ms-excel;base64,'
-        , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
-            'xmlns:x="urn:schemas-microsoft-com:office:excel" ' +
-            'xmlns="http://www.w3.org/TR/REC-html40"><head>' +
-            '<!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets>' +
-            '<x:ExcelWorksheet><x:Name>{worksheet}</x:Name>' +
-            '<x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>' +
-            '</x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook>' +
-            '</xml><![endif]--><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body>' +
-            '<table>{table}</table></body></html>'
-        , base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
-        , format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
-    return function (table, name) {
-        if (!table.nodeType) table = $(table)//table = document.getElementById(table)
-        var ctx = { worksheet: name || 'Worksheet', table: table.html() }
-        window.location.href = uri + base64(format(template, ctx))
-    }
-})();
-/************************************************************************
-* Xử lý khi nhấn nút export trong report                                *
-*************************************************************************/
-function convertTableToExcel(el) {
-    tableToExcel(el == null ? '#gc_DivReceiptContent' : el, 'Sheet 1');
-};
-function round(value, i) {
-    var r = 0.0;
-    if ($.isNumeric(value)) {
-        var t = (value + "").split(".");
-        if (t.length > 1 && t[1].length > 0) {
-            r = parseFloat(t[0] + "." + t[1].substr(0, i))
-        }
-        else r = parseFloat(value + "");
-    }
-    return r;
-}
-=======
-        return str.toString();
-    }
-}
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea

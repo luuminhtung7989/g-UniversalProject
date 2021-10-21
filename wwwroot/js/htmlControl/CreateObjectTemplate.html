@@ -1,0 +1,12 @@
+﻿CREATE TABLE [ObjectTemplateUsers](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Domain] [nvarchar](128) NULL,
+	[UserName] [nvarchar](256) NULL,
+	[Password] [nvarchar](256) NULL,
+	[Email] [nvarchar](256) NULL,
+	[BusinessCode] [nvarchar](256) NULL,
+	[isValid] [int] NULL,
+	[isCreatedDate] [datetime] NULL,
+	[isUpdatedDate] [datetime] NULL,
+	[isPartFull] [nvarchar](1024) NULL,
+)

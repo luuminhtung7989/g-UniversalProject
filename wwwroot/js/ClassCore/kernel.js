@@ -490,13 +490,7 @@ function parseJsResponse(data) {
     return data;
 }
 $(document).ready(function () {
-<<<<<<< HEAD
     //$(document.body).click(function (ev) {
     //    onProcessClick(ev);
     //});
-=======
-    $(document.body).click(function (ev) {
-        onProcessClick(ev);
-    });
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 });

@@ -1,64 +1,4 @@
-﻿var listObjectSematics =  [
-    {
-        main: 'Business' ,
-        submain: ['Orders' ,'Services'] ,//<= load all Services of Business
-        self: 'OrderDetails' //<== Ngữ nghĩa cho OrderDetails
-    },
-    {
-        main: 'Business' ,
-        self: 'Orders'// <= Ngữ nghĩa cho Order
-    },
-    {
-        main: 'Business' ,
-        self: 'Langguages'// <= Ngữ nghĩa cho Langguage
-    },
-    {
-        main: 'Business' ,
-        self: 'Staffs'// <= Ngữ nghĩa cho Staff
-    },
-    {
-        main: 'Business' ,
-        self: 'Services'// <= Ngữ nghĩa cho Services
-    },
-    {
-        main: 'Business' ,
-        self: 'Promotions'// <= Ngữ nghĩa cho Promotion
-    },
-    {
-        main: 'Business' ,
-        submain: ['Promotions'],
-        self: 'PromotionDetail'// <= Ngữ nghĩa cho PromotionDetail
-    },
-    {
-        main: 'Business' ,
-        self: 'SMSs'// <= Ngữ nghĩa cho SMS
-    },
-    {
-        main: 'Business' ,
-        submain: ['Staffs'],
-        self: 'Users'// <= Ngữ nghĩa cho SMS
-    },
-    {
-        main: 'Business',
-        submain: 'SMSs',
-        self: 'SMSSetting'// <= Ngữ nghĩa cho SMSSetting
-    },
-    {
-        main: 'Users',
-        self: 'Logins',
-    },
-    {
-        main: 'Users',
-        self: 'LogActivities',
-    },
-    {
-        main: 'Business',
-        submain: ['Users'],
-        self: 'Roles',
-    },
-];
-
-var listObjectSpaces = [{
+﻿var listObjectSpaces = [{
     object:
     {
         a: "API",
@@ -72,18 +12,17 @@ var listObjectSpaces = [{
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
             { self: "UserName", en: "UserName", vn: "UserName", type: { self: "string", len: 256 }, allownull: false },
-            { self: "Password", en: "Password", vn: "Password", type: { self: "string", len: 1024 }, allownull: false , expandtype:"password"},
-            { self: "Email", en: "Email", vn: "Email", type: { self: "string", len: 1024 }, allownull: false, expandtype:"email" },
+            { self: "Password", en: "Password", vn: "Password", type: { self: "string", len: 1024 }, allownull: false },
+            { self: "Email", en: "Email", vn: "Email", type: { self: "string", len: 1024 }, allownull: false },
             { self: "PassCode", en: "PassCode", vn: "PassCode", type: { self: "string", len: 1024 }, allownull: false },
-            { self: "Phone", en: "Phone", vn: "Phone", type: { self: "string", len: 1024 }, allownull: false, expandtype:"phone" },
+            { self: "Phone", en: "Phone", vn: "Phone", type: { self: "string", len: 1024 }, allownull: false },
             { self: "Domain", en: "Domain", vn: "Domain", type: { self: "string", len: 1024 }, allownull: false },
 
             { self: "BusinessID", en: "BusinessID", vn: "BusinessID", type: { self: "bigint" }, allownull: true },
             { self: "StaffID", en: "StaffID", vn: "StaffID", type: { self: "bigint" }, allownull: true },
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
-            
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
+
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -92,11 +31,10 @@ var listObjectSpaces = [{
         //{ colum: "FactoryID", refObjects: "Factory", refColum: "Id", refObjectShow:[Code,Name,Price...] }
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] },
-            { colum: "StaffID", refObjects: "Staffs", refColum: "Id", refObjectShow: ["Name", "Phone"] }
+            { colum: "StaffID", refObjects: "Staff", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
-        connectionObject: [{ connectOBj: "Departments" }, { connectOBj: "Categories" }],
+        connectionObject: [{ connectOBj: "Department" }, { connectOBj: "Categorys" }],
         NumRowsTEST: { numRows: 100, isCreated: false, isScan: false},
         UI: [{ form: true, grid: true }, { form: true, list: true }, { form: false, list: true }, { form: false, grid: true }, { form: true }],
         UILanguage: { javascript: true, android: true, netform: true, IOS: true, flutter: true, reactnative: true, telerik: true, xmarin: true, ruby: true },
@@ -398,14 +336,14 @@ var listObjectSpaces = [{
             { self: "UserID", en: "UserID", vn: "UserID", type: { self: "bigint" }, allownull: true },
             { self: "Online", en: "Online", vn: "Online", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
+            { self: "isUser", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false },
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["Name"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -427,8 +365,8 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //LogActivities(UserID, task, todo, UpdatedTime)
-        objID: { self: "LogActivities", en: "LogActivities", vn: "LogActivities" },
+        //LogActivity(UserID, task, todo, UpdatedTime)
+        objID: { self: "LogActivity", en: "LogActivity", vn: "LogActivity" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -438,14 +376,13 @@ var listObjectSpaces = [{
 
             { self: "UserID", en: "UserID", vn: "UserID", type: { self: "bigint" }, allownull: true },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["Name"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -493,7 +430,6 @@ var listObjectSpaces = [{
             { self: "UserID", en: "UserID", vn: "UserID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -513,7 +449,7 @@ var listObjectSpaces = [{
     },
     APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
 }
-    //BusinessTimes(BusinessID, dayth, opentime, closetime, active)
+    //BusinessTime(BusinessID, dayth, opentime, closetime, active)
     ,
 {
     //5
@@ -524,8 +460,8 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //BusinessTimes(BusinessID, dayth, opentime, closetime, active)
-        objID: { self: "BusinessTimes", en: "BusinessTimes", vn: "BusinessTimes" },
+        //BusinessTime(BusinessID, dayth, opentime, closetime, active)
+        objID: { self: "BusinessTime", en: "BusinessTime", vn: "BusinessTime" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -536,15 +472,13 @@ var listObjectSpaces = [{
             { self: "BusinessID", en: "BusinessID", vn: "BusinessID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -578,15 +512,13 @@ var listObjectSpaces = [{
             { self: "BusinessID", en: "BusinessID", vn: "BusinessID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -599,7 +531,7 @@ var listObjectSpaces = [{
     },
     APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
 }
-    //TicketSettings(BusinessID, FieldName, FormName, TableName, Ordered, Active)
+    //TicketSetting(BusinessID, FieldName, FormName, TableName, Ordered, Active)
     ,
 {
     //7
@@ -610,8 +542,8 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //TicketSettings(BusinessID, FieldName, FormName, TableName, Ordered, Active)
-        objID: { self: "TicketSettings", en: "TicketSettings", vn: "TicketSettings" },
+        //TicketSetting(BusinessID, FieldName, FormName, TableName, Ordered, Active)
+        objID: { self: "TicketSetting", en: "TicketSetting", vn: "TicketSetting" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -623,15 +555,13 @@ var listObjectSpaces = [{
             { self: "BusinessID", en: "BusinessID", vn: "BusinessID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -644,7 +574,7 @@ var listObjectSpaces = [{
     },
     APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
 }
-    //CheckoutTypes(ID, Name, FormName, Active)
+    //CheckoutType(ID, Name, FormName, Active)
     ,
 {
     //8
@@ -655,8 +585,8 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //CheckoutTypes(ID, Name, FormName, Active)
-        objID: { self: "CheckoutTypes", en: "CheckoutTypes", vn: "CheckoutTypes" },
+        //CheckoutType(ID, Name, FormName, Active)
+        objID: { self: "CheckoutType", en: "CheckoutType", vn: "CheckoutType" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -665,15 +595,12 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
-        refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-        ],
+        refObjects: [],
         isParsered: false,
         connectionObject: [],
         NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -685,7 +612,7 @@ var listObjectSpaces = [{
     },
     APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
 }
-    //CheckoutSettings(BusinessID, CheckoutTypesID, PointBonus)
+    //CheckoutSetting(BusinessID, CheckoutTypeID, PointBonus)
     ,
 {
     //9
@@ -696,26 +623,24 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //CheckoutSettings(BusinessID, CheckoutTypesID, PointBonus)
-        objID: { self: "CheckoutSettings", en: "CheckoutSettings", vn: "CheckoutSettings" },
+        //CheckoutSetting(BusinessID, CheckoutTypeID, PointBonus)
+        objID: { self: "CheckoutSetting", en: "CheckoutSetting", vn: "CheckoutSetting" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
             { self: "PointBonus", en: "PointBonus", vn: "PointBonus", type: { self: "double" }, allownull: false },
 
-            { self: "CheckoutTypesID", en: "CheckoutTypesID", vn: "CheckoutTypesID", type: { self: "bigint" }, allownull: true },
+            { self: "CheckoutTypeID", en: "CheckoutTypeID", vn: "CheckoutTypeID", type: { self: "bigint" }, allownull: true },
             { self: "BusinessID", en: "BusinessID", vn: "BusinessID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [{ colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] },
-            { colum: "CheckoutTypesID", refObjects: "CheckoutTypes", refColum: "Id", refObjectShow: ["Name"] }
+            { colum: "CheckoutTypeID", refObjects: "CheckoutType", refColum: "Id", refObjectShow: ["Name"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -750,15 +675,13 @@ var listObjectSpaces = [{
             { self: "BusinessID", en: "BusinessID", vn: "BusinessID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -792,7 +715,6 @@ var listObjectSpaces = [{
             { self: "LanguageID", en: "LanguageID", vn: "LanguageID", type: { self: "bigint" }, allownull: true },
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -800,8 +722,7 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "LanguageID", refObjects: "Languages", refColum: "Id", refObjectShow: ["Name", "Code"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "LanguageID", refObjects: "Languages", refColum: "Id", refObjectShow: ["Name", "Code"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -835,15 +756,12 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
-        refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-        ],
+        refObjects: [],
         isParsered: false,
         connectionObject: [],
         NumRowsTEST: { numRows: 100, isCreated: false, isScan: false },
@@ -867,7 +785,7 @@ var listObjectSpaces = [{
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
         //SMS(ID, NameTemplate, Description, FormName)
-        objID: { self: "SMSs", en: "SMSs", vn: "SMSs" },
+        objID: { self: "SMS", en: "SMS", vn: "SMS" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -878,15 +796,12 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
-        refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-        ],
+        refObjects: [],
         isParsered: false,
         connectionObject: [],
         NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -921,15 +836,12 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
-        refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-        ],
+        refObjects: [],
         isParsered: false,
         connectionObject: [],
         NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -941,7 +853,7 @@ var listObjectSpaces = [{
     },
     APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
 }
-    //BusinessSMSs(BusinessID, SMSID, FormName, ContentName, Active)
+    //BusinessSMS(BusinessID, SMSID, FormName, ContentName, Active)
     ,
 {
     //15
@@ -952,8 +864,8 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //BusinessSMSs(BusinessID, SMSID, FormName, ContentName, Active)
-        objID: { self: "BusinessSMSs", en: "BusinessSMSs", vn: "BusinessSMSs" },
+        //BusinessSMS(BusinessID, SMSID, FormName, ContentName, Active)
+        objID: { self: "BusinessSMS", en: "BusinessSMS", vn: "BusinessSMS" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -966,7 +878,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -974,8 +885,7 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] },
-            { colum: "SMSID", refObjects: "SMSs", refColum: "Id", refObjectShow: ["Id"] }
+            { colum: "SMSID", refObjects: "SMS", refColum: "Id", refObjectShow: ["Id"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1040,7 +950,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1048,8 +957,7 @@ var listObjectSpaces = [{
         ],
         isParsered: false,
         refObjects: [
-            { colum: "PromotionID", refObjects: "Promotions", refColum: "Id", refObjectShow: ["Id"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "PromotionID", refObjects: "Promotions", refColum: "Id", refObjectShow: ["Id"] }
         ],
         connectionObject: [],
         NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -1087,7 +995,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1096,7 +1003,6 @@ var listObjectSpaces = [{
         isParsered: false,
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] },
             { colum: "PromotionID", refObjects: "Promotions", refColum: "Id", refObjectShow: ["Id"] }
         ],
         connectionObject: [],
@@ -1140,7 +1046,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1148,7 +1053,6 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] },
             { colum: "PromotionID", refObjects: "Promotions", refColum: "Id", refObjectShow: ["Id"] }
         ],
         isParsered: false,
@@ -1174,7 +1078,7 @@ var listObjectSpaces = [{
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
         //Staff(BusinessID, StaffID, Name, Avatar, Code, NickName, Cell, Email, Address, Color, DepartmentID, ortherCell)
-        objID: { self: "Staffs", en: "Staffs", vn: "Staffs" },
+        objID: { self: "Staff", en: "Staff", vn: "Staff" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -1193,7 +1097,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1201,8 +1104,7 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] },
-            { colum: "DepartmentID", refObjects: "Departments", refColum: "Id", refObjectShow: ["Name", "Phone"] }
+            { colum: "DepartmentID", refObjects: "Department", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1239,15 +1141,13 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "StaffID", refObjects: "Staffs", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "StaffID", refObjects: "Staff", refColum: "Id", refObjectShow: ["Name", "Phone"] }
             
         ],
         isParsered: false,
@@ -1273,7 +1173,7 @@ var listObjectSpaces = [{
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
         //Department(ID, Code, Name, Active)
-        objID: { self: "Departments", en: "Departments", vn: "Departments" },
+        objID: { self: "Department", en: "Department", vn: "Department" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -1282,15 +1182,12 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
-        refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-        ],
+        refObjects: [],
         isParsered: false,
         connectionObject: [],
         NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -1324,16 +1221,14 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "StaffID", refObjects: "Staffs", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "ServicesID", refObjects: "Services", refColum: "Id", refObjectShow: ["Name", "Code"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "StaffID", refObjects: "Staff", refColum: "Id", refObjectShow: ["Name", "Phone"] },
+            { colum: "ServicesID", refObjects: "Services", refColum: "Id", refObjectShow: ["Name", "Code"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1358,7 +1253,7 @@ var listObjectSpaces = [{
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
         //Category(ID, Code, Name, Active)
-        objID: { self: "Categories", en: "Categories", vn: "Categories" },
+        objID: { self: "Categorys", en: "Categorys", vn: "Categorys" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
@@ -1367,15 +1262,12 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
-        refObjects: [
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-        ],
+        refObjects: [],
         isParsered: false,
         connectionObject: [],
         NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -1413,7 +1305,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1421,8 +1312,7 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "CategoryID", refObjects: "Categories", refColum: "Id", refObjectShow: ["Name", "Code"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "CategoryID", refObjects: "Categorys", refColum: "Id", refObjectShow: ["Name", "Code"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1457,15 +1347,13 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1522,7 +1410,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1530,8 +1417,7 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "CustTypeID", refObjects: "CustomerType", refColum: "Id", refObjectShow: ["Id"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "CustTypeID", refObjects: "CustomerType", refColum: "Id", refObjectShow: ["Id"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1567,14 +1453,14 @@ var listObjectSpaces = [{
             //{ self: "OrderID", en: "OrderID", vn: "OrderID", type: { self: "bigint" }, allownull: true },
             { self: "CustomerID", en: "CustomerID", vn: "CustomerID", type: { self: "bigint" }, allownull: true },
 
-            { self: "DateCheckIn", en: "DateCheckIn", vn: "DateCheckIn", type: { self: "datetime" }, allownull: false ,search:"range", defaultvalue: "DEFAULT GETDATE()" },
+            { self: "DateCheckIn", en: "DateCheckIn", vn: "DateCheckIn", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "DateCheckOut", en: "DateCheckOut", vn: "DateCheckOut", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "DateDeliveryInfo", en: "DateDeliveryInfo", vn: "DateDeliveryInfo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "DaySendInfo", en: "DaySendInfo", vn: "DaySendInfo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
 
             { self: "RoomInfo", en: "RoomInfo", vn: "RoomInfo", type: { self: "string", len: 256 }, allownull: false },
             { self: "PersonReceiveInfo", en: "PersonReceiveInfo", vn: "PersonReceiveInfo", type: { self: "string", len: 2560 }, allownull: false },
-            { self: "StatusOrder", en: "StatusOrder", vn: "StatusOrder", type: { self: "string", len: 256 }, allownull: false , search:"group"},
+            { self: "StatusOrder", en: "StatusOrder", vn: "StatusOrder", type: { self: "string", len: 256 }, allownull: false },
 
 
             //json object for array
@@ -1584,7 +1470,6 @@ var listObjectSpaces = [{
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
             { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
@@ -1592,8 +1477,7 @@ var listObjectSpaces = [{
         ],
         refObjects: [
             { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "CustomerID", refObjects: "Customers", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "CustomerID", refObjects: "Customers", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         isParsered: false,
         connectionObject: [],
@@ -1606,7 +1490,7 @@ var listObjectSpaces = [{
     },
     APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
 }
-    //OrderDetails(OrderID, ServicesID, Price, TIP, StaffID, NumServices, Discount, Coupon, Total, Note)
+    //OrderDetail(OrderID, ServicesID, Price, TIP, StaffID, NumServices, Discount, Coupon, Total, Note)
     ,
 {
     //28
@@ -1617,37 +1501,35 @@ var listObjectSpaces = [{
         subAPI: "CreateSelfObject",
         produce: [{ lang: "NET" }, { lang: "Flutter" }, { lang: "Golang" }, { lang: "ReactNative" }],
         SQLtype: "SQLServer",//MySQL, Oracle, Access, 
-        //OrderDetails(OrderID, ServicesID, Price, TIP, StaffID, NumServices, Discount, Coupon, Total, Note)
-        objID: { self: "OrderDetails", en: "OrderDetails", vn: "OrderDetails" },
+        //OrderDetail(OrderID, ServicesID, Price, TIP, StaffID, NumServices, Discount, Coupon, Total, Note)
+        objID: { self: "OrderDetail", en: "OrderDetail", vn: "OrderDetail" },
         columns: [
             { self: "Id", en: "Identify", vn: "Mã ID", type: { self: "bigint", len: 32 }, allownull: false, identify: true, auto: true, primarykey: true },
 
-            { self: "ServicesID", en: "ServicesID", vn: "ServicesID", type: { self: "bigint" }, allownull: true ,search:"group" ,addon:'<i class="bi clipboard-plus" style="font-size: 1.1rem; color: cornflowerblue;"></i>'  },
+            { self: "ServicesID", en: "ServicesID", vn: "ServicesID", type: { self: "bigint" }, allownull: true },
             { self: "OrderID", en: "OrderID", vn: "OrderID", type: { self: "bigint" }, allownull: true },
-            { self: "StaffID", en: "StaffID", vn: "StaffID", type: { self: "bigint" }, allownull: true ,search:"group"},
+            { self: "StaffID", en: "StaffID", vn: "StaffID", type: { self: "bigint" }, allownull: true },
 
-            { self: "Price", en: "Price", vn: "Price", type: { self: "double", len: 256 }, allownull: false ,search:"range", addon:'<i class="bi bi-at" style="font-size: 1.1rem; color: cornflowerblue;"></i>'},
-            { self: "TIP", en: "TIP", vn: "TIP", type: { self: "double", len: 256 }, allownull: false , expandtype:'addon'},
+            { self: "Price", en: "Price", vn: "Price", type: { self: "double", len: 256 }, allownull: false },
+            { self: "TIP", en: "TIP", vn: "TIP", type: { self: "double", len: 256 }, allownull: false },
             { self: "NumServices", en: "NumServices", vn: "NumServices", type: { self: "int", len: 256 }, allownull: false },
-            { self: "Discount", en: "Discount", vn: "Discount", type: { self: "double", len: 256 }, allownull: false ,search:"value"},
+            { self: "Discount", en: "Discount", vn: "Discount", type: { self: "double", len: 256 }, allownull: false },
             { self: "Total", en: "Total", vn: "Total", type: { self: "double", len: 256 }, allownull: false },
 
-            { self: "Coupon", en: "Coupon", vn: "Coupon", type: { self: "string", len: 256 }, allownull: false ,search:"like"},
-            { self: "Note", en: "Note", vn: "Note", type: { self: "string", len: 256 }, allownull: false, expandtype:'area' },
+            { self: "Coupon", en: "Coupon", vn: "Coupon", type: { self: "string", len: 256 }, allownull: false },
+            { self: "Note", en: "Note", vn: "Note", type: { self: "string", len: 256 }, allownull: false },
 
             { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-            { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
             { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
-            { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false , search:"range", defaultvalue: "DEFAULT GETDATE()" },
+            { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
             { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
         ],
         refObjects: [
-            { colum: "ServicesID", refObjects: "Services", refColum: "Id", refObjectShow: ["Name", "Price"] },
+            { colum: "ServicesID", refObjects: "Services", refColum: "Id", refObjectShow: ["Name", "Code"] },
             { colum: "OrderID", refObjects: "Orders", refColum: "Id", refObjectShow: ["Id"] },
-            { colum: "StaffID", refObjects: "Staffs", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-            { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+            { colum: "StaffID", refObjects: "Staff", refColum: "Id", refObjectShow: ["Name", "Phone"] }
         ],
         connectionObject: [],
         isParsered: false,
@@ -1695,15 +1577,13 @@ var listObjectSpaces = [{
 
                 { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-                { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
                 { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
                 { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
             ],
             refObjects: [
-                { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] },
-                { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
+                { colum: "BusinessID", refObjects: "Business", refColum: "Id", refObjectShow: ["Name", "Phone"] }
             ],
             isParsered: false,
             connectionObject: [],
@@ -1742,15 +1622,12 @@ var listObjectSpaces = [{
 
                 { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-                { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
                 { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
                 { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
             ],
-            refObjects: [
-                { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-            ],
+            refObjects: [],
             isParsered: false,
             connectionObject: [],
             NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -1790,15 +1667,12 @@ var listObjectSpaces = [{
 
                 { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-                { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
                 { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
                 { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isPartFull", en: "isPartFull", vn: "Thông tin", type: { self: "string", len: 1028 }, allownull: false, defaultvalue: "DEFAULT ''" },
             ],
-            refObjects: [
-                { colum: "UserID", refObjects: "Users", refColum: "Id", refObjectShow: ["UseName"] }
-            ],
+            refObjects: [],
             isParsered: false,
             connectionObject: [],
             NumRowsTEST: { numRows: 10, isCreated: false, isScan: false },
@@ -1834,7 +1708,6 @@ var listObjectSpaces = [{
 
                 { self: "isActive", en: "isActive", vn: "isActive", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
 
-                { self: "isUserID", en: "isUser", vn: "isUser", type: { self: "bigint", len: 128 }, allownull: false ,search:"group"},
                 { self: "isValid", en: "isValid", vn: "Vòng đời", type: { self: "int", len: 32 }, allownull: false, defaultvalue: "DEFAULT 0" },
                 { self: "isCreatedDate", en: "isCreateDated", vn: "Ngày tạo", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },
                 { self: "isUpdatedDate", en: "isUpdateDated", vn: "Ngày cập nhật cuối", type: { self: "datetime" }, allownull: false, defaultvalue: "DEFAULT GETDATE()" },

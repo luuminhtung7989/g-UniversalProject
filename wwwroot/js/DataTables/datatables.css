@@ -4,231 +4,12 @@
  *
  * To rebuild or modify this file with the latest versions of the included
  * software please visit:
-<<<<<<< HEAD
- *   https://datatables.net/download/#bs4/jszip-2.5.0/pdfmake-0.1.36/dt-1.10.25/af-2.3.7/b-1.7.1/b-colvis-1.7.1/b-html5-1.7.1/b-print-1.7.1/cr-1.5.4/date-1.1.0/fc-3.3.3/fh-3.1.9/kt-2.6.2/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.4/sb-1.1.0/sp-1.3.0/sl-1.3.3
-=======
  *   https://datatables.net/download/#dt/jszip-2.5.0/pdfmake-0.1.36/dt-1.10.25/af-2.3.7/b-1.7.1/b-colvis-1.7.1/b-html5-1.7.1/b-print-1.7.1/cr-1.5.4/date-1.1.0/fc-3.3.3/fh-3.1.9/kt-2.6.2/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.4/sb-1.1.0/sp-1.3.0/sl-1.3.3
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
  *
  * Included libraries:
  *   JSZip 2.5.0, pdfmake 0.1.36, DataTables 1.10.25, AutoFill 2.3.7, Buttons 1.7.1, Column visibility 1.7.1, HTML5 export 1.7.1, Print view 1.7.1, ColReorder 1.5.4, DateTime 1.1.0, FixedColumns 3.3.3, FixedHeader 3.1.9, KeyTable 2.6.2, Responsive 2.2.9, RowGroup 1.1.3, RowReorder 1.2.8, Scroller 2.0.4, SearchBuilder 1.1.0, SearchPanes 1.3.0, Select 1.3.3
  */
 
-<<<<<<< HEAD
-@charset "UTF-8";
-table.dataTable {
-  clear: both;
-  margin-top: 6px !important;
-  margin-bottom: 6px !important;
-  max-width: none !important;
-  border-collapse: separate !important;
-  border-spacing: 0;
-}
-table.dataTable td,
-table.dataTable th {
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-}
-table.dataTable td.dataTables_empty,
-table.dataTable th.dataTables_empty {
-  text-align: center;
-}
-table.dataTable.nowrap th,
-table.dataTable.nowrap td {
-  white-space: nowrap;
-}
-
-div.dataTables_wrapper div.dataTables_length label {
-  font-weight: normal;
-  text-align: left;
-  white-space: nowrap;
-}
-div.dataTables_wrapper div.dataTables_length select {
-  width: auto;
-  display: inline-block;
-}
-div.dataTables_wrapper div.dataTables_filter {
-  text-align: right;
-}
-div.dataTables_wrapper div.dataTables_filter label {
-  font-weight: normal;
-  white-space: nowrap;
-  text-align: left;
-}
-div.dataTables_wrapper div.dataTables_filter input {
-  margin-left: 0.5em;
-  display: inline-block;
-  width: auto;
-}
-div.dataTables_wrapper div.dataTables_info {
-  padding-top: 0.85em;
-}
-div.dataTables_wrapper div.dataTables_paginate {
-  margin: 0;
-  white-space: nowrap;
-  text-align: right;
-}
-div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-  margin: 2px 0;
-  white-space: nowrap;
-  justify-content: flex-end;
-}
-div.dataTables_wrapper div.dataTables_processing {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  margin-left: -100px;
-  margin-top: -26px;
-  text-align: center;
-  padding: 1em 0;
-}
-
-table.dataTable > thead > tr > th:active,
-table.dataTable > thead > tr > td:active {
-  outline: none;
-}
-table.dataTable > thead > tr > th:not(.sorting_disabled),
-table.dataTable > thead > tr > td:not(.sorting_disabled) {
-  padding-right: 30px;
-}
-table.dataTable > thead .sorting,
-table.dataTable > thead .sorting_asc,
-table.dataTable > thead .sorting_desc,
-table.dataTable > thead .sorting_asc_disabled,
-table.dataTable > thead .sorting_desc_disabled {
-  cursor: pointer;
-  position: relative;
-}
-table.dataTable > thead .sorting:before, table.dataTable > thead .sorting:after,
-table.dataTable > thead .sorting_asc:before,
-table.dataTable > thead .sorting_asc:after,
-table.dataTable > thead .sorting_desc:before,
-table.dataTable > thead .sorting_desc:after,
-table.dataTable > thead .sorting_asc_disabled:before,
-table.dataTable > thead .sorting_asc_disabled:after,
-table.dataTable > thead .sorting_desc_disabled:before,
-table.dataTable > thead .sorting_desc_disabled:after {
-  position: absolute;
-  bottom: 0.9em;
-  display: block;
-  opacity: 0.3;
-}
-table.dataTable > thead .sorting:before,
-table.dataTable > thead .sorting_asc:before,
-table.dataTable > thead .sorting_desc:before,
-table.dataTable > thead .sorting_asc_disabled:before,
-table.dataTable > thead .sorting_desc_disabled:before {
-  right: 1em;
-  content: "↑";
-}
-table.dataTable > thead .sorting:after,
-table.dataTable > thead .sorting_asc:after,
-table.dataTable > thead .sorting_desc:after,
-table.dataTable > thead .sorting_asc_disabled:after,
-table.dataTable > thead .sorting_desc_disabled:after {
-  right: 0.5em;
-  content: "↓";
-}
-table.dataTable > thead .sorting_asc:before,
-table.dataTable > thead .sorting_desc:after {
-  opacity: 1;
-}
-table.dataTable > thead .sorting_asc_disabled:before,
-table.dataTable > thead .sorting_desc_disabled:after {
-  opacity: 0;
-}
-
-div.dataTables_scrollHead table.dataTable {
-  margin-bottom: 0 !important;
-}
-
-div.dataTables_scrollBody table {
-  border-top: none;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-div.dataTables_scrollBody table thead .sorting:before,
-div.dataTables_scrollBody table thead .sorting_asc:before,
-div.dataTables_scrollBody table thead .sorting_desc:before,
-div.dataTables_scrollBody table thead .sorting:after,
-div.dataTables_scrollBody table thead .sorting_asc:after,
-div.dataTables_scrollBody table thead .sorting_desc:after {
-  display: none;
-}
-div.dataTables_scrollBody table tbody tr:first-child th,
-div.dataTables_scrollBody table tbody tr:first-child td {
-  border-top: none;
-}
-
-div.dataTables_scrollFoot > .dataTables_scrollFootInner {
-  box-sizing: content-box;
-}
-div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
-  margin-top: 0 !important;
-  border-top: none;
-}
-
-@media screen and (max-width: 767px) {
-  div.dataTables_wrapper div.dataTables_length,
-div.dataTables_wrapper div.dataTables_filter,
-div.dataTables_wrapper div.dataTables_info,
-div.dataTables_wrapper div.dataTables_paginate {
-    text-align: center;
-  }
-  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    justify-content: center !important;
-  }
-}
-table.dataTable.table-sm > thead > tr > th:not(.sorting_disabled) {
-  padding-right: 20px;
-}
-table.dataTable.table-sm .sorting:before,
-table.dataTable.table-sm .sorting_asc:before,
-table.dataTable.table-sm .sorting_desc:before {
-  top: 5px;
-  right: 0.85em;
-}
-table.dataTable.table-sm .sorting:after,
-table.dataTable.table-sm .sorting_asc:after,
-table.dataTable.table-sm .sorting_desc:after {
-  top: 5px;
-}
-
-table.table-bordered.dataTable {
-  border-right-width: 0;
-}
-table.table-bordered.dataTable th,
-table.table-bordered.dataTable td {
-  border-left-width: 0;
-}
-table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child,
-table.table-bordered.dataTable td:last-child,
-table.table-bordered.dataTable td:last-child {
-  border-right-width: 1px;
-}
-table.table-bordered.dataTable tbody th,
-table.table-bordered.dataTable tbody td {
-  border-bottom-width: 0;
-}
-
-div.dataTables_scrollHead table.table-bordered {
-  border-bottom-width: 0;
-}
-
-div.table-responsive > div.dataTables_wrapper > div.row {
-  margin: 0;
-}
-div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:first-child {
-  padding-left: 0;
-}
-div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-child {
-  padding-right: 0;
-}
-
-
-div.dt-autofill-handle{position:absolute;height:8px;width:8px;z-index:102;box-sizing:border-box;background:#0275d8;cursor:pointer}div.dtk-focus-alt div.dt-autofill-handle{background:#ff8b33}div.dt-autofill-select{position:absolute;z-index:1001;background-color:#0275d8;background-image:repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.5) 10px)}div.dt-autofill-select.top,div.dt-autofill-select.bottom{height:3px;margin-top:-1px}div.dt-autofill-select.left,div.dt-autofill-select.right{width:3px;margin-left:-1px}div.dt-autofill-list{position:fixed;top:50%;left:50%;width:500px;margin-left:-250px;background-color:white;border-radius:6px;box-shadow:0 0 5px #555;border:2px solid #444;z-index:11;box-sizing:border-box;padding:1.5em 2em}div.dt-autofill-list ul{display:table;margin:0;padding:0;list-style:none;width:100%}div.dt-autofill-list ul li{display:table-row}div.dt-autofill-list ul li:last-child div.dt-autofill-question,div.dt-autofill-list ul li:last-child div.dt-autofill-button{border-bottom:none}div.dt-autofill-list ul li:hover{background-color:#f6f6f6}div.dt-autofill-list div.dt-autofill-question{display:table-cell;padding:.5em 0;border-bottom:1px solid #ccc}div.dt-autofill-list div.dt-autofill-question input[type=number]{padding:6px;width:30px;margin:-2px 0}div.dt-autofill-list div.dt-autofill-button{display:table-cell;padding:.5em 0;border-bottom:1px solid #ccc}div.dt-autofill-background{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);background:radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);z-index:10}div.dt-autofill-list div.dt-autofill-question input[type=number]{padding:6px;width:60px;margin:-2px 0}
-=======
 /*
  * Table styles
  */
@@ -691,7 +472,6 @@ table.dataTable td {
 
 
 div.dt-autofill-handle{position:absolute;height:8px;width:8px;z-index:102;box-sizing:border-box;background:#36f;cursor:pointer}div.dtk-focus-alt div.dt-autofill-handle{background:#ff8b33}div.dt-autofill-select{position:absolute;z-index:1001;background-color:#4989de;background-image:repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.5) 10px)}div.dt-autofill-select.top,div.dt-autofill-select.bottom{height:3px;margin-top:-1px}div.dt-autofill-select.left,div.dt-autofill-select.right{width:3px;margin-left:-1px}div.dt-autofill-list{position:fixed;top:50%;left:50%;width:500px;margin-left:-250px;background-color:white;border-radius:6px;box-shadow:0 0 5px #555;border:2px solid #444;z-index:11;box-sizing:border-box;padding:1.5em 2em}div.dt-autofill-list ul{display:table;margin:0;padding:0;list-style:none;width:100%}div.dt-autofill-list ul li{display:table-row}div.dt-autofill-list ul li:last-child div.dt-autofill-question,div.dt-autofill-list ul li:last-child div.dt-autofill-button{border-bottom:none}div.dt-autofill-list ul li:hover{background-color:#f6f6f6}div.dt-autofill-list div.dt-autofill-question{display:table-cell;padding:.5em 0;border-bottom:1px solid #ccc}div.dt-autofill-list div.dt-autofill-question input[type=number]{padding:6px;width:30px;margin:-2px 0}div.dt-autofill-list div.dt-autofill-button{display:table-cell;padding:.5em 0;border-bottom:1px solid #ccc}div.dt-autofill-list div.dt-autofill-button button{color:white;margin:0;padding:6px 12px;text-align:center;border:1px solid #2e6da4;background-color:#337ab7;border-radius:4px;cursor:pointer;vertical-align:middle}div.dt-autofill-background{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);background:radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);z-index:10}
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
 @keyframes dtb-spinner {
@@ -758,20 +538,6 @@ div.dt-button-collection-title:empty {
   display: none;
 }
 
-<<<<<<< HEAD
-div.dt-button-collection {
-  position: absolute;
-  z-index: 2001;
-}
-div.dt-button-collection div.dropdown-menu {
-  display: block;
-  z-index: 2002;
-  min-width: 100%;
-}
-div.dt-button-collection div.dt-button-collection-title {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-=======
 button.dt-button,
 div.dt-button,
 a.dt-button,
@@ -969,7 +735,6 @@ div.dt-button-collection a.dt-button.active:not(.disabled) {
   background: linear-gradient(to bottom, #f0f0f0 0%, #dadada 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#f0f0f0", EndColorStr="#dadada");
   box-shadow: inset 1px 1px 3px #666;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 div.dt-button-collection.fixed {
   position: fixed;
@@ -1035,15 +800,6 @@ div.dt-button-collection.four-column > :last-child {
 div.dt-button-collection .dt-button {
   border-radius: 0;
 }
-<<<<<<< HEAD
-div.dt-button-collection.fixed {
-  max-width: none;
-}
-div.dt-button-collection.fixed:before, div.dt-button-collection.fixed:after {
-  display: none;
-}
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 div.dt-button-background {
   position: fixed;
@@ -1051,30 +807,6 @@ div.dt-button-background {
   left: 0;
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
-  z-index: 999;
-}
-
-@media screen and (max-width: 767px) {
-  div.dt-buttons {
-    float: none;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0.5em;
-  }
-  div.dt-buttons a.btn {
-    float: none;
-  }
-}
-div.dt-buttons button.btn.processing,
-div.dt-buttons div.btn.processing,
-div.dt-buttons a.btn.processing {
-  color: rgba(0, 0, 0, 0.2);
-}
-div.dt-buttons button.btn.processing:after,
-div.dt-buttons div.btn.processing:after,
-div.dt-buttons a.btn.processing:after {
-=======
   background: rgba(0, 0, 0, 0.7);
   /* Fallback */
   background: -ms-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
@@ -1106,7 +838,6 @@ a.dt-button.processing {
 button.dt-button.processing:after,
 div.dt-button.processing:after,
 a.dt-button.processing:after {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1136,11 +867,7 @@ table.DTCR_clonedTable.dataTable {
 
 div.DTCR_pointer {
   width: 1px;
-<<<<<<< HEAD
-  background-color: #0275d8;
-=======
   background-color: #0259C4;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
   z-index: 201;
 }
 
@@ -1324,87 +1051,6 @@ div.dt-datetime-error {
   color: #b11f1f; }
 
 
-<<<<<<< HEAD
-table.DTFC_Cloned tr {
-  background-color: white;
-  margin-bottom: 0;
-}
-
-div.DTFC_LeftHeadWrapper table,
-div.DTFC_RightHeadWrapper table {
-  border-bottom: none !important;
-  margin-bottom: 0 !important;
-  background-color: white;
-}
-
-div.DTFC_LeftBodyWrapper table,
-div.DTFC_RightBodyWrapper table {
-  border-top: none;
-  margin: 0 !important;
-  z-index: 2;
-}
-div.DTFC_LeftBodyWrapper table thead .sorting:before, div.DTFC_LeftBodyWrapper table thead .sorting:after,
-div.DTFC_LeftBodyWrapper table thead .sorting_asc:before,
-div.DTFC_LeftBodyWrapper table thead .sorting_asc:after,
-div.DTFC_LeftBodyWrapper table thead .sorting_desc:before,
-div.DTFC_LeftBodyWrapper table thead .sorting_desc:after,
-div.DTFC_LeftBodyWrapper table thead .sorting:before,
-div.DTFC_LeftBodyWrapper table thead .sorting:after,
-div.DTFC_LeftBodyWrapper table thead .sorting_asc:before,
-div.DTFC_LeftBodyWrapper table thead .sorting_asc:after,
-div.DTFC_LeftBodyWrapper table thead .sorting_desc:before,
-div.DTFC_LeftBodyWrapper table thead .sorting_desc:after,
-div.DTFC_RightBodyWrapper table thead .sorting:before,
-div.DTFC_RightBodyWrapper table thead .sorting:after,
-div.DTFC_RightBodyWrapper table thead .sorting_asc:before,
-div.DTFC_RightBodyWrapper table thead .sorting_asc:after,
-div.DTFC_RightBodyWrapper table thead .sorting_desc:before,
-div.DTFC_RightBodyWrapper table thead .sorting_desc:after,
-div.DTFC_RightBodyWrapper table thead .sorting:before,
-div.DTFC_RightBodyWrapper table thead .sorting:after,
-div.DTFC_RightBodyWrapper table thead .sorting_asc:before,
-div.DTFC_RightBodyWrapper table thead .sorting_asc:after,
-div.DTFC_RightBodyWrapper table thead .sorting_desc:before,
-div.DTFC_RightBodyWrapper table thead .sorting_desc:after {
-  display: none;
-}
-div.DTFC_LeftBodyWrapper table tbody tr:first-child th,
-div.DTFC_LeftBodyWrapper table tbody tr:first-child td,
-div.DTFC_RightBodyWrapper table tbody tr:first-child th,
-div.DTFC_RightBodyWrapper table tbody tr:first-child td {
-  border-top: none;
-}
-
-div.DTFC_LeftFootWrapper table,
-div.DTFC_RightFootWrapper table {
-  border-top: none;
-  margin-top: 0 !important;
-  background-color: white;
-}
-
-div.DTFC_Blocker {
-  background-color: white;
-}
-
-table.dataTable.table-striped.DTFC_Cloned tbody {
-  background-color: white;
-}
-
-
-table.dataTable.fixedHeader-floating,
-table.dataTable.fixedHeader-locked {
-  background-color: white;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-table.dataTable.fixedHeader-floating {
-  position: fixed !important;
-}
-
-table.dataTable.fixedHeader-locked {
-  position: absolute !important;
-=======
 table.DTFC_Cloned thead,
 table.DTFC_Cloned tfoot {
   background-color: white;
@@ -1441,7 +1087,6 @@ table.fixedHeader-floating.no-footer {
 table.fixedHeader-locked {
   position: absolute !important;
   background-color: white;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 
 @media print {
@@ -1453,11 +1098,7 @@ table.fixedHeader-locked {
 
 table.dataTable tbody th.focus,
 table.dataTable tbody td.focus {
-<<<<<<< HEAD
-  box-shadow: inset 0 0 1px 2px #0275d8;
-=======
   box-shadow: inset 0 0 1px 2px #3366ff;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 
 div.dtk-focus-alt table.dataTable tbody th.focus,
@@ -1501,11 +1142,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   font-family: "Courier New", Courier, monospace;
   line-height: 1em;
   content: "+";
-<<<<<<< HEAD
-  background-color: #0275d8;
-=======
   background-color: #31b131;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control:before,
 table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th.dtr-control:before {
@@ -1554,11 +1191,7 @@ table.dataTable.dtr-column > tbody > tr > th.control:before {
   font-family: "Courier New", Courier, monospace;
   line-height: 1em;
   content: "+";
-<<<<<<< HEAD
-  background-color: #0275d8;
-=======
   background-color: #31b131;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable.dtr-column > tbody > tr.parent td.dtr-control:before,
 table.dataTable.dtr-column > tbody > tr.parent th.dtr-control:before,
@@ -1656,12 +1289,6 @@ div.dtr-modal div.dtr-modal-background {
     width: 95%;
   }
 }
-<<<<<<< HEAD
-div.dtr-bs-modal table.table tr:first-child td {
-  border-top: none;
-}
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
 table.dataTable tr.dtrg-group td {
@@ -1709,21 +1336,13 @@ table.dt-rowReorder-float {
   position: absolute !important;
   opacity: 0.8;
   table-layout: fixed;
-<<<<<<< HEAD
-  outline: 2px solid #0275d8;
-=======
   outline: 2px solid #888;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
   outline-offset: -2px;
   z-index: 2001;
 }
 
 tr.dt-rowReorder-moving {
-<<<<<<< HEAD
-  outline: 2px solid #888;
-=======
   outline: 2px solid #555;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
   outline-offset: -2px;
 }
 
@@ -1770,13 +1389,6 @@ div.dts div.dataTables_length {
   display: none;
 }
 
-<<<<<<< HEAD
-div.DTS div.dataTables_scrollBody table {
-  background-color: white;
-}
-
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 div.dt-button-collection {
   overflow: visible !important;
@@ -1868,32 +1480,6 @@ div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria span.dtsp-joiner {
   margin-right: 0.8em;
 }
 
-<<<<<<< HEAD
-div.dtsb-searchBuilder div.dtsb-titleRow {
-  height: 40px;
-}
-div.dtsb-searchBuilder div.dtsb-titleRow div.dtsb-title {
-  padding-top: 10px;
-}
-div.dtsb-searchBuilder div.dtsb-group button.dtsb-clearGroup {
-  margin-right: 8px;
-}
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria .form-control {
-  width: auto;
-  display: inline-block;
-}
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-condition {
-  border-color: #28a745;
-}
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-data {
-  border-color: #dc3545;
-}
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-value, div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria input.dtsb-value {
-  border-color: #007bff;
-}
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-logicContainer {
-  border-radius: 4px;
-=======
 div.dtsb-searchBuilder button, div.dtsb-searchBuilder select, div.dtsb-searchBuilder input {
   background-color: #f9f9f9;
 }
@@ -1947,17 +1533,12 @@ div.dtsb-searchBuilder div.dtsb-group div.dtsb-logicContainer {
   border: 1px solid;
   border-color: #cecece;
   border-radius: 3px;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-<<<<<<< HEAD
-  margin-top: 10px;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 div.dtsb-searchBuilder div.dtsb-group div.dtsb-logicContainer button.dtsb-logic {
   border: none;
@@ -1973,12 +1554,6 @@ div.dtsb-searchBuilder div.dtsb-group div.dtsb-logicContainer button.dtsb-clearG
   width: 2em;
   margin: 0px;
 }
-<<<<<<< HEAD
-
-div.dt-button-collection div.dtsb-searchBuilder {
-  padding-left: 10px;
-  padding-right: 10px;
-=======
 div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-dropDown, div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria input.dtsb-input {
   border: 1px solid;
   border-radius: 3px;
@@ -1994,7 +1569,6 @@ div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-value, div.d
 }
 div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-condition option.dtsb-option, div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-data option.dtsb-option, div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-value option.dtsb-option {
   background-color: white;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 
 
@@ -2221,41 +1795,6 @@ div.dtsp-hidden {
   display: none !important;
 }
 
-<<<<<<< HEAD
-div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow {
-  margin: 0.5em 0;
-}
-div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow div.dtsp-subRow2 {
-  margin-left: 0.5em;
-}
-div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow button {
-  border: 1px solid #ced4da;
-  width: 35px;
-  line-height: 20px;
-}
-div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow div.dtsp-subRow1 button {
-  border-right: none;
-}
-div.dtsp-panesContainer div.dtsp-searchPane div.dataTables_wrapper {
-  border: 2px #f0f0f0 solid;
-  border-radius: 4px;
-}
-div.dtsp-panesContainer div.dtsp-searchPane div.dataTables_wrapper:hover {
-  border: 2px solid #cfcfcf !important;
-}
-div.dtsp-panesContainer div.dtsp-searchPane div.dataTables_wrapper div.dtsp-nameCont span.badge {
-  min-width: 30px;
-  line-height: 1.25em;
-  margin-top: 3.5px;
-}
-div.dtsp-panesContainer button.disabled {
-  cursor: not-allowed;
-}
-
-div.dt-button-collection div.dtsp-panesContainer {
-  padding-left: 10px;
-  padding-right: 10px;
-=======
 div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
@@ -2339,35 +1878,22 @@ div.dtsp-columns-6 {
     max-width: 98% !important;
     min-width: 98% !important;
   }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 
 
 table.dataTable tbody > tr.selected,
 table.dataTable tbody > tr > .selected {
-<<<<<<< HEAD
-  background-color: #0275d8;
-=======
   background-color: #B0BED9;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable.stripe tbody > tr.odd.selected,
 table.dataTable.stripe tbody > tr.odd > .selected, table.dataTable.display tbody > tr.odd.selected,
 table.dataTable.display tbody > tr.odd > .selected {
-<<<<<<< HEAD
-  background-color: #0272d3;
-=======
   background-color: #acbad4;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable.hover tbody > tr.selected:hover,
 table.dataTable.hover tbody > tr > .selected:hover, table.dataTable.display tbody > tr.selected:hover,
 table.dataTable.display tbody > tr > .selected:hover {
-<<<<<<< HEAD
-  background-color: #0271d0;
-=======
   background-color: #aab7d1;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable.order-column tbody > tr.selected > .sorting_1,
 table.dataTable.order-column tbody > tr.selected > .sorting_2,
@@ -2376,42 +1902,6 @@ table.dataTable.order-column tbody > tr > .selected, table.dataTable.display tbo
 table.dataTable.display tbody > tr.selected > .sorting_2,
 table.dataTable.display tbody > tr.selected > .sorting_3,
 table.dataTable.display tbody > tr > .selected {
-<<<<<<< HEAD
-  background-color: #0273d4;
-}
-table.dataTable.display tbody > tr.odd.selected > .sorting_1, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_1 {
-  background-color: #026fcc;
-}
-table.dataTable.display tbody > tr.odd.selected > .sorting_2, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_2 {
-  background-color: #0270ce;
-}
-table.dataTable.display tbody > tr.odd.selected > .sorting_3, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_3 {
-  background-color: #0270d0;
-}
-table.dataTable.display tbody > tr.even.selected > .sorting_1, table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_1 {
-  background-color: #0273d4;
-}
-table.dataTable.display tbody > tr.even.selected > .sorting_2, table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_2 {
-  background-color: #0274d5;
-}
-table.dataTable.display tbody > tr.even.selected > .sorting_3, table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_3 {
-  background-color: #0275d7;
-}
-table.dataTable.display tbody > tr.odd > .selected, table.dataTable.order-column.stripe tbody > tr.odd > .selected {
-  background-color: #026fcc;
-}
-table.dataTable.display tbody > tr.even > .selected, table.dataTable.order-column.stripe tbody > tr.even > .selected {
-  background-color: #0273d4;
-}
-table.dataTable.display tbody > tr.selected:hover > .sorting_1, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_1 {
-  background-color: #026bc6;
-}
-table.dataTable.display tbody > tr.selected:hover > .sorting_2, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_2 {
-  background-color: #026cc8;
-}
-table.dataTable.display tbody > tr.selected:hover > .sorting_3, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_3 {
-  background-color: #026eca;
-=======
   background-color: #acbad5;
 }
 table.dataTable.display tbody > tr.odd.selected > .sorting_1, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_1 {
@@ -2446,16 +1936,11 @@ table.dataTable.display tbody > tr.selected:hover > .sorting_2, table.dataTable.
 }
 table.dataTable.display tbody > tr.selected:hover > .sorting_3, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_3 {
   background-color: #a5b2cb;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable.display tbody > tr:hover > .selected,
 table.dataTable.display tbody > tr > .selected:hover, table.dataTable.order-column.hover tbody > tr:hover > .selected,
 table.dataTable.order-column.hover tbody > tr > .selected:hover {
-<<<<<<< HEAD
-  background-color: #026bc6;
-=======
   background-color: #a2aec7;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 }
 table.dataTable tbody td.select-checkbox,
 table.dataTable tbody th.select-checkbox {
@@ -2475,11 +1960,7 @@ table.dataTable tbody th.select-checkbox:after {
 table.dataTable tbody td.select-checkbox:before,
 table.dataTable tbody th.select-checkbox:before {
   content: " ";
-<<<<<<< HEAD
-  margin-top: -2px;
-=======
   margin-top: -6px;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
   margin-left: -6px;
   border: 1px solid black;
   border-radius: 3px;
@@ -2514,18 +1995,5 @@ div.dataTables_wrapper span.select-item {
     display: block;
   }
 }
-<<<<<<< HEAD
-table.dataTable tbody tr.selected,
-table.dataTable tbody th.selected,
-table.dataTable tbody td.selected {
-  color: white;
-}
-table.dataTable tbody tr.selected a,
-table.dataTable tbody th.selected a,
-table.dataTable tbody td.selected a {
-  color: #a2d4ed;
-}
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 

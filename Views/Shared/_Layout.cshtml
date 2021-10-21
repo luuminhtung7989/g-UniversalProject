@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebCore</title>
-<<<<<<< HEAD
 
     @*<link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>*@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -17,19 +16,8 @@
     <link rel="stylesheet" href="~/css/bootstrap-callout.css?a=1212" />
 
 
-
-
     <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/js/Common/qrcode.min.js?f=sdddfs8"></script>
-    <script src="~/js/Common/gcGlobal.js?f=sdddf8"></script>
-    
-    <script src="~/js/DataTables/anchor.min.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/select2-bootstrap.css?a=1212dddd12" />
-
-
-
+    <script src="~/js/Common/gcGlobal.js?f=sdddfs8"></script>
 
 
     <style>
@@ -55,10 +43,12 @@
             margin-top: 0 !important;
         }
 
-        
- 
-
-
+        .select2-container--krajee .select2-dropdown--below {
+            /*width: 230px !important;*/
+            min-width: 113px !important;
+            max-width: 336px !important;
+            margin-left: -70px !important;
+        }
 
         .smalldrop {
             min-width: 113px !important;
@@ -209,50 +199,28 @@
 
 
     <link rel="stylesheet" href="~/js/DataTables/datatables.css">
-         @* <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">  *@
-
-    @* <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" defer></script> *@
     <script type="text/javascript" src="~/js/DataTables/datatables.js" defer></script>
- @* <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js" defer></script>  *@
 
-  
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+
+
 
     <script type="text/javascript" src="~/js/jsGobalLib/xdate.js"></script>
 
 </head>
 
-=======
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-    <script src="~/lib/bootstrap-collapse.js"></script>
-  
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-
-  
-
-
-</head>
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 <body style="font-size:0.8rem !important">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-<<<<<<< HEAD
                 <img src="https://img.icons8.com/ios-glyphs/30/000000/marker--v2.png" />
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp</a>
-=======
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebCore</a>
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-<<<<<<< HEAD
                     <ul class="navbar-nav flex-grow-1" id="ulGobalMenu">
                         <li class="nav-item">
                             <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -310,18 +278,6 @@
             </div>
 
 
-=======
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         </nav>
     </header>
     <div class="container">
@@ -335,7 +291,6 @@
             &copy; 2021 - WebCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-<<<<<<< HEAD
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
@@ -346,18 +301,13 @@
 
     <script src="~/js/Common/gcGlobalForm.js?f=12dd34"></script>
     @*<script src="~/js/ClassCore/KernelTwoLine.js?f=aafsadfsdfsad"></script>*@
-    <script src="~/js/ClassCore/KernelCell.js?a=fsdddddd9"></script>
+    <script src="~/js/ClassCore/KernelCell.js?a=fsdddd9"></script>
     <script src="~/js/ClassCore/CanteenDb.js?a=s0ads"></script>
-    <script src="~/js/ClassCore/CanteenDb_langFull.js?a=idddo"></script>
-    <script src="~/js/Instances/allObject.js?d=ddefdddd9"></script>
-    <script src="~/js/Instances/allObjectParserSpace.js?a=ddd8"></script>
+    <script src="~/js/ClassCore/CanteenDb_langFull.js?iodo"></script>
+    <script src="~/js/Instances/allObject.js?d=ddefddd9"></script>
+    <script src="~/js/Instances/allObjectParserSpace.js?a=doddddd8"></script>
 
 
-=======
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -24,10 +24,10 @@ namespace WebCoreHttp.Controllers
         {
             var username = this.Request.Query["username"];
             var password = this.Request.Query["password"];
-
-            if (HttpContext.Session.GetString("LoginPass") == "true")
+            
+            if(HttpContext.Session.GetString("LoginPass") == "true")
             {
-
+                
             }
             else
             {

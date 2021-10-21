@@ -70,7 +70,7 @@ namespace zgcSpaceKernel.Core
         {
             if (DGobal._dD_List_fd_a != null)
                 if (DGobal._dD_List_fd_a.ContainsKey(ModelDb))
-                    DGobal._dD_List_fd_a.Remove(ModelDb);
+                DGobal._dD_List_fd_a.Remove(ModelDb);
 
             string sql1 = "SELECT   o.name, o.object_id as id, o.type  FROM sys.objects as o WHERE(o.type = 'U') AND(o.name <> 'dtproperties') order by o.create_date ";
             X x1 = new X((object)null);

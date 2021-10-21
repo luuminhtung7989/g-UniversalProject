@@ -94,16 +94,16 @@ namespace zgcSpaceKernel.Core
             }
             else if (x1._ip.ContainsKey("sql"))
             {
-                if (x1._ip.ContainsKey("noquery"))
+                if(x1._ip.ContainsKey("noquery"))
                 {
                     //fix 2021
                     SqlCommand cm = new SqlCommand(sql);
-                    Rs trs = zgcLibCore.zgcHelper.ExecProc(cm, x1._cs, false);
+                    Rs trs = zgcLibCore.zgcHelper.ExecProc(cm,x1._cs, false);
                     trs.Infor = (object)sql;
                     oo = (object)trs;
                     return;
                 }
-                else
+                else 
                     x1.GD(sql);
             }
             R r = x1.G();

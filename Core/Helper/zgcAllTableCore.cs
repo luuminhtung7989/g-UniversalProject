@@ -31,9 +31,9 @@ namespace zgc0Admin
         private static string _editform = "_editform: [\r\n                {0}\r\n            ],";
         private static string _updateform = "_updateform: [\r\n                {0}\r\n            ],";
         private static string _listReports = "_listReports: [\r\n            {0}\r\n            ],";
-
+       
         //Language Scope
-        private static string langScopeBlock = "      \r\n         '{0}' : {{\r\n            _id: '{0}',//table\r\n         UIname: {{ en: '{0}', vn:'{0}' , kmer: '{0}', thai: '{0}', china: '{0}'}},\r\n           _fieldsList: [\r\n                {1}\r\n            ],\r\n        }},";
+        private static string langScopeBlock = "      \r\n         '{0}' : {{\r\n            _id: '{0}',//table\r\n         UIname: {{ en: '{0}', vn:'{0}'}},\r\n           _fieldsList: [\r\n                {1}\r\n            ],\r\n        }},";
         private static string _dictionaryLangSelf = "         this._dictSelf.set('{0}', obj{1});";
         private static string _gbLanguageI18 = "var _gbLanguageI18 = {{\r\n        \r\n{0}\r\n        \r\n}};";
         //End language scope
@@ -466,7 +466,7 @@ namespace zgc0Admin
                 string key = string.Concat(tablesObj[index1]["name"]);
                 int num1 = (int)tablesObj[index1]["id"];
                 string.Concat((object)index1);
-                string format = "/*{0}*/{{ field: '{1}', vn: '{2}', en: '{2}', kmer: '{2}', thai: '{2}', china: '{2}' }}\r\n";
+                string format = "/*{0}*/{{ field: '{1}', vn: '{2}' }}\r\n";
                 int num2 = 0;
                 List<Dictionary<string, object>> mapTable = mapTables[key];
                 List<string> stringList = new List<string>();
@@ -480,7 +480,7 @@ namespace zgc0Admin
                     }
                 }
                 string str5 = string.Format(zgcAllTableCore.langScopeBlock, (object)key, (object)str3);
-
+                
                 str2 = str2 + str5;// + "\r\n" + string.Format(zgcAllTableCore._dictionaryLangSelf, (object) key, (object) index1) + "\r\n";
             }
             return (str1 + string.Format(zgcAllTableCore._gbLanguageI18, (object)str2)).ToString();
@@ -569,11 +569,9 @@ namespace zgc0Admin
                             if (!flag2)
                             {
                                 if (cs == "double")
-                                    str6 = ", type: \"double\" , precition: 2, expandtype:'money'";
-                                if (cs == "long")
-                                    str6 = ", type: \"bigint\" , precition: 0, expandtype:'smoney'";
-                                if (cs == "int")
-                                    str6 = ", type: \"int\" , precition: 0, expandtype:'smoney'";
+                                    str6 = ", type: \"money\" , precition: 2";
+                                if (cs == "long" || cs == "int")
+                                    str6 = ", type: \"money\" ";
                             }
                             if (str5.ToLower() == "id")
                                 str6 = ", type: \"hidden\"";
@@ -609,10 +607,10 @@ namespace zgc0Admin
                 string str20 = string.Format(zgcAllTableCore._editform, (object)str19);
                 string str21 = string.Format(zgcAllTableCore._updateform, (object)str19);
                 string str22 = string.Format(zgcAllTableCore._listReports, (object)zgcAllTableCore.BuildReportAll(mapTable1, str4));
-
+                
                 string str23 = string.Format(zgcAllTableCore.objScope, (object)"", (object)str13, (object)"", (object)str4, (object)str15, (object)str17, (object)str18, (object)str20, (object)str21, (object)str22);
                 //if (index1 > 0)
-                str23 += ",";
+                    str23 += ",";
                 str2 = str2 + str23 + "\r\n";// + string.Format(zgcAllTableCore._dictionarySelf, (object)str4, (object)index1) + "\r\n";
             }
             return (str1 + string.Format(zgcAllTableCore._gbDictionary, (object)str2, (object)zgcAllTableCore._sessionStore)).ToString();

@@ -6,52 +6,24 @@ var _gbSubDictionary = {
 		_className: "display",
 		_listReports: [{}],
 		_listSelfTables: [
-			{ AjaxObj: { a: "fGetStaffWorkingTime", _f: "*", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-			{ AjaxObj: { a: "fGetStaffWorkingTime", _f: "Id,StaffID,Dayth,InTime,OutTime,isActive,isUserID,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-			{ AjaxObj: { a: "fGetStaffWorkingTime", _f: "Id,StaffID,Dayth,InTime,OutTime,isActive,isUserID,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
+			{ AjaxObj: { a: "fGetStaffWorkingTime", _f: "*", _gb: "", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
+			{ AjaxObj: { a: "fGetStaffWorkingTime", _f: "Id,StaffID,Dayth,InTime,OutTime,isActive,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: "", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
+			{ AjaxObj: { a: "fGetStaffWorkingTime", _f: "Id,StaffID,Dayth,InTime,OutTime,isActive,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: "", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
 		],
 		_listRefTables: [
-			{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } },
-			{ field: "UserID", mergename: [1], objAjax: { AjaxObj: { a: "fGetUsers", c: { }, _f: "Id,UseName",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }
+			{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }
 		],
 		_fieldsList: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false},
-			/*1*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*2*/{ field: "Dayth", name: "Dayth", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:true},
-			/*3*/{ field: "InTime", name: "InTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" , allownull:false},
-			/*4*/{ field: "OutTime", name: "OutTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" , allownull:false},
-			/*5*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false},
-			/*6*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false},
-			/*7*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false},
-			/*8*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*9*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*10*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false}
-		],
-		_fieldsReport: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false},
-			/*1*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*2*/{ field: "Dayth", name: "Dayth", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:true},
-			/*3*/{ field: "InTime", name: "InTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" , allownull:false},
-			/*4*/{ field: "OutTime", name: "OutTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" , allownull:false},
-			/*5*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false},
-			/*6*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false},
-			/*7*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false},
-			/*8*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*9*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*10*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false}
-		],
-		_fieldsSearch: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false,search:""},
-			/*1*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true,search:""},
-			/*2*/{ field: "Dayth", name: "Dayth", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:true,search:""},
-			/*3*/{ field: "InTime", name: "InTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*4*/{ field: "OutTime", name: "OutTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*5*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false,search:""},
-			/*6*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false,search:"group"},
-			/*7*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false,search:""},
-			/*8*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*9*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*10*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false,search:""}
+			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" },
+			/*1*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }},
+			/*2*/{ field: "Dayth", name: "Dayth", create: true, edit: true, list: true, type: "bigint",  expandtype:"" },
+			/*3*/{ field: "InTime", name: "InTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" },
+			/*4*/{ field: "OutTime", name: "OutTime", create: true, edit: true, list: true, type: "datetime",  expandtype:"" },
+			/*5*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" },
+			/*6*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" },
+			/*7*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" },
+			/*8*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" },
+			/*9*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" }
 		],
 		_editform: [
 			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
@@ -59,15 +31,7 @@ var _gbSubDictionary = {
 			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
 			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
 			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10], style: [".col-md-2"] }
-		],
-		_searchform: [
-			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
-			{ row: [2, 3], style: [".col-md-2", ".col-md-4"] },
-			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
-			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
-			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10], style: [".col-md-2"] }
+
 		],
 		_updateform: [
 			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
@@ -75,7 +39,7 @@ var _gbSubDictionary = {
 			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
 			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
 			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10], style: [".col-md-2"] }
+
 		],
 	},
 	Staff : {
@@ -85,71 +49,31 @@ var _gbSubDictionary = {
 		_className: "display",
 		_listReports: [{}],
 		_listSelfTables: [
-			{ AjaxObj: { a: "fGetStaff", _f: "*", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-			{ AjaxObj: { a: "fGetStaff", _f: "Id,BusinessID,DepartmentID,Name,Avatar,Code,Phone,ortherPhone,Email,Address,Color,isActive,isUserID,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-			{ AjaxObj: { a: "fGetStaff", _f: "Id,BusinessID,DepartmentID,Name,Avatar,Code,Phone,ortherPhone,Email,Address,Color,isActive,isUserID,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
+			{ AjaxObj: { a: "fGetStaff", _f: "*", _gb: "", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
+			{ AjaxObj: { a: "fGetStaff", _f: "Id,BusinessID,DepartmentID,Name,Avatar,Code,Phone,ortherPhone,Email,Address,Color,isActive,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: "", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
+			{ AjaxObj: { a: "fGetStaff", _f: "Id,BusinessID,DepartmentID,Name,Avatar,Code,Phone,ortherPhone,Email,Address,Color,isActive,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: "", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
 		],
 		_listRefTables: [
-			{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } },
-			{ field: "UserID", mergename: [1], objAjax: { AjaxObj: { a: "fGetUsers", c: { }, _f: "Id,UseName",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } },
-			{ field: "DepartmentID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetDepartment", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }
+			{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } },
+			{ field: "DepartmentID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetDepartment", c: { }, _f: "Id,Name,Phone", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }
 		],
 		_fieldsList: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false},
-			/*1*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*2*/{ field: "DepartmentID", name: "DepartmentID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "DepartmentID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetDepartment", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*3*/{ field: "Name", name: "Name", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*4*/{ field: "Avatar", name: "Avatar", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*5*/{ field: "Code", name: "Code", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*6*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*7*/{ field: "ortherPhone", name: "ortherPhone", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*8*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*9*/{ field: "Address", name: "Address", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*10*/{ field: "Color", name: "Color", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*11*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false},
-			/*12*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false},
-			/*13*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false},
-			/*14*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*15*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*16*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false}
-		],
-		_fieldsReport: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false},
-			/*1*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*2*/{ field: "DepartmentID", name: "DepartmentID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "DepartmentID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetDepartment", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*3*/{ field: "Name", name: "Name", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*4*/{ field: "Avatar", name: "Avatar", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*5*/{ field: "Code", name: "Code", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*6*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*7*/{ field: "ortherPhone", name: "ortherPhone", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*8*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*9*/{ field: "Address", name: "Address", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*10*/{ field: "Color", name: "Color", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*11*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false},
-			/*12*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false},
-			/*13*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false},
-			/*14*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*15*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*16*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false}
-		],
-		_fieldsSearch: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false,search:""},
-			/*1*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true,search:""},
-			/*2*/{ field: "DepartmentID", name: "DepartmentID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "DepartmentID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetDepartment", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true,search:""},
-			/*3*/{ field: "Name", name: "Name", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*4*/{ field: "Avatar", name: "Avatar", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*5*/{ field: "Code", name: "Code", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*6*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*7*/{ field: "ortherPhone", name: "ortherPhone", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*8*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*9*/{ field: "Address", name: "Address", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*10*/{ field: "Color", name: "Color", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*11*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false,search:""},
-			/*12*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false,search:"group"},
-			/*13*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false,search:""},
-			/*14*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*15*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*16*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false,search:""}
+			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" },
+			/*1*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }},
+			/*2*/{ field: "DepartmentID", name: "DepartmentID", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , option:{ field: "DepartmentID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetDepartment", c: { }, _f: "Id,Name,Phone", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }},
+			/*3*/{ field: "Name", name: "Name", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*4*/{ field: "Avatar", name: "Avatar", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*5*/{ field: "Code", name: "Code", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*6*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*7*/{ field: "ortherPhone", name: "ortherPhone", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*8*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*9*/{ field: "Address", name: "Address", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*10*/{ field: "Color", name: "Color", create: true, edit: true, list: true, type: "string",  expandtype:"" },
+			/*11*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" },
+			/*12*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" },
+			/*13*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" },
+			/*14*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" },
+			/*15*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" }
 		],
 		_editform: [
 			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
@@ -160,18 +84,7 @@ var _gbSubDictionary = {
 			{ row: [10, 11], style: [".col-md-2", ".col-md-4"] },
 			{ row: [12, 13], style: [".col-md-2", ".col-md-4"] },
 			{ row: [14, 15], style: [".col-md-2", ".col-md-4"] },
-			{ row: [16], style: [".col-md-2"] }
-		],
-		_searchform: [
-			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
-			{ row: [2, 3], style: [".col-md-2", ".col-md-4"] },
-			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
-			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
-			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10, 11], style: [".col-md-2", ".col-md-4"] },
-			{ row: [12, 13], style: [".col-md-2", ".col-md-4"] },
-			{ row: [14, 15], style: [".col-md-2", ".col-md-4"] },
-			{ row: [16], style: [".col-md-2"] }
+
 		],
 		_updateform: [
 			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
@@ -182,105 +95,7 @@ var _gbSubDictionary = {
 			{ row: [10, 11], style: [".col-md-2", ".col-md-4"] },
 			{ row: [12, 13], style: [".col-md-2", ".col-md-4"] },
 			{ row: [14, 15], style: [".col-md-2", ".col-md-4"] },
-			{ row: [16], style: [".col-md-2"] }
-		],
-	},
-	Users : {
-		_rightOnTable: { },
-		_titleName: "Users",
-		_id: "Users",
-		_className: "display",
-		_listReports: [{}],
-		_listSelfTables: [
-			{ AjaxObj: { a: "fGetUsers", _f: "*", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-			{ AjaxObj: { a: "fGetUsers", _f: "Id,UserName,Password,Email,PassCode,Phone,Domain,BusinessID,StaffID,isActive,isUserID,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-			{ AjaxObj: { a: "fGetUsers", _f: "Id,UserName,Password,Email,PassCode,Phone,Domain,BusinessID,StaffID,isActive,isUserID,isValid,isCreatedDate,isUpdatedDate,isPartFull", _gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" },
-		],
-		_listRefTables: [
-			{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } },
-			{ field: "UserID", mergename: [1], objAjax: { AjaxObj: { a: "fGetUsers", c: { }, _f: "Id,UseName",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } },
-			{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }
-		],
-		_fieldsList: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false},
-			/*1*/{ field: "UserName", name: "UserName", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*2*/{ field: "Password", name: "Password", create: true, edit: true, list: true, type: "string",  expandtype:"password" , allownull:false},
-			/*3*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"email" , allownull:false},
-			/*4*/{ field: "PassCode", name: "PassCode", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*5*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"phone" , allownull:false},
-			/*6*/{ field: "Domain", name: "Domain", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*7*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*8*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*9*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false},
-			/*10*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false},
-			/*11*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false},
-			/*12*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*13*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*14*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false}
-		],
-		_fieldsReport: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false},
-			/*1*/{ field: "UserName", name: "UserName", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*2*/{ field: "Password", name: "Password", create: true, edit: true, list: true, type: "string",  expandtype:"password" , allownull:false},
-			/*3*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"email" , allownull:false},
-			/*4*/{ field: "PassCode", name: "PassCode", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*5*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"phone" , allownull:false},
-			/*6*/{ field: "Domain", name: "Domain", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false},
-			/*7*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*8*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true},
-			/*9*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false},
-			/*10*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false},
-			/*11*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false},
-			/*12*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*13*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false},
-			/*14*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false}
-		],
-		_fieldsSearch: [
-			/*0*/{ field: "Id", name: "Identify", create: true, edit: true, list: true, type: "bigint",  expandtype:"hidden" , allownull:false,search:""},
-			/*1*/{ field: "UserName", name: "UserName", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*2*/{ field: "Password", name: "Password", create: true, edit: true, list: true, type: "string",  expandtype:"password" , allownull:false,search:""},
-			/*3*/{ field: "Email", name: "Email", create: true, edit: true, list: true, type: "string",  expandtype:"email" , allownull:false,search:""},
-			/*4*/{ field: "PassCode", name: "PassCode", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*5*/{ field: "Phone", name: "Phone", create: true, edit: true, list: true, type: "string",  expandtype:"phone" , allownull:false,search:""},
-			/*6*/{ field: "Domain", name: "Domain", create: true, edit: true, list: true, type: "string",  expandtype:"" , allownull:false,search:""},
-			/*7*/{ field: "BusinessID", name: "BusinessID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "BusinessID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetBusiness", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true,search:""},
-			/*8*/{ field: "StaffID", name: "StaffID", create: true, edit: true, list: true, type: "bigint",  expandtype:"select" , fkey:true , option:{ field: "StaffID", mergename: [1,2], objAjax: { AjaxObj: { a: "fGetStaff", c: { }, _f: "Id,Name,Phone",_gb: " ORDER BY Id Desc", ModelDb: "AppCoreDb" }, APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k" } }, allownull:true,search:""},
-			/*9*/{ field: "isActive", name: "isActive", create: true, edit: true, list: true, type: "int",  expandtype:"" , allownull:false,search:""},
-			/*10*/{ field: "isUserID", name: "isUser", create: true, edit: true, list: true, type: "bigint",  expandtype:"" , allownull:false,search:"group"},
-			/*11*/{ field: "isValid", name: "isValid", create: false, edit: false, list: false, type: "int",  expandtype:"" , allownull:false,search:""},
-			/*12*/{ field: "isCreatedDate", name: "isCreateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*13*/{ field: "isUpdatedDate", name: "isUpdateDated", create: false, edit: false, list: false, type: "datetime",  expandtype:"" , allownull:false,search:""},
-			/*14*/{ field: "isPartFull", name: "isPartFull", create: false, edit: false, list: false, type: "string",  expandtype:"" , allownull:false,search:""}
-		],
-		_editform: [
-			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
-			{ row: [2, 3], style: [".col-md-2", ".col-md-4"] },
-			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
-			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
-			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10, 11], style: [".col-md-2", ".col-md-4"] },
-			{ row: [12, 13], style: [".col-md-2", ".col-md-4"] },
-			{ row: [14], style: [".col-md-2"] }
-		],
-		_searchform: [
-			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
-			{ row: [2, 3], style: [".col-md-2", ".col-md-4"] },
-			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
-			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
-			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10, 11], style: [".col-md-2", ".col-md-4"] },
-			{ row: [12, 13], style: [".col-md-2", ".col-md-4"] },
-			{ row: [14], style: [".col-md-2"] }
-		],
-		_updateform: [
-			{ row: [0, 1], style: [".col-md-2", ".col-md-4"] },
-			{ row: [2, 3], style: [".col-md-2", ".col-md-4"] },
-			{ row: [4, 5], style: [".col-md-2", ".col-md-4"] },
-			{ row: [6, 7], style: [".col-md-2", ".col-md-4"] },
-			{ row: [8, 9], style: [".col-md-2", ".col-md-4"] },
-			{ row: [10, 11], style: [".col-md-2", ".col-md-4"] },
-			{ row: [12, 13], style: [".col-md-2", ".col-md-4"] },
-			{ row: [14], style: [".col-md-2"] }
+
 		],
 	},
 

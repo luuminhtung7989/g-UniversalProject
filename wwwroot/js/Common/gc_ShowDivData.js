@@ -37,104 +37,7 @@ var cur_gb_CurItemObject = null;
 var cur_gb_FlagControlCmb = null;
 var cur_gb_FlagControlCmbMulti = 0;
 
-<<<<<<< HEAD
 
-=======
-var StrStatusKH = new Array(12);
-
-StrStatusKH[0] = new Array(3);
-StrStatusKH[0][0] = "Doanh thu hằng ngày";
-StrStatusKH[0][1] = "condition";
-StrStatusKH[0][2] = "0";
-
-StrStatusKH[1] = new Array(3);
-StrStatusKH[1][0] = "Tiền thu trong kỳ";
-StrStatusKH[1][1] = "condition";
-StrStatusKH[1][2] = "1";
-
-StrStatusKH[2] = new Array(3);
-StrStatusKH[2][0] = "Danh sách lớp dự kiến";
-StrStatusKH[2][1] = "condition";
-StrStatusKH[2][2] = "2";
-
-StrStatusKH[3] = new Array(3);
-StrStatusKH[3][0] = "Danh sách lớp đã mở";
-StrStatusKH[3][1] = "condition";
-StrStatusKH[3][2] = "3";
-StrStatusKH[4] = new Array(3);
-StrStatusKH[4][0] = "Các lớp trong tuần";
-StrStatusKH[4][1] = "condition";
-StrStatusKH[4][2] = "4";
-StrStatusKH[5] = new Array(3);
-StrStatusKH[5][0] = "Bảng điểm cuối khóa";
-StrStatusKH[5][1] = "condition";
-StrStatusKH[5][2] = "5";
-StrStatusKH[6] = new Array(3);
-StrStatusKH[6][0] = "Thống kê tất cả lớp học";
-StrStatusKH[6][1] = "condition";
-StrStatusKH[6][2] = "6";
-StrStatusKH[7] = new Array(3);
-StrStatusKH[7][0] = "DS cấp chứng chỉ";
-StrStatusKH[7][1] = "condition";
-StrStatusKH[7][2] = "7";
-
-StrStatusKH[8] = new Array(3);
-StrStatusKH[8][0] = "DT theo nhân viên";
-StrStatusKH[8][1] = "condition";
-StrStatusKH[8][2] = "8";
-
-
-StrStatusKH[9] = new Array(3);
-StrStatusKH[9][0] = "Doanh thu tổng hợp";
-StrStatusKH[9][1] = "condition";
-StrStatusKH[9][2] = "9";
-
-StrStatusKH[10] = new Array(3);
-StrStatusKH[10][0] = "Doanh thu theo CC";
-StrStatusKH[10][1] = "condition";
-StrStatusKH[10][2] = "10";
-
-
-StrStatusKH[11] = new Array(3);
-StrStatusKH[11][0] = "Doanh thu theo lớp";
-StrStatusKH[11][1] = "condition";
-StrStatusKH[11][2] = "11";
-
-StrStatusKH[11] = new Array(3);
-StrStatusKH[11][0] = "Báo cáo tiền lương giáo viên";
-StrStatusKH[11][1] = "condition";
-StrStatusKH[11][2] = "12";
-
-
-var StrStatusLICHHOC = new Array(6);
-StrStatusLICHHOC[0] = new Array(3);
-StrStatusLICHHOC[0][0] = "Sáng 246";
-StrStatusLICHHOC[0][1] = "condition";
-StrStatusLICHHOC[0][2] = "1";
-
-StrStatusLICHHOC[1] = new Array(3);
-StrStatusLICHHOC[1][0] = "Tối 246";
-StrStatusLICHHOC[1][1] = "condition";
-StrStatusLICHHOC[1][2] = "1";
-
-StrStatusLICHHOC[2] = new Array(3);
-StrStatusLICHHOC[2][0] = "Sáng 357";
-StrStatusLICHHOC[2][1] = "condition";
-StrStatusLICHHOC[2][2] = "1";
-StrStatusLICHHOC[3] = new Array(3);
-StrStatusLICHHOC[3][0] = "Tối 357";
-StrStatusLICHHOC[3][1] = "condition";
-StrStatusLICHHOC[3][2] = "1";
-
-StrStatusLICHHOC[4] = new Array(3);
-StrStatusLICHHOC[4][0] = "Chiều 357";
-StrStatusLICHHOC[4][1] = "condition";
-StrStatusLICHHOC[4][2] = "1";
-StrStatusLICHHOC[5] = new Array(3);
-StrStatusLICHHOC[5][0] = "Chiều 246";
-StrStatusLICHHOC[5][1] = "condition";
-StrStatusLICHHOC[5][2] = "1";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
 function onItemClickReport(itemLI, tBox, index) {
@@ -728,11 +631,7 @@ function GobalPrintNew(id) {
     docPrint.focus();
 }
 
-<<<<<<< HEAD
-function setClassAll(id, searchform = false) {
-=======
 function setClassAll(id) {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     $("#" + id + " input[name*='search']").blur(function (ev) {
         if (this.value == '')
             this.value = 'Tìm kiếm...';
@@ -760,28 +659,6 @@ function setClassAll(id) {
 
     $("#" + id + " input[id*='SoCT']").css({ 'font-weight': 'bold', 'color': '#3276b1' });
 
-<<<<<<< HEAD
-    $("#" + id + " input[id*='Tien']").css({ 'font-weight': 'bold', 'color': '#007bff' });
-    $("#" + id + " input[id*='TongTien']").css({ 'font-weight': 'bold', 'color': '#007bff' });
-    $("#" + id + " input[id*='ThucThu']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='PhuThu']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='VAT']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='Price']").css({ 'font-weight': 'bold', 'color': '#28a745' });
-    $("#" + id + " input[id*='Gia']").css({ 'font-weight': 'bold', 'color': '#28a745' });
-    $("#" + id + " input[id*='Discount']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='SoLuong']").css({ 'font-weight': 'bold', 'color': '#28a745' });
-    $("#" + id + " input[id*='ChietKhau']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='KhuyenMai']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='NoLai']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-
-    $("#" + id + " input[id*='Total']").css({ 'font-weight': 'normal', 'color': '#007bff' });
-    $("#" + id + " input[id*='Num']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='Quanlity']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='Amount']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='Debt']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-    $("#" + id + " input[id*='TIP']").css({ 'font-weight': 'normal', 'color': '#28a745' });
-
-=======
     $("#" + id + " input[id*='Tien']").css({ 'font-weight': 'bold', 'color': '#17C252' });
     $("#" + id + " input[id*='ThucThu']").css({ 'font-weight': 'normal', 'color': 'rgb(128, 156, 31)' });
     $("#" + id + " input[id*='PhuThu']").css({ 'font-weight': 'normal', 'color': 'rgb(128, 156, 31)' });
@@ -792,34 +669,11 @@ function setClassAll(id) {
     $("#" + id + " input[id*='SoLuong']").css({ 'font-weight': 'bold', 'color': 'rgb(128, 156, 31)' });
     $("#" + id + " input[id*='ChietKhau']").css({ 'font-weight': 'normal', 'color': 'rgb(128, 156, 31)' });
     $("#" + id + " input[id*='KhuyenMai']").css({ 'font-weight': 'normal', 'color': 'rgb(128, 156, 31)' });
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
     setKeyupUpper("#" + id + " input[id*='Code']");
     setKeyupUpper("#" + id + " input[id*='Ma']");
     setKeyupUpper("#" + id + " input[id*='MaCT']");
 
-<<<<<<< HEAD
-    //nếu là search thì để tự do không cần 
-    if (!searchform) {
-        setKeyup("#" + id + " input[id*='Tien']");
-        setKeyup("#" + id + " input[id*='TongTien']");
-        setKeyup("#" + id + " input[id*='ThucThu']");
-        setKeyup("#" + id + " input[id*='PhuThu']");
-        setKeyup("#" + id + " input[id*='VAT']");
-        setKeyup("#" + id + " input[id*='ChietKhau']");
-        setKeyup("#" + id + " input[id*='KhuyenMai']");
-        setKeyup("#" + id + " input[id*='Price']");
-        setKeyup("#" + id + " input[id='Gia']");
-        setKeyup("#" + id + " input[id*='Discount']");
-        setKeyup("#" + id + " input[id*='SoLuong']");
-        setKeyup("#" + id + " input[id*='Total']");
-        setKeyup("#" + id + " input[id*='Num']");
-        setKeyup("#" + id + " input[id*='Quanlity']");
-        setKeyup("#" + id + " input[id*='Amount']");
-        setKeyup("#" + id + " input[id*='Debt']");
-        setKeyup("#" + id + " input[id*='TIP']");
-    }
-=======
 
     setKeyup("#" + id + " input[id*='Tien']");
     setKeyup("#" + id + " input[id*='ThucThu']");
@@ -831,7 +685,6 @@ function setClassAll(id) {
     setKeyup("#" + id + " input[id='Gia']");
     setKeyup("#" + id + " input[id*='Discount']");
     setKeyup("#" + id + " input[id*='SoLuong']");
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
     //---------------------------------------------------------------------
 
@@ -913,19 +766,6 @@ function setClassAll(id) {
     }
     //---------------------------------------------------------------------
 
-<<<<<<< HEAD
-    // $("#" + id + " input[name*='datepicker']").keydown(function (ev) {
-    //     var ev = ev || window.event;
-    //     var keyCode = (ev == null) ? -1 : (ev.keyCode || ev.which);
-    //     /* tab null backspace , minus*/
-    //     if (keyCode == 9 || keyCode == 16 || keyCode == 17) {
-    //         $(this).datepicker('hide');
-    //     }
-    // });
-    // $("#" + id + " input[name*='datepicker']").click(function (ev) {
-    //     $(this).datepicker('show');
-    // });
-=======
     $("#" + id + " input[name*='datepicker']").keydown(function (ev) {
         var ev = ev || window.event;
         var keyCode = (ev == null) ? -1 : (ev.keyCode || ev.which);
@@ -939,7 +779,6 @@ function setClassAll(id) {
     });
 
 
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
     $("#" + id + " input[name*='file']").css({
@@ -957,19 +796,11 @@ function setClassAll(id) {
         'font-weight': 'bold'
     });
 
-<<<<<<< HEAD
-    // $("#" + id + " input[name*='datepicker']").datepicker({
-    //     format: 'dd/mm/yyyy'
-    // }).on('changeDate', function (ev) {
-    //     $("input[name*='datepicker']").datepicker('hide');
-    // });
-=======
     $("#" + id + " input[name*='datepicker']").datepicker({
         format: 'dd/mm/yyyy'
     }).on('changeDate', function (ev) {
         $("input[name*='datepicker']").datepicker('hide');
     });
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
     $("#" + id + " input[name*='search']").css({
         'background': '#fff  url(../Usercontrol/images/icon_search.png) no-repeat right 4px center',
@@ -989,24 +820,11 @@ function setClassAll(id) {
     //        );
 }
 
-<<<<<<< HEAD
-
-function setKeyup(id) {
-    $(id).keyup(async function (ev) {
-        $(this).blur();
-        $(this).focus();
-        if ($(this).val().length) {
-            var token = (_gbLanguage === 'vn') ? ',' : '.';
-            var value = gcRev($(this).val(), token);
-            await $(this).val(gcFormatStr(value.toString()));
-            let delayres = await delay(1000);
-=======
 function setKeyup(id) {
     $(id).keyup(function (ev) {
         if ($(this).val().length) {
             var value = gcRev($(this).val(), ',');
             $(this).val(gcFormatStr(value.toString()));
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         }
     });
 }
@@ -1170,11 +988,7 @@ function parseDateJs(dateString) {
         if (dateString.length < 4)
             return new Date();
         if (typeof (dateString) !== "string") {
-<<<<<<< HEAD
-            console.log(dateString + " No datime type- it's typeof " + typeof (dateString));
-=======
             console.log(  dateString + " No datime type- it's typeof " + typeof (dateString));
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             return new Date();
         }
 
@@ -1226,11 +1040,7 @@ function parseDateJs(dateString) {
         }
     }
     catch (e) {
-<<<<<<< HEAD
-        console.log(e.toString() + dateString + "No datime type- it's " + typeof (dateString));
-=======
         console.log(e.toString() + dateString + "No datime type- it's " + typeof(dateString));
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
     }
     return 'format error!';
 };
@@ -1298,8 +1108,6 @@ function test(strId, ev, s, tt, cc) {
         Kernel.P(cur_gb_Obj, shd);
     }
 };
-<<<<<<< HEAD
-=======
 /************************************************************************
 * Xử lý chuyển table html thành file excel                              *
 *************************************************************************/
@@ -1339,4 +1147,3 @@ function round(value, i) {
     }
     return r;
 }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
