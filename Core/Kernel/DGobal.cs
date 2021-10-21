@@ -24,7 +24,6 @@ namespace zgcSpaceKernel.Core
         //new 23/06 for Client UI
 
 
-<<<<<<< HEAD
         //public static DGobal.DbName Lookup(string ModelDb)
         //{
         //    switch (ModelDb)
@@ -51,34 +50,6 @@ namespace zgcSpaceKernel.Core
         //            return DGobal.DbName.CanteenDb;
         //    }
         //}
-=======
-        public static DGobal.DbName Lookup(string ModelDb)
-        {
-            switch (ModelDb)
-            {
-                case "AccountingDb":
-                    return DGobal.DbName.AccountingDb;
-                case "BusLinesDb":
-                    return DGobal.DbName.BusLinesDb;
-                case "CustomerDb":
-                    return DGobal.DbName.CustomerDb;
-                case "ExpressLogDb":
-                    return DGobal.DbName.ExpressLogDb;
-                case "ExpressMainDb":
-                    return DGobal.DbName.ExpressMainDb;
-                case "ExpressReportDb":
-                    return DGobal.DbName.ExpressReportDb;
-                case "ExpressSMSDb":
-                    return DGobal.DbName.ExpressSMSDb;
-                case "HumanResourceDb":
-                    return DGobal.DbName.HumanResourceDb;
-                case "TaxiDb":
-                    return DGobal.DbName.TaxiDb;
-                default:
-                    return DGobal.DbName.CanteenDb;
-            }
-        }
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
         public static string SqlString(string key, bool bDecript = false)
         {
@@ -97,13 +68,10 @@ namespace zgcSpaceKernel.Core
 
         public static void Load_fda(string ModelDb)
         {
-<<<<<<< HEAD
             if (DGobal._dD_List_fd_a != null)
                 if (DGobal._dD_List_fd_a.ContainsKey(ModelDb))
-                DGobal._dD_List_fd_a.Remove(ModelDb);
+                    DGobal._dD_List_fd_a.Remove(ModelDb);
 
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             string sql1 = "SELECT   o.name, o.object_id as id, o.type  FROM sys.objects as o WHERE(o.type = 'U') AND(o.name <> 'dtproperties') order by o.create_date ";
             X x1 = new X((object)null);
             x1.Init(DGobal.SqlString(ModelDb, true), (Dictionary<string, C>)null, ModelDb);
@@ -283,11 +251,8 @@ namespace zgcSpaceKernel.Core
             };
             if (DGobal._dD_List_fd_a == null)
                 DGobal._dD_List_fd_a = new Dictionary<string, object[]>();
-<<<<<<< HEAD
             if (DGobal._dD_List_fd_a.ContainsKey(ModelDb))
                 DGobal._dD_List_fd_a.Remove(ModelDb);
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             DGobal._dD_List_fd_a.Add(ModelDb, objArray);
         }
 
@@ -392,11 +357,7 @@ namespace zgcSpaceKernel.Core
             HumanResourceDb = 5,
             AccountingDb = 6,
             ExpressMainDb = 7,
-<<<<<<< HEAD
             AppCoreDb = 8,
-=======
-            BusLinesDb = 8,
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             TaxiDb = 9,
             CanteenDb = 10, // 0x0000000A
         }

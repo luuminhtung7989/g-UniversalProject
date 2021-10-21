@@ -5,10 +5,7 @@
 // Assembly location: C:\LuuMinhTung\KernelServices\bin\Kernel.dll
 
 using System.Collections.Generic;
-<<<<<<< HEAD
 using System.Data.SqlClient;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 namespace zgcSpaceKernel.Core
 {
@@ -65,11 +62,7 @@ namespace zgcSpaceKernel.Core
             if (x1._ip.ContainsKey("sql"))
                 sql = (string)x1._ip["sql"];
             //-----------------------------------------------------------------
-<<<<<<< HEAD
             if (x1._ip.ContainsKey("type") && (x1._ip["type"].ToString() == "p"))
-=======
-            if (x1._ip.ContainsKey("type") && (x1._ip["type"].ToString()=="p"))
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             {
                 x1.GDP();
             }
@@ -100,23 +93,19 @@ namespace zgcSpaceKernel.Core
                 x1.R().A().L().S().EX().G();
             }
             else if (x1._ip.ContainsKey("sql"))
-<<<<<<< HEAD
             {
-                if(x1._ip.ContainsKey("noquery"))
+                if (x1._ip.ContainsKey("noquery"))
                 {
                     //fix 2021
                     SqlCommand cm = new SqlCommand(sql);
-                    Rs trs = zgcLibCore.zgcHelper.ExecProc(cm,x1._cs, false);
+                    Rs trs = zgcLibCore.zgcHelper.ExecProc(cm, x1._cs, false);
                     trs.Infor = (object)sql;
                     oo = (object)trs;
                     return;
                 }
-                else 
+                else
                     x1.GD(sql);
             }
-=======
-                        x1.GD(sql);
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             R r = x1.G();
             oo = (object)new Rs()
             {

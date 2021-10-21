@@ -19,17 +19,13 @@ using WebApplication.Services;
 using ServiceStack;
 using ServiceStack.Text;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
-<<<<<<< HEAD
 using System.IO;
 using zgcLibCore;
 using Newtonsoft.Json;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 namespace zgcServives
 
 {
-<<<<<<< HEAD
 
     public class LmtServices
     {
@@ -162,7 +158,7 @@ namespace zgcServives
                             {// thực thi điều kiện else, nếu ko có func thì ko làm gì
                                 //((Dictionary<string, object>)objectList[applyFunc])["bStop"] = false;
                             }
-                            
+
                         }
                         //else
                         //    ((Dictionary<string, object>)objectList[applyFunc])["bStop"] = false;
@@ -269,10 +265,6 @@ namespace zgcServives
             }
 
         }
-=======
-    public class LmtServices
-    {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
         public Rs Process(Dictionary<string, object> obj)
         {
             Rs rs1 = new Rs();
@@ -280,7 +272,6 @@ namespace zgcServives
             string ModelDb = dictionary == null || !dictionary.ContainsKey("ModelDb") ? "" : string.Concat(dictionary["ModelDb"]);
             string str1 = dictionary == null || !dictionary.ContainsKey("P") ? "" : string.Concat(dictionary["P"]);
             string str2 = dictionary == null || !dictionary.ContainsKey("_sys") ? "" : string.Concat(dictionary["_sys"]);
-<<<<<<< HEAD
             object[] tupples = dictionary == null || !dictionary.ContainsKey("tupple") ? (null) : (object[])dictionary["tupple"];
             Rs rs2 = new Rs();
 
@@ -314,20 +305,6 @@ namespace zgcServives
                 }
             }
 
-=======
-            Rs rs2;
-            if (dictionary == null || !dictionary.ContainsKey("_sys"))
-            {
-                string str3 = str1;
-                rs2 = str3 == "U" ? (Rs)Kernel.U((object)dictionary, ModelDb) : (str3 == "Rp" ? (Rs)Kernel.Rp((object)dictionary, ModelDb) : (Rs)Kernel.P((object)dictionary, ModelDb));
-            }
-            else if (str2 == "GetCurTimes")
-                rs2 = new Rs()
-                {
-                    Status = "OK",
-                    Records = (object)DateTime.Now.ToString()
-                };
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             else
                 rs2 = new Rs()
                 {
@@ -346,7 +323,6 @@ namespace zgcServives
                 if (!obj.GetType().Name.Contains("List"))
                 {
                     rs1 = this.Process(obj as Dictionary<string, object>);
-<<<<<<< HEAD
 
                     //---------------------------------------
                     //xử lý reload lại Model nếu thêm bảng dữ liệu
@@ -360,11 +336,6 @@ namespace zgcServives
                 else
                 {
                     bool bStopLoop = true;
-=======
-                }
-                else
-                {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     List<object> objectList = obj as List<object>;
                     if (objectList.Count > 0)
                     {
@@ -373,7 +344,6 @@ namespace zgcServives
                         int num = 0;
                         for (int index = 0; index < objectList.Count; ++index)
                         {
-<<<<<<< HEAD
                             Rs rs2 = new Rs();
                             Dictionary<string, object> dictionary1 = objectList[index] as Dictionary<string, object>;
                             var bStop = dictionary1.ContainsKey("bStop") ? (Dictionary<string, object>)dictionary1["bStop"] : null;
@@ -403,17 +373,6 @@ namespace zgcServives
                         }
                         //if (num == objectList.Count)
                         //    rs1.Status = "OK";
-=======
-                            Dictionary<string, object> dictionary1 = objectList[index] as Dictionary<string, object>;
-                            Rs rs2 = this.Process(dictionary1);
-                            rs1.ListRecords[index] = (object)rs2;
-                            
-                            if (rs2.Status == "OK")
-                                ++num;
-                        }
-                        if (num == objectList.Count)
-                            rs1.Status = "OK";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     }
                 }
             }
@@ -432,10 +391,7 @@ namespace zgcServives
                 }
                 else
                 {
-<<<<<<< HEAD
                     bool bStopLoop = true;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     List<object> objectList = obj as List<object>;
                     if (objectList.Count > 0)
                     {
@@ -444,7 +400,6 @@ namespace zgcServives
                         int num = 0;
                         for (int index = 0; index < objectList.Count; ++index)
                         {
-<<<<<<< HEAD
                             Rs rs2 = new Rs();
                             Dictionary<string, object> dictionary1 = objectList[index] as Dictionary<string, object>;
                             var bStop = dictionary1.ContainsKey("bStop") ? (Dictionary<string, object>)dictionary1["bStop"] : null;
@@ -468,17 +423,6 @@ namespace zgcServives
                         }
                         //if (num == objectList.Count)
                         //    rs1.Status = "OK";
-=======
-                            Dictionary<string, object> dictionary1 = objectList[index] as Dictionary<string, object>;
-                            Rs rs2 = this.Process(dictionary1["AjaxObj"] as Dictionary<string, object>);
-                            rs1.ListRecords[index] = (object)rs2;
-
-                            if (rs2.Status == "OK")
-                                ++num;
-                        }
-                        if (num == objectList.Count)
-                            rs1.Status = "OK";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     }
                 }
             }
@@ -493,7 +437,6 @@ namespace zgcServives
                 if (obj.ContainsKey("BuildClass_JS"))
                 {
 
-<<<<<<< HEAD
                     string ModelDb = obj.ContainsKey("ModelDb") ? (string)obj["ModelDb"] :
                             (string)(obj["AjaxObj"] as Dictionary<string, object>)["ModelDb"];
                     string PathDirectory = PhysicalApplicationPath + "/ClassBuilder/";
@@ -503,17 +446,6 @@ namespace zgcServives
                     path = PhysicalApplicationPath + "/ClassBuilder/" + ModelDb + "_part.c";
                     pathJs = PhysicalApplicationPath + "" +
                         "/ClassBuilder/" + ModelDb + "_part.js";
-=======
-                    Dictionary<string, object> objTmp = obj["AjaxObj"] as Dictionary<string, object>;
-                    string ModelDb = (string)objTmp["ModelDb"];
-                    string PathDirectory = PhysicalApplicationPath + "\\ClassBuilder\\";
-                    string path = PhysicalApplicationPath + "\\ClassBuilder\\" + ModelDb + ".c";
-                    string pathJs = PhysicalApplicationPath + "\\ClassBuilder\\" + ModelDb + ".js";
-                    Kernel.BuildClassAndJs(PathDirectory, path, pathJs, ModelDb);
-                    path = PhysicalApplicationPath + "\\ClassBuilder\\" + ModelDb + "_part.c";
-                    pathJs = PhysicalApplicationPath + "" +
-                        "\\ClassBuilder\\" + ModelDb + "_part.js";
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     Kernel.BuildClassAndJs(PathDirectory, path, pathJs, ModelDb, "part");
                     rs.Status = "OK";
                     rs.Records = "Build code is successfull";
@@ -530,7 +462,6 @@ namespace zgcServives
                 };
             }
         }
-<<<<<<< HEAD
 
         //Save 1 đối tượng js về server
         //fixed 2021
@@ -726,8 +657,3 @@ namespace zgcServives
     }
 
 }
-=======
-    }
-       
- } 
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea

@@ -15,10 +15,7 @@ using zgcSpaceKernel.Core;
 using System.IO;
 using System.Web;
 using Microsoft.AspNetCore.Hosting;
-<<<<<<< HEAD
 using Newtonsoft.Json;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 
 
 
@@ -59,11 +56,11 @@ namespace WebCore.Core
 
             //else xử lý bình thường
             return Process(request);
-            
+
         }
 
         // POST api/<callback>
-  
+
         [HttpPost]
         public object Post()
         {
@@ -73,28 +70,22 @@ namespace WebCore.Core
                 this.Request.Body.ReadAsync(buffer, 0, (int)this.Request.ContentLength);
                 String request = new String(buffer.FromUtf8Bytes());
 
-<<<<<<< HEAD
                 String deepData = "";
                 //if contain header => process file text quá khổ
-                if(request.Contains("[{header}]"))
+                if (request.Contains("[{header}]"))
                 {
                     var index = request.IndexOf("[{header}]");
-                    deepData = request.Substring(index+10, request.Length - (index+10));// tru 10 ki tu [{header}]
+                    deepData = request.Substring(index + 10, request.Length - (index + 10));// tru 10 ki tu [{header}]
                     request = request.Substring(0, index);
                 }
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
-           
+
                 string PhysicalApplicationPath = _host.WebRootPath;
                 // xử lý cho Cross data
                 List<object> objectList = CheckCrossData(request);
-                if (objectList.Count>0)
+                if (objectList.Count > 0)
                 {
                     zgcServives.LmtServices s = new zgcServives.LmtServices();
-<<<<<<< HEAD
                     s.PhysicalApplicationPath = PhysicalApplicationPath;
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                     return s.Post1(objectList);// Kernel.
                 }
                 //end xử lý cross data
@@ -106,7 +97,6 @@ namespace WebCore.Core
                     zgcServives.LmtServices s = new zgcServives.LmtServices();
                     return s.BuildCore(obj, PhysicalApplicationPath);// Kernel. 
                 }
-<<<<<<< HEAD
                 else if (obj.ContainsKey("SaveObjectJS"))
                 {
                     zgcServives.LmtServices s = new zgcServives.LmtServices();
@@ -117,8 +107,6 @@ namespace WebCore.Core
                     zgcServives.LmtServices s = new zgcServives.LmtServices();
                     return s.BuildCreateNewObjectJS(obj, deepData, PhysicalApplicationPath);// Kernel. 
                 }
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
                 return Process(request);
             }
             return (object)new Rs()
@@ -130,7 +118,7 @@ namespace WebCore.Core
 
         // PUT api/<callback>/5
         [HttpPut("{id}")]
-        public void Put( [FromBody] string value)
+        public void Put([FromBody] string value)
         {
         }
 
@@ -144,12 +132,8 @@ namespace WebCore.Core
         {
             //bool bReturn = false;
             // xử lý cho Cross data
-<<<<<<< HEAD
             var jsonObj = JSON.parse((request));// qua 16k loi json
             //Dictionary<string, object> jsonObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(request);
-=======
-            var jsonObj = JSON.parse((request));
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             Dictionary<string, object> obj = jsonObj as Dictionary<string, object>;
             if (obj.ContainsKey("CrossData"))
             {
@@ -216,6 +200,6 @@ namespace WebCore.Core
             };
         }
 
-        
+
     }
 }

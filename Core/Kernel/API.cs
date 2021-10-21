@@ -30,10 +30,7 @@ namespace zgcSpaceKernel.Core
                 Records = (object)DateTime.Now.ToString() + " - param Id:" + objDict["Id"].ToString() + " - param Name:" + objDict["Name"].ToString()
             };
         }
-<<<<<<< HEAD
-       
-=======
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+
         public static void ProcessStockList(object obj, out object oo, string ModelDb)
         {
             Dictionary<string, object> objDict = obj as Dictionary<string, object>;

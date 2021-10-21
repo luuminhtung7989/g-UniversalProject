@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-=======
-﻿using Microsoft.AspNetCore.Mvc;
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -23,16 +19,15 @@ namespace WebCoreHttp.Controllers
             _logger = logger;
         }
 
-<<<<<<< HEAD
         [HttpGet]
         public IActionResult Index()
         {
             var username = this.Request.Query["username"];
             var password = this.Request.Query["password"];
-            
-            if(HttpContext.Session.GetString("LoginPass") == "true")
+
+            if (HttpContext.Session.GetString("LoginPass") == "true")
             {
-                
+
             }
             else
             {
@@ -44,10 +39,6 @@ namespace WebCoreHttp.Controllers
         [HttpPost]
         public IActionResult Index1()
         {
-=======
-        public IActionResult Index()
-        {
->>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
             return View();
         }
 
