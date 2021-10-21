@@ -1,0 +1,43 @@
+@import url(resets-12.css);
+body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color:#333; background:#fcfafd url(../images/bg.png); line-height:18px;}
+a { color:#0066cc; text-decoration:none;}
+a:hover { color:#058dd7; text-decoration:underline;}
+.clear { clear:both;}
+#header { background:url(../images/bg_black.png); height: 70px; width: 100%; border-bottom: 1px solid #6cb13d; }
+.header, .copyright{ width: 980px; margin: 0 auto; position:relative; z-index:0;}
+#logo { position:absolute; left: 0; top:12px;}
+.user { position:absolute; right:0; top: 30px; color:#fff; background:url(../images/user.png) no-repeat left center; padding-left: 25px; }
+.user a { color:#fff; font-weight: bold;}
+.user a.logout { margin-left: 15px; display:inline-block; background:#6cb13d; padding: 5px 16px;}
+.user a.logout:hover{ background:#313131; box-shadow:inset 2px 2px 1px #252525, 1px 1px 0 #454444; -webkit-box-shadow:inset 2px 2px 1px #252525, 1px 1px 0 #454444; -moz-box-shadow:inset 2px 2px 1px #252525, 1px 1px 0 #454444; -o-box-shadow:inset 2px 2px 1px #252525, 1px 1px 0 #454444; text-decoration:none;}
+
+#container {border-top: 2px solid #353535;}
+.container { width: 920px; margin:0 auto; padding: 30px 30px; position: relative; min-height: 470px;}
+.login { position:absolute; top: 30px; right: 0; padding: 20px; background: #6cb13d url(../images/logo_login.png) no-repeat right top;}
+.login h3 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; font-weight:normal;}
+.login .input { margin-bottom: 10px;}
+.login .input label { display:block;}
+.login .input label.error { color:#fff;}
+.login input { border:none; outline:none; margin: 0;}
+.login .input input { width: 100%; background: #b5e288; padding: 5px;}
+.login .button { padding: 6px 0;}
+.login .button input, .login .button input:active, .login .button input:focus{cursor:pointer; background:#1763ab; color: #CCC; padding: 7px 16px; text-transform: uppercase; border-radius: 5px;}
+.login .button input:hover{ background:#ccc; color: #1763ab;}
+.login .check input{ margin-right: 5px;}
+.login a { color:#333;}
+
+.content h2 { font-family:"Times New Roman", Times, serif; text-transform: uppercase; font-weight: normal; font-size: 20px; display: block; border-left: 4px solid #6cb13d; line-height: 18px;  padding-left:5px; height: 16px;}
+.content .item { background:url(../images/imac.png) no-repeat 15px; min-height:57px; padding-left: 95px; margin: 20px 0 0 37px;}
+.content .item.mailisa {background:url(../images/mailisa.png) no-repeat left top;}
+.content .item h3, .about_us h3 { font-size: 14px; text-transform: uppercase;font-weight:normal; padding-bottom: 5px;}
+.content .item a { color:#0066cc;}
+
+.content .menu { list-style:none; overflow: hidden; padding: 20px 0 20px 30px;}
+.content .menu li { float:left;}
+.content .menu li a  {  color:#0066cc; padding: 3px 20px;}
+
+.about_us  { background:url(../images/iolo.png) no-repeat 3px 3px; min-height: 135px; padding-left: 270px;padding-right: 260px; }
+
+
+#footer { width: 100%; border-top: 1px solid #ccc; height: 35px;}
+#footer .copyright p { line-height: 40px;}

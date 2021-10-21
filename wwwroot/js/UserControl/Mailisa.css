@@ -1,0 +1,528 @@
+
+.albumMailisa
+{
+     cursor:pointer;
+}
+.albumMailisa:hover
+{
+    cursor:pointer;
+    background-color:#fea;
+}
+
+.menuNewMailisa
+{
+    cursor:pointer;
+}
+.menuNewMailisa:hover
+{
+    background-color:Lime;
+}
+.pageMailsa
+{
+    padding:5px;
+    background-color:Lime;
+    
+}
+.pageMailsa:hover
+{
+    background-color:Blue;
+    color: Red;
+    border: 1px solid #def;
+}
+.pageMailsaNew
+{
+    padding:5px;
+    background-color:Lime;
+    
+}
+.pageMailsaNew:hover
+{
+    background-color:Blue;
+    color: Red;
+    border: 1px solid #def;
+}
+.gcTopWraper {
+    background: none repeat scroll 0 0 #21242C;
+}
+.gcFooterWraper
+{
+	background: none repeat scroll 0 0 #F0F0F0;
+}
+.gcBottomWraper
+{
+	background: none repeat scroll 0 0 #21242C;
+}
+.gcHeaderWraper
+{
+	
+}
+/* style one for 1 website */
+.boxeOneStyle {
+        background: none repeat scroll 0 0 white;
+        border: 1px solid #a96f83;
+        margin: 0;
+    }
+.gcWraperAllStyleOne
+{
+	   /*background: url('../img/background33.png') repeat-y scroll 0 0 #FFFFFF;*/
+	   background-color:#aaa;
+	   border: 1px solid #DBE2E8;
+	   font-size: 12px;
+	   font-family: Tahoma Arial "MS Sans Serif";
+}
+.gcWraperAllStyleOneInner
+{
+    margin: 0 auto;
+    height:auto;
+}
+.gcInnerBlockOneStyle
+{
+    clear: both;
+    margin: 0 auto;
+    width: 1024px;
+}
+.gcBottomWraperOneStyle
+{
+	background: none repeat scroll 0 0 #21242C;
+}
+.gcHeaderWraperOneStyle
+{
+    background: none repeat scroll 0 0 #aaa;
+    
+}
+.UserCounter
+{
+	font-size:18pt;
+	font-weight:bold;
+}
+.gcWraperAll
+{
+	    background: url('../img/bgr.png') repeat-x scroll 0 0 #FFFFFF;
+}
+
+.gcWraper
+{
+}
+.gcInnerBlockNew
+{
+    margin: 0 auto;
+}
+.gcInnerBlock
+{
+    clear: both;
+    margin: 0 auto;
+    width: 1024px;
+    
+}
+.gcTopWraper .gcInnerNavWraper 
+{
+    clear: both;
+    height: 95px;
+    margin: 0 auto;
+    width: 1024px;
+}
+.gcContentNavigate
+{
+	float:left;
+}
+.gcContentParent
+{
+	float:left;
+}
+
+.gcInnerNavWraper3 
+{
+    clear: both;
+    height: 310px;
+    margin: 0 auto;
+    width: 1024px;
+}
+.gcInnerNavWraper2 
+{
+    clear: both;
+    height: 85px;
+    margin: 0 auto;
+    width: 1024px;
+}
+
+.gcInnerNavWraperTextDb {
+    color: #cccccc;
+    display: block;
+    font-size: 13px;
+    
+}
+.gcInnerNavWraperTextDbBtn
+{
+	color: #FFFFFF;
+    display: block;
+    font-size: 13px;
+}
+.gcInnerNavWraperTextDbInner
+{
+	display: block;
+}
+.gcInnerNavWraperTextDb:hover {
+    border: solid 1px #666666;
+    padding:5px;
+    cursor:pointer;
+}
+.gcInnerNavWraperTextDbSelect {
+    border: solid 2px #9A2F4D;
+    padding:0px;
+    cursor:pointer;
+}
+.gcInnerNavWraperText {
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+}
+.gcInnerNavWraper {
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+}
+.gcTopWraper01 {
+    background: none repeat scroll 0 0 #393C45;
+    border-top: 2px solid #9A2F4D;
+    margin-top: -2px;
+}
+
+
+.gcTopWraper00 {
+   background: none repeat scroll 0 0 #21242C;
+   padding-top:5px;
+}
+
+.gcLogo {
+    color: #999999;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    text-indent: -4444px;
+}
+.BlockTextLeftNew{
+    width:690px;
+    background: scroll right top #FFFFFF;
+    border: 1px solid #DBE2E8;
+    margin-bottom: 10px;
+    padding: 10px 10px 20px;
+    font: 12px arial,sans-serif;
+
+	text-decoration:none;
+	display:inline-block;
+    clear: both;
+    text-align:justify;
+}
+
+.BlockTextLeft{
+    width:600px;
+    background: scroll right top #FFFFFF;
+    border: 1px solid #DBE2E8;
+    margin-bottom: 10px;
+    padding: 10px 10px 20px;
+    font: 12px arial,sans-serif;
+
+	text-decoration:none;
+	display:inline-block;
+    clear: both;
+    text-align:justify;
+}
+.gcContentWraper
+{
+}
+.BlockTextRightOrig
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D9D9D9;
+    clear: both;
+    font: 12px arial,sans-serif;
+    margin: 17px 0 0;
+    padding: 15px;
+}
+
+.BlockTextLeftOrigNew
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #DBE2E8;
+    font: 12px arial,sans-serif;
+    margin: 0px 0 0;
+    padding: 15px;
+}
+
+.BlockTextLeftOrigNewDetail
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #DBE2E8;
+    font: 12px arial,sans-serif;
+    margin: 0px 0 0;
+    padding: 0px;
+}
+
+.BlockTextLeftOrig
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #DBE2E8;
+    font: 12px arial,sans-serif;
+    margin: 10px 0 0;
+    padding: 15px;
+}
+
+.BlockTextLeftOrigWhite
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #DBE2E8;
+    font: 12px arial,sans-serif;
+    margin: 10px 0 0;
+    padding: 15px;
+}
+
+
+.BlockTextLeftSpecialDetail
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #DBE2E8;
+    font: 14px arial,sans-serif;
+    line-height:1.8;
+    padding: 10px;
+}
+
+.BlockTextLeftSpecial
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #DBE2E8;
+    font: 12px arial,sans-serif;
+    line-height:1.8;
+    padding: 10px;
+}
+
+.BlockTextLeftSpecial2
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #DBE2E8;
+    font: 14px arial,sans-serif;
+    line-height:1.8;
+    padding: 10px;
+}
+
+.BlockTextLeftInner
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    letter-spacing: 0.2;
+    font: 12px arial,sans-serif;
+    line-height:1.6;
+}
+
+.BlockTextRightOrigHead2
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #D9D9D9;
+    clear: both;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.6;
+    padding: 10px;
+    font-family: Arial;
+}
+
+.BlockTextRightOrigHead
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    clear: both;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.6;
+    padding: 10px;
+    font-family: Arial;
+}
+
+.BlockTextRightOrigHead:hover
+{
+	
+	background: none repeat scroll 0 0 #eeeeee;
+   cursor: pointer;
+}
+
+.BlockTextRightOrigHeadNew
+{
+	text-align:justify;
+	background: none repeat scroll 0 0 #eeeeee;
+    border-top: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    clear: both;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.6;
+    padding: 10px;
+    font-family: Arial;
+}
+
+.BlockTextRightOrigHeadNew:hover
+{
+	
+	background: none repeat scroll 0 0 #ffffff;
+   cursor: pointer;
+}
+
+
+.BlockTextRight {
+    width:300px;
+    background: none repeat scroll 0 0 #EDEDED;
+    border-color: #EDEDED;
+    border-right: 17px solid #EDEDED;
+    border-style: solid;
+    border-width: 1px 17px 17px;
+}
+.BlockText BlockTextRight BlockTextLeft{
+    background: scroll right top #FFFFFF;
+    border: 1px solid #DBE2E8;
+    margin-bottom: 10px;
+    padding: 10px 10px 20px;
+}
+.gcNameTitleMailisa
+{
+	padding:4px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 12px; 
+	/*color: #090;*/
+	color:#09f;
+	background:none repeat scroll 0 0 #498A2A;
+	border:1px solid #64C341;
+	color:#fefefe;
+}
+.gcNameTitleMailisaMenuStore
+{
+	padding:6px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 12px; 
+	/*color: #090;*/
+	color:#09f;
+	background:none repeat scroll 0 0 #498A2A;
+	border:1px solid #64C341;
+	border-bottom-style:none;
+	color:#fefefe;
+}
+.gcNameTitleMailisaMenu
+{
+	padding:6px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 12px; 
+	/*color: #090;*/
+	color:#09f;
+	/*background:none repeat scroll 0 0 #8A492A;*/
+	background:none repeat scroll 0 0 #ff0088;
+	border:1px solid #aaaaaa;
+	border-bottom-style:none;
+	color:#ffffff;
+	font-weight:bold;
+}
+
+.gcNameTitleMailisaHead
+{
+	padding:10px;
+	padding-top:5px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 16px; 
+	/*color: #090;*/
+	color:#09f;
+	background:none repeat scroll 0 0 #ff0088;
+	border:1px solid #aaaaaa;
+	border-bottom-style:none;
+	color:Yellow;
+	font-weight:bold;
+}
+
+.gcNameTitleMailisaMenu:hover
+{
+background:none repeat scroll 0 0 #41002A;
+	color: #aff019;
+	cursor:pointer;
+}
+.gcNameTitleMailisaSubMenu:hover
+{
+background:none repeat scroll 0 0 #41002A;
+	color: #ffffff;
+	cursor:pointer;
+}
+.gcNameTitleMailisaSubMenu
+{
+	
+	padding:6px;
+	padding-left:30px;
+	padding-right:10px;
+	font-size: 12px; 
+	/*color: #090;*/
+	color:#09f;
+	background:none repeat scroll 0 0 #ff0088;
+	border:1px solid #aaaaaa;
+	border-bottom-style:none;
+	color:Yellow;
+	font-weight:bold;
+}
+.TitleServiceBold
+{
+	color: #ee3333;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.gcNameTitleMailisa:hover
+{
+background:none repeat scroll 0 0 #41762A;
+	color: #aff019;
+	cursor:pointer;
+}
+.FooterItem
+{
+	height:80px;
+	width:190px;
+	padding:3px;
+}
+.BlockTextSubMenu
+{
+	text-align:justify;
+	/*background: none repeat scroll 0 0 #eeeeee;*/
+	color:#eeeeee;
+    font: 12px arial,sans-serif;
+    margin: 5px 0 0;
+    font-weight:bold;
+    padding: 5px;
+    width: 220px;
+}
+.BlockTextSubMenu:hover
+{
+	background: none repeat scroll 0 0 #111111;
+	cursor:pointer;
+
+}
+.urlMailisa
+{
+	color: #aa55cc;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}

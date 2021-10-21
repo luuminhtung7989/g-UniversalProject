@@ -1,0 +1,62 @@
+﻿var listObject = [{
+    AjaxObj:
+    {
+        a: "API",
+        name: "allAPI",
+        subAPI: "CreateSelfObject",
+        produce: [{lang:"NET"},{lang:"Flutter"},{lang:"Golang"},{lang:"ReactNative"}]
+        name: {self: "StockProduct", en:"Stock Product", vn: "Sản phẩm (KHO)"}
+        column: [{self:"Id", en:"Identify", vn: "Mã ID", type:{self:int,len:32},required:true, identify:true, auto:true},
+                {self:"Code", en:"Product Code", vn: "Mã sản phẩm", type:{self:string,len:256}, allownull:false},
+                {self:"Name", en:"Product Name", vn: "Tên sản phẩm", type:{self:string,len:1024}, allownull:false},
+                {self:"Price", en:"Product Price", vn: "Giá sản phẩm", type:{self:double}, allownull:false},
+                {self:"FactoryID", en:"Product Factory", vn: "Nhà sản xuất", type:{self:int}, allownull:true},
+                {self:"NationalID", en:"Product National", vn: "Quốc gia sản xuất", type:{self:int}, allownull:true},
+                {self:"Description", en:"Description", vn: "Mô tả", type:{self:string,len:2048}, allownull:true},
+                {self:"isValid", en:"isValid", vn: "Vòng đời", type:{self:int,len:32}, allownull:false, defaultvalue:0},
+                {self:"isCreatedDate", en:"isCreateDated", vn: "Ngày tạo", type:{self:datetime}, allownull:false, defaultvalue:"currenttime"},
+                {self:"isUpdatedDate", en:"isUpdateDated", vn: "Ngày cập nhật cuối", type:{self:datetime}, allownull:false, defaultvalue:"currenttime"},
+                {self:"isPartFull", en:"isPartFull", vn: "Thông tin", type:{self:datetime}, allownull:false, defaultvalue:"currenttime"},
+                ]
+        refObject: [{colum:"FactoryID", refObject:"Factory", refColum:"Id"},{colum:"NationalID", refObject:"National", refColum:"Id"}],
+        connectionObject: [{connectOBj:"Stock"},{connectOBj:"Company"}],
+        UI:[{form:true,grid:true}, {form:true,list:true}, {form:false,list:true}, {form:false,grid:true}, {form:true}]
+        UILanguage: {javascript:true, android: true, netform:true, IOS:true, flutter:true, reactnative:true, telerik:true, xmarin:true, ruby:true}
+        APIFile: "StockProduct.js"
+        GroupApp:{AdminGroup,SellerGroup,EmployeeGroup,},
+        ModelDb: "CanteenDb",
+        jSonFormat: "1"
+    },
+    APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+},
+{
+    AjaxObj:
+    {
+        a: "API",
+        name: "allAPI",
+        subAPI: "CreateSelfObject",
+        produce: [{lang:"NET"},{lang:"Flutter"},{lang:"Golang"},{lang:"ReactNative"}]
+        name: {self: "Services", en:"Services", vn: "Dịch vụ (Services)"}
+        column: [{self:"Id", en:"Identify", vn: "Mã ID", type:{self:int,len:32},required:true, identify:true, auto:true},
+                {self:"Code", en:"Product Code", vn: "Mã dịch vụ", type:{self:string,len:256}, allownull:false},
+                {self:"Name", en:"Product Name", vn: "Tên dịch vụ", type:{self:string,len:1024}, allownull:false},
+                {self:"Price", en:"Product Price", vn: "Giá dịch vụ", type:{self:double}, allownull:false},
+                {self:"DepartmentID", en:"Department ID", vn: "Bộ phận làm dịch vụ", type:{self:int}, allownull:true},
+                {self:"StockID", en:"Stock ID", vn: "Kho phục vụ", type:{self:int}, allownull:true},
+                {self:"Description", en:"Description", vn: "Mô tả", type:{self:string,len:2048}, allownull:true},
+                {self:"isValid", en:"isValid", vn: "Vòng đời", type:{self:int,len:32}, allownull:false, defaultvalue:0},
+                {self:"isCreatedDate", en:"isCreateDated", vn: "Ngày tạo", type:{self:datetime}, allownull:false, defaultvalue:"currenttime"},
+                {self:"isUpdatedDate", en:"isUpdateDated", vn: "Ngày cập nhật cuối", type:{self:datetime}, allownull:false, defaultvalue:"currenttime"},
+                {self:"isPartFull", en:"isPartFull", vn: "Thông tin", type:{self:datetime}, allownull:false, defaultvalue:"currenttime"},
+                ]
+        refObject: [{colum:"FactoryID", refObject:"Factory", refColum:"Id"},{colum:"NationalID", refObject:"National", refColum:"Id"}],
+        connectionObject: [{connectOBj:"Stock"},{connectOBj:"Company"}],
+        UI:[{form:true,grid:true}, {form:true,list:true}, {form:false,list:true}, {form:false,grid:true}, {form:true}]
+        UILanguage: {javascript:true, android: true, netform:true, IOS:true, flutter:true, reactnative:true, telerik:true, xmarin:true, ruby:true}
+        APIFile: "Services.js"
+        GroupApp:{AdminGroup,SellerGroup,EmployeeGroup,},
+        ModelDb: "CanteenDb",
+        jSonFormat: "1"
+    },
+    APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+}]

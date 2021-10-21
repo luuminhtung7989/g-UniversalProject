@@ -1,0 +1,760 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<<<<<<< HEAD
+<link rel="stylesheet" href="~/mysitecss/css/style.css">
+<!-- Demo CSS -->
+<link rel="stylesheet" href="~/mysitecss/css/demo.css">
+
+<div class="row">
+    <div class="col-md-12">
+
+        <form class="form-inline" runat="server">
+            <div class="">
+
+                <div class="content" id="gc_MainForm2" style="max-width:1110px !important"></div>
+
+
+                <div id="divGrid2"></div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+=======
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+
+<div class="row">
+    <div class="col-md-12">
+
+        <form class="form-inline">
+            <div class="">
+<<<<<<< HEAD
+                
+                <div class="input-group mb-3">
+  
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at" style="font-size: 1.1rem; color: cornflowerblue;"></i></span>
+  </div>
+</div>
+
+                <div class="input-group-prepend" >
+                    <span class="input-group-text" id="basic-addon1"> * </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                
+=======
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+                <div>
+                    <label for="txtURL">URL: </label>
+                    <input style="max-width: 1024px; width:900px !important" class="form-control " id="URL" name="URL" type="text" placeholder="Type your name" value='/callback/'>
+                </div>
+                <label for="txtName">Param: </label>
+                <input style="max-width: 1024px; width:900px !important" class="form-control " id="Param" name="Param" type="text" placeholder="Type your name" value='{"APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",   "AjaxObj":{"a": "Run", "P": "CreateSetupNext","c": { "Price": 29500, "Status": "DONE" },"Transfer": true,"Override": false,"jSonFormat": "1"}}'>
+
+                <label for="txtName">------------UpdateCall: </label>
+                <button type="button" id="UpdateCall">Call API - Update/Insert/Delete Call</button>
+                <input style="max-width: 1024px; width:900px !important" class="form-control " id="UpdateCallParam" name="UpdateCallParam" type="text" placeholder="Type your name" value='{ "AjaxObj":{ "a": "InsertgcGobal_QA_Table", "d": {"Code":"NEW", "Name":"_TUNG", "FloorId":3}, "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k"}'>
+
+
+                <label for="txtName">------------------------------------------GetDataAll: </label>
+                <button type="button" id="GetDataAll">Call API - Get Data All</button>
+                <input style="max-width: 1024px; width:900px !important" class="form-control " id="GetDataAllParam" name="GetDataAllParam" type="text" placeholder="Type your name" value='{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":{"Id":"$x>9 and $x<170 "} ,"_f":" TOP 10 Id,Code,Name","_gb":" order by Id desc  ", "type": "p", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k"}'>
+
+
+
+                <label for="txtName">---------------------------------------SystemFunction: </label>
+                <button type="button" id="SystemFunction">Call API - Run a System Function </button>
+<<<<<<< HEAD
+                <input style="max-width: 1024px; width:900px !important" class="form-control " id="SystemFunctionvalue" name="SystemFunction" type="text" placeholder="Type your name" value='{"APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",   "AjaxObj":{"a": "Run", "P": "CreateSetupNext","c": { "Price": 29500, "Status": "DONE" },"Transfer": true,"Override": false,"ModelDb": "CanteenDb", "jSonFormat": "1"}}'>
+=======
+                <input style="max-width: 1024px; width:900px !important" class="form-control " id="SystemFunction" name="SystemFunction" type="text" placeholder="Type your name" value='{"APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",   "AjaxObj":{"a": "Run", "P": "CreateSetupNext","c": { "Price": 29500, "Status": "DONE" },"Transfer": true,"Override": false,"ModelDb": "CanteenDb", "jSonFormat": "1"}}'>
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+
+
+
+                <label for="txtName">-------------------------------------------MixFunction: </label>
+                <button type="button" id="MixFunction">Call API - Run a Mix Function </button>
+                <input style="max-width: 1024px; width:900px !important" class="form-control " id="MixFunctionParam" name="MixFunctionParam" type="text" placeholder="Type your name" value='{ "AjaxObj":{ "a": "fGetbill", "c":{"id":"$x>5 "} ,"_f":" *","_gb":" order by Id desc  ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k"}'>
+
+
+                <iframe id="result" width="900px" height="100px"></iframe>
+                <div>
+                    <button type="button" id="CallAPI">Call API - Random - Per/1 page</button>
+                    <button type="button" id="CallAPIFIX">Call API - multi Proc</button>
+
+                </div>
+                <div>
+                    <span id="result2"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<<<<<<< HEAD
+
+=======
+           
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+<footer>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p>&copy; 2021 - My ASP.NET MVC Application</p>
+        </div>
+    </div>
+</footer>
+
+<script src="/lib/jquery/dist/jquery.js"></script>
+<<<<<<< HEAD
+<script src="~/js/ClassCore/KernelCell.js?f=199s99"></script>
+
+
+<script>
+
+    $("#AdminGroup").click(function () {
+
+        __gbApp.add("gcGobal_STOCK_gcProduct_Input_Detail", _gbDictionary["gcGobal_STOCK_gcProduct_Input_Detail"]);
+        console.log(_gbLanguageI18["gcGobal_STOCK_gcProduct_Input_Detail"].UIname["vn"] + _gbLanguageI18["gcGobal_STOCK_gcProduct_Input_Detail"].UIname["en"]);
+        $('#TitlePage').html("/" + _gbLanguageI18["gcGobal_STOCK_gcProduct_Input_Detail"].UIname["vn"]);
+
+
+        _gbApp.run($("#divGrid2"), $("#gc_MainForm2")).then(function () {
+            //_gbCaches.saveToLocal();
+        }
+        );
+
+        //__Space.saveToLocal();
+        $('.selectpicker').select2();
+    });
+
+=======
+
+
+<script>
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+    $("#txtName").keyup(function () {
+        $.getJSON("/api/hello/" + this.value)
+            .then(function (r) {
+                $("#result").html(r.Result);
+            });
+    });
+<<<<<<< HEAD
+    
+ 
+=======
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    function getKeyByValue(obj, val) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key) && obj[key] == val) {
+                return key;
+            }
+        }
+    }
+    function parseJsonDate(jsonDateString) {
+        return new Date(parseInt(jsonDateString.replace('/Date(', '')));
+    }
+
+    function getValueByKey(obj, key) {
+        if (obj.hasOwnProperty(keyin)) {
+            return obj[keyin];
+        }
+    }
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+    function dumJson(obj, br) {
+        var result = "<div>";
+        $.each(obj, function (key, value) {
+            if ((value) == null) {
+
+                result += "<div style='float:left'>" + key + ":</div >" + "<div style='color:Tomato;float:left;margin-left:20px'>" + "null </div>" + (br ? "</br>" : "");
+            }
+            else {
+                if ((value + "").indexOf("/Date(") >= 0)
+                    result += "<div style='float:left'>" + key + ":</div > <div style='color:DodgerBlue;float:left;margin-left:20px'>" + parseJsonDate(value).toLocaleString() + "</div>" + (br ? "</br>" : "");
+                else
+                    result += "<div style='float:left'>" + key + ":</div > <div style='color:black;float:left;margin-left:20px'>" + value + "</div>" + (br ? "</br>" : "");
+            }
+        });
+        return result + "</div>";
+    }
+    function ProcessData(data) {
+        var str = "";
+
+        // dùng để hiển thị nhiều kết quả trong tập gọi multi request
+        if ((data.listRecords) != null) {
+            for (u = 0; u < data.listRecords.length; u++) {
+                var obj = data.listRecords[u];
+                str += "<div style='color:red'>Object</div> " + u + "======================<br/>";
+
+                if ((obj.records) != null)
+<<<<<<< HEAD
+                    if (typeof (obj.records) == "object")
+                        for (m = 0; m < obj.records.length; m++) {
+                            str += dumJson(obj.records[m], true);
+                            str += "<div style='color:green'>row at " + (m + 1) + "</div><br/>";
+                        }
+                    else
+                        str += "<div style='color:green'>Result obj.records is: " + (obj.records) + "--------------------------------------</div><br/>";
+=======
+                if (typeof (obj.records) == "object")
+                    for (m = 0; m < obj.records.length; m++) {
+                        str += dumJson(obj.records[m], true);
+                        str += "<div style='color:green'>row at " + (m + 1) + "</div><br/>";
+                    }
+                else
+                    str += "<div style='color:green'>Result obj.records is: " + (obj.records) + "--------------------------------------</div><br/>";
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+
+                str += "<div style='color:red'>[End Object " + u + "]</div> <br/>";
+            }
+        }
+        // dùng để hiển thị 1 kết quả cho việc gọi 1 request
+        else {
+            str = ""; var b = true;
+            str += "<div style='color:red'>Object I</div> ======================<br/>";
+            if ((data.records) != null)
+<<<<<<< HEAD
+                if (typeof (data.records) == "object")
+                    for (u = 0; u < data.records.length; u++) {
+                        str += dumJson(data.records[u], true);
+                        b = false;
+                        str += "<div style='color:green'>row at " + (u + 1) + "--------------------------------------</div><br/>";
+                    }
+                else
+                    str += "<div style='color:green'>Result obj.records is: " + (data.records) + "--------------------------------------</div><br/>";
+=======
+            if (typeof (data.records) == "object")
+                for (u = 0; u < data.records.length; u++) {
+                    str += dumJson(data.records[u], true);
+                    b = false;
+                    str += "<div style='color:green'>row at " + (u + 1) + "--------------------------------------</div><br/>";
+                }
+            else
+                str += "<div style='color:green'>Result obj.records is: " + (data.records) + "--------------------------------------</div><br/>";
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+
+            if (b)
+                str = "Result:<b>" + data.records + "</b>";
+            str += "<div style='color:red'>[End Object I</div> <br/>";
+        }
+        return str;
+    }
+    var localStorage;
+    var juu = '{"APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb", "AjaxObj":{"a": "Run", "P": "CreateSetupNext","c": { "Price": 29500, "Status": "DONE" },"Transfer": true,"Override": false,"jSonFormat": "1"}}';
+    var jjjj = '{ "APIkey": "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb": "CanteenDb", "si": "1", "mr": "25", "AjaxObj": { "a": "pGetgcGobal_STOCK_gcProductList", "c": "", "d": "", "type": "p", "cl": "*", "si": ' + getRandomInt(1, 25) + ', "mr": 25, "Transfer": true, "Override": false, "ModelDb": "CanteenDb", "jSonFormat": "1" } }';
+    var obj1 = {
+        a: "Run",
+        P: "CreateSetupThumb",
+        c: { Price: Math.round(Math.random() * 50000), Status: "DONE" },
+        Transfer: true,
+        Override: true,
+        ModelDb: "CanteenDb",
+        jSonFormat: "1"
+    };
+    var obj2 = {
+        a: "Run",
+        P: "CreatePatterm",
+        c: { Price: Math.round(Math.random() * 50000), Status: "DONE" },
+        Transfer: true,
+        Override: false,
+        ModelDb: "CanteenDb",
+        jSonFormat: "1"
+    };
+    var obj3 = {
+        a: "Run",
+        P: "CreateSetupNext",
+        c: { Price: Math.round(Math.random() * 50000), Status: "DONE" },
+        Transfer: true,
+        Override: false,
+        ModelDb: "CanteenDb",
+        jSonFormat: "1"
+    };
+    var obj4 = {
+        a: "Run",
+        P: "CreateReceipt",
+        c: { Price: Math.round(Math.random() * 50000), Status: "DONE" },
+        Override: false,
+        ModelDb: "CanteenDb",
+        jSonFormat: "1"
+    };
+    var objcall = { a: "Run", P: "CreateSetupNext", c: { Price: Math.round(Math.random() * 50000), Status: "DONE" }, Transfer: true, Override: false, ModelDb: "CanteenDb", jSonFormat: "1" };
+    var objTmp = [obj1, obj2, obj3, obj4]
+    var objcallmultiProc = { APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k", ModelDb: "CanteenDb", object: objTmp };
+
+    var sqlRequest = {
+        AjaxObj:
+        {
+            a: "SQL",
+            sql: "Select top 10 Id,Code,Name from gcGobal_STOCK_gcProductList",
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequest2 = {
+        AjaxObj:
+        {
+            a: "SQL",
+            sql: "INSERT INTO gcGobal_QA_Table (Code, Name ) VALUES (N'Đậu Rồng',N'Tùng thêm')",
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequest3 = {
+        AjaxObj:
+        {
+            a: "SQL",
+            insert: "1",
+            table: "gcGobal_QA_Table",
+<<<<<<< HEAD
+            d: { Code: 'Call Insert', Name: 'Test' },
+=======
+            d: {Code:'Call Insert', Name:'Test'},
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequest4 = {
+        AjaxObj:
+        {
+            a: "SQL",
+            update: "1",
+            table: "gcGobal_QA_Table",
+            d: { Code: 'Đậu rồng làm cái kia sai', Name: 'Test update Tùng' },
+<<<<<<< HEAD
+            c: { Id: 131 },
+=======
+            c: {Id:131},
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequest5 = {
+        AjaxObj:
+        {
+            a: "SQL",
+            delete: "1",
+            table: "gcGobal_QA_Table",
+            d: { Code: 'Đậu rồng làm cái kia sai', Name: 'Test update Tùng' },
+            c: { Id: 132 },
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequest6 = {
+        AjaxObj:
+        {
+            a: "SQL",
+            select: "1",
+            table: "gcGobal_QA_Table",
+            _f: " * ",
+            c: { Id: 133 },
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequest7 = {
+        AjaxObj:
+        {
+            a: "API",
+            name: "ProcessStockList",
+<<<<<<< HEAD
+            param: { Id: 133, Name: "Kiểm tra gọi API có trúng không! Gọi trực tiếp ProcessStockList" },
+=======
+            param: { Id: 133, Name:"Kiểm tra gọi API có trúng không! Gọi trực tiếp ProcessStockList"},
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+
+    var sqlRequest8 = {
+        AjaxObj:
+        {
+            a: "API",
+            name: "allAPI",
+            subAPI: "CheckStock",
+            param: { Id: 133, Name: "Kiểm tra gọi Sub API có trúng không! Gọi 1 api CheckStock khác không nằm trong class API; Khi bạn gọi từ nhiều lớp khác nhau bạn chỉ cần sửa text! " },
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var sqlRequestPage = {
+        AjaxObj:
+        {
+            a: "SQL",
+            exV: "gcGobal_QA_Table",
+            c: { "Id": "$x>9 and $x<170" },
+            _f: "Id,Code,Name",
+            _gb: " order by Id ",
+            d: " ",
+            type: "p",
+            cl: "Id,FloorId,Code,Name",
+            si: 1,
+            mr: 25,
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+<<<<<<< HEAD
+
+    var sqlRequest9 = {
+        AjaxObj:
+        {
+            a: "SQL",
+            select: "1",
+            table: "StockProduct",
+
+            _f: " * ",
+            c: { Id: "$x>0" },
+            ModelDb: "AppCoreDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var builder = {
+        //BuildClass_JS: true, AjaxObj: { BuildClass_JS: true, ModelDb: "CanteenDb" }
+        BuildClass_JS: true, AjaxObj: { BuildClass_JS: true, ModelDb: "AppCoreDb" }
+    };
+    var objTmpNew = [builder, sqlRequest9, sqlRequest8, sqlRequest7, sqlRequest6, sqlRequest5, sqlRequest4, sqlRequest3, sqlRequest2, sqlRequest, sqlRequestPage]
+    var objcallmultiRequestNew = { CrossData: true, MultiRequest: objTmpNew };
+
+    //objcallmultiRequestNew =
+=======
+    var builder = {
+        BuildClass_JS: true, AjaxObj: { ModelDb: "CanteenDb" }
+    };
+    var objTmpNew = [builder, sqlRequest8, sqlRequest7, sqlRequest6,sqlRequest5, sqlRequest4, sqlRequest3, sqlRequest2, sqlRequest, sqlRequestPage]
+    var objcallmultiRequestNew = { CrossData: true, MultiRequest: objTmpNew };
+
+    //objcallmultiRequestNew = 
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+    $('#CallAPIFIX').click(function () {
+        var name = $('#Param').val();
+        var data = { Param: (name) };
+        var u = { Param: JSON.parse(name) };
+        if (name) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(objcallmultiRequestNew),
+                contentType: 'application/json',
+                beforeSend: function (xhr) {
+                },
+                success: function (data) {
+                    var str = ProcessData(data);
+                    $('#result2').html(JSON.stringify(objcallmultiRequestNew) + "</br>" + str);
+                },
+                //url: "/api/kernel",
+                url: $('#URL').val(),
+
+                error: function (xhr, err) {
+                    alert(err);
+                }
+            });
+
+        } else {
+            $('#result').html('');
+        }
+    });
+
+    //-------------------------------------------------\//
+    //SystemFunction
+    var SystemFunction = {};
+    $('#GetDataAll').click(function () {
+        var name = $('#GetDataAllParam').val();
+        var body = { a: "tung", b: "tung" }
+
+        //Ở đây câu điều kiện lấy vào đôi khi bị sai do chuỗi định dạng . Bạn phải chuẩn; Nhất là dấu ' và "
+        var objRequest = {
+            AjaxObj:
+            {
+                a: "fGetgcGobal_QA_Table",
+                c: { "Id": "$x>9 and $x<170" },
+                _f: "TOP 10 Id,Code,Name",
+                _gb: " order by Id desc",
+                d: " ",
+                type: "p",
+                cl: "*",
+                si: 1,
+                mr: 25,
+                ModelDb: "CanteenDb",
+                jSonFormat: "1"
+            },
+            APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+        };
+
+        //name = '{"AjaxObj":{"a":"fGetgcGobal_QA_Table","c":{"Id":"$x>9and$x<170","Name":"($x=\'Bàn 02\' or $x=\'Bàn 04\') AND"},"_f":"TOP 10 Id,Code,Name","_gb":" order by Id desc", "d":"","type":"p","cl":"*","si":1,"mr":25 ,"ModelDb":"CanteenDb","jSonFormat":"1"},"APIkey":"kUcHUoWsxLPrIJy$rTcbeG5k"}';
+        // var name2 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":{"Id":"$x>99 and $x<170 ", "Name": "($x= LIKE '%Bàn 02%') AND"} ,"_f":" TOP 10 Id,Code,Name","_gb":" order by Id desc  ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name3 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":"" ,"_f":" TOP 10 Id,Code,Name","_gb":" order by Id desc  ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name4 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":"" ,"_f":"Id,Code,Name","_gb":" order by Id desc  ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name5 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":"" ,"_f":"Id,Code,Name","_gb":" ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name6 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":"" ,"_f":"*","_gb":" ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name7 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "c":"" ,"_f":"*", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name8 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name8 = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table", "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // exV: extern view:  se tien hanh ghi de view trong he thong// su dung cho 1 doi tuong nhieu view khac nhau
+        // var name = '{ "AjaxObj":{ "a": "fGetgcGobal_QA_Table","exV":"gcGobal_STOCK_List", "c":"" ,"_f":"Id,Code,Name","_gb":" order by Id desc  ", "d": "", "type": "p", "cl": "*", "si": 1, "mr": 25 , "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        name = (JSON.stringify(objRequest));
+
+        var u = { Param: JSON.parse(name) };
+        if (name) {
+            $.ajax({
+                type: "POST",
+                dataType: "jsonp",
+                contentType: 'application/json',
+                data: JSON.stringify(objRequest),
+                success: function (data) {
+                    var str = ProcessData(data);
+                    $('#result2').html((name) + "</br>" + str + "</br>" + data.Infor);
+                },
+                //url: "/api/kernel",
+                url: $('#URL').val(),
+                //url: $('#URL').val()  ,
+
+                error: function (err) {
+                    alert(err);
+                }
+            });
+
+        } else {
+            $('#result').html('');
+        }
+    });
+    //End function
+    //---------------------------------------------------
+
+    //---------------------------------------------------
+    //MixFunction
+
+
+    var Request1 = {
+        AjaxObj:
+        {
+            a: "fGetgcGobal_QA_Table",
+            c: { "Id": "$x>9 and $x<170" },
+            _f: "TOP 10 Id,Code,Name",
+            _gb: " order by Id desc",
+            d: " ",
+            type: "p",
+            cl: "*",
+            si: 1,
+            mr: 25,
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var Request2 = {
+        AjaxObj:
+        {
+            a: "pGetgcGobal_STOCK_gcProductList",
+            c: { "Id": "$x>9 and $x<170" },
+            _gb: " order by Id desc",
+            d: "",
+            type: "p",
+            cl: "*",
+            si: 1,
+            mr: 25,
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        },
+        APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k"
+    };
+    var objTmp = [Request1, Request2]
+    var objcallmultiRequest = { CrossData: true, MultiRequest: objTmp };
+
+    $('#MixFunction').click(function () {
+        var name = $('#MixFunctionParam').val();
+        var u = { Param: JSON.parse(name) };
+        if (name) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: 'application/json',
+                data: JSON.stringify(objcallmultiRequest),
+                beforeSend: function (xhr) {
+                },
+                success: function (data) {
+                    var str = ProcessData(data);
+
+                    str += "<div style='color:red'>[End Object I</div> <br/>";
+                    $('#result2').html((name) + "</br>" + str + "</br>" + data.Infor);
+                },
+                //url: "/api/kernel",
+                url: $('#URL').val() + '',
+
+                error: function (xhr, err) {
+                    alert(err);
+                }
+            });
+
+        } else {
+            $('#result').html('');
+        }
+    });
+    //End function
+    //---------------------------------------------------
+
+    //---------------------------------------------------
+    //UpdateCall
+    $('#UpdateCall').click(function () {
+        var name = $('#UpdateCallParam').val();
+
+        // doi voi cac bien gan tu dong tren database ta lam 1 ham LoadDefaltData() => Sau do them cac property nay vao doi tuong bang ham Kernel.AddProperty()
+        // mot so du lieu lay tu he thong ta lam nhu sau: van truyen binh thuong doi tuong tren ta goi _sysfunc de cap nhat nhu sau:
+        //isPrgPartComp: co the dung o client ko dung o server
+        //Code: AUTO tao code theo dinh dang ngay va so nhay: CreateAutoCode();{"_funcname":"CreateAutoCode", "_funcparam": ["Code"]}
+        //isPrgSmField: {"_funcname":"SmField", "_funcparam": ["isPrgSmField", "UserId", "UserName"]}
+        //_sysfunc:{"isPrgCreateDate":{"_funcname":"GetCurDate"}, "isPrgVNKoDau": {"_funcname":"ConverVNKD", "_funcparam": ["Name",""]}, "isPrgEncriptData":{"_funcname":"EncriptData", "_funcparam": ["Password"]}}
+        // var name1 = '{ "AjaxObj":{ "a": "InsertgcGobal_QA_Table", "d": {"Code":"NEW", "Name":"_TUNG", "FloorId":3}, "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name2 = '{ "AjaxObj":{ "a": "UpdategcGobal_QA_Table", "d": {"Code":"tmp", "Name":"_tmp", "FloorId":3},"c":{"Id":105}, "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        // var name3 = '{ "AjaxObj":{ "a": "RemovegcGobal_QA_Table", "c":{"Id":18s}, "ModelDb": "CanteenDb", "jSonFormat": "1"}, "APIkey" : "kUcHUoWsxLPrIJy$rTcbeG5k",  "ModelDb":"CanteenDb"}';
+        var AjaxObj1 = {
+            a: "InsertgcGobal_QA_Table",
+            d: { "Code": "NEW", "Name": "_TUNG", "FloorId": 3 },
+            type: "p",
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        };
+        var AjaxObj2 = {
+            a: "fGetgcGobal_QA_Table",
+            c: { "Id": "$x>9 and $x<170" },
+            _f: "TOP 10 Id,Code,Name",
+            _gb: " order by Id desc",
+            d: " ",
+            type: "p",
+            cl: "*",
+            si: 1,
+            mr: 25,
+            ModelDb: "CanteenDb",
+            jSonFormat: "1"
+        };
+        var objTmp = [AjaxObj1, AjaxObj2]
+        var objcallmultiRequest = { APIkey: "kUcHUoWsxLPrIJy$rTcbeG5k", AjaxObj: objTmp };
+        var u = { Param: JSON.parse(name) };
+        if (name) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(objcallmultiRequest),
+                contentType: 'application/json',
+                beforeSend: function (xhr) {
+                },
+                success: function (data) {
+
+                    var str = ProcessData(data);
+
+                    $('#result2').html((name) + "</br>" + str + "</br>" + data.Infor);
+                },
+                //url: "/api/kernel",
+                url: $('#URL').val(),
+
+                error: function (xhr, err) {
+                    alert(err);
+                }
+            });
+
+        } else {
+            $('#result').html('');
+        }
+    });
+    //---------------------------------------------------
+
+    $("#CallAPI").click(function () {
+        setInterval(LoadDynamic, 3000);
+        LoadDynamic();
+    });
+
+    function LoadDynamic() {
+        var name = $('#Param').val();
+        var data = { Param: (name) };
+        var u = { Param: JSON.parse(name) };
+        var r = getRandomInt(1, 25);
+        //alert(r);
+        var requestSend = '{"APIkey":"kUcHUoWsxLPrIJy$rTcbeG5k","si":1,"mr":25,"AjaxObj":{"a":"pGetgcGobal_STOCK_gcProductList","c":"","d":"","type":"p","cl":"*","si":' + r + ', "mr":25,"Transfer":true,"Override":false,"ModelDb":"CanteenDb","jSonFormat":"1"}}';
+        //var data = { "name": name, "obj": (obj) };
+        if (name) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: requestSend,
+                contentType: 'application/json',
+                beforeSend: function (xhr) {
+                    //xhr.setRequestHeader('Authorization', 'Basic ' + btoa('ticket@easybook.vn:123456'));
+                    //xhr.setRequestHeader('Authorization', 'Basic ' + btoa('user:123456'));
+                    //xhr.withCredentials = true;
+                    // xhr.setRequestHeader('auth-key', 'key...');
+                },
+                success: function (data) {
+                    var str = ProcessData(data);
+                    $('#result').contents().find('html').html(str);
+                },
+                //url: "/api/kernel",
+                url: $('#URL').val(),
+                //"http://kernel.axmsoft.com/api/kernel",
+                //url: "../api/kernel",
+                //url: "https://agent.axmsoft.com/api/v1/trip/GetRoute?ID=3&version=1&",
+                //internal project
+                //data: JSON.stringify(data),
+
+                //Hostring project
+                //data: (data),
+                error: function (xhr, err) {
+                    alert(err);
+                }
+            });
+
+        } else {
+            $('#result').html('');
+        }
+    }
+<<<<<<< HEAD
+
+    $(document).ready(function () {
+        sessionStorage["passUser"] = true;
+        //StocInputkGroup
+        $("a[id*='navmenu_link']").click(function () {
+
+
+            $("#divGrid2").html('');
+            $("#gc_MainForm2").html('');
+            _gbApp.reset();
+            _gbApp._curMainOjectName = $("#" + this.id).attr('objectname');
+            sessionStorage["groupUser"] = _gbApp._curMainOjectName;
+
+            window.location.href = window.location + 'Home/Privacy?p=' + _gbApp._curMainOjectName;
+
+            _gbApp.add(_gbApp._curMainOjectName, _gbDictionary[_gbApp._curMainOjectName]);
+            console.log(_gbLanguageI18[_gbApp._curMainOjectName].UIname["vn"] + _gbLanguageI18[_gbApp._curMainOjectName].UIname["en"]);
+            $('#TitlePage').html("/" + _gbLanguageI18[_gbApp._curMainOjectName].UIname["vn"]);
+
+
+            _gbApp.run($("#divGrid2"), $("#gc_MainForm2")).then(function () {
+                //_gbCaches.saveToLocal();
+            }
+            );
+
+            $('.selectpicker').select2({ dropdownCssClass: 'smalldrop', width: 'auto' });
+        });
+
+    });
+=======
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+</script>

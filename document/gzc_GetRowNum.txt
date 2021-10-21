@@ -1,0 +1,35 @@
+﻿
+/****** Object:  StoredProcedure [dbo].[XIKE_GetRowNum]    Script Date: 6/20/2021 4:31:02 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [dbo].gcz_GetRowNum
+	@table nvarchar(1024),
+	@sort	nvarchar(1024),
+	@filter nvarchar(max),
+	@column nvarchar(1024),
+	@index int,
+	@SL int,
+	@p_Count_out int output 
+as
+BEGIN
+	declare @sql	nvarchar(max), @fi nvarchar(max), @ti nvarchar(max), @paramater nvarchar(max), 
+	@sqlCount nvarchar(max)
+	/*exec gcGOBAL_DropObject 'zgcTempViewData', 0*/
+	/*exec gcGOBAL_DropObject 'dbo.zgcTempViewData', 0*/
+	begin 
+		set @sql = '(select ROW_NUMBER() OVER (ORDER BY '+ @sort +') as ROWNUM , ' + @column + 
+            		+ ' from ' + @table + ' '
+			if (( LEN(@filter) > 3))
+				set @sql = @sql + ' WHERE (' + @filter + ') '
+		set @sql = @sql + '  ) '
+		set @fi = convert(nvarchar(max), (@index-1)*@SL + 1)
+		set @ti = convert(nvarchar(max), @index*@SL)
+		set @p_Count_out = 0
+		set @paramater = '@countOut int output'
+		set @sqlCount = (' select @countOut = count(*) from ' + @sql + ' as a ')
+		exec sp_executesql @sqlCount, @paramater, @countOUt = @p_Count_out output
+		exec (' select * from ' + @sql + ' as a where Rownum between ' + @fi + ' and ' + @ti + ' ')
+	end
+END

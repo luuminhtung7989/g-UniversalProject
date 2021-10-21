@@ -1,0 +1,1620 @@
+@import url(resets-12.css);
+/*------------- Start Main Layout-----------*/
+body, html
+{
+    /*background-color:#B33;*/ /* VTCM background-image:url('../Img/bgpink.gif'); background-repeat:repeat-x repeat-y;*/
+    background-color: Transparent;
+    scrollbar-base-color: #E0E8E6;
+    scrollbar-arrow-color: #0077C4;
+    scrollbar-3dlight-color: #E0E8E6;
+    scrollbar-darkshadow-color: #E0E8E6;
+    scrollbar-face-color: #E0E8E6;
+    scrollbar-highlight-color: #E0E8E6;
+    scrollbar-shadow-color: #cccccc;
+}
+
+.gcBlockEntry
+{
+    background: url(../images/iolo.png) no-repeat 3px 3px;
+    min-height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+.gcBlockEntryClass
+{
+    background: url(../images/imagesclass.png) no-repeat 3px 3px;
+    min-height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.gcBlockEntryWrap
+{
+    float: left;
+    margin-left: 15px; /* padding:15px; */
+    border: 1px solid #ddd;
+    background: #eee;
+    cursor: pointer;
+    border-left: 6px solid #26bdef;
+    margin-bottom: 10px;
+    min-width: 250px;
+    height: 200px;
+    text-align: center;
+}
+.gcBlockEntryWrap:hover
+{
+    border-left: 6px solid #41762A;
+    margin-left: 10px;
+    color: #26bdef;
+}
+
+
+.divDialog
+{
+    position: fixed;
+}
+.loginDiv
+{
+    font-family: Tahoma;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #eee;
+    border: solid 1px #ccc;
+}
+.gcLoginForm
+{
+    font-family: Tahoma;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #eee;
+    border: solid 1px #ccc;
+}
+.loginItem
+{
+    padding: 5px;
+}
+.darkLine
+{
+    border-bottom: solid 1px #ccc;
+    height: 1px;
+}
+.zgcInfoCtrlEmpty
+{
+    display: none !important;
+}
+.zgcDivCtrl
+{
+    height: 15px;
+    padding: 15px;
+    color: #0594a9;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.darkLineText
+{
+    height: 15px;
+    padding: 15px;
+    color: #0594a9;
+    padding-top: 5px;
+}
+.darkLineText:hover
+{
+    color: #000;
+    cursor: pointer;
+}
+
+.HeaderDialog
+{
+    width: 100%;
+    height: 30px;
+    background: Green;
+}
+.divIFrame
+{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 80%;
+    background-color: Transparent;
+}
+
+.gcWraper
+{
+    padding: 0 auto;
+    width: 100%;
+    min-height: 500px;
+}
+.qsfNone
+{
+    height: 1px;
+    left: -3333px;
+    overflow: hidden;
+    position: absolute;
+    top: -100%;
+    width: 1px;
+}
+
+
+
+.gcMainParent
+{
+}
+
+.gcMainIn
+{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    background-color: #fff;
+}
+/*border:solid 1px #0f9f9f;*/
+.gcMainCtns
+{
+    width: 99%;
+    padding: 5px;
+    padding-left: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gcMainCtnsV
+{
+    width: 906px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gcMainIn2
+{
+    width: 100%;
+    padding: 0px;
+    z-index: 0;
+    text-align: left;
+    border: 1px solid #dedede; /*background-image:url('../Img/bg-form3.jpg');*/
+    background-color: #F4F4F4;
+    background-repeat: repeat;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+    min-width: 1000px;
+}
+.gcMainIn2New
+{
+    width: 99%;
+    padding: 5px;
+    z-index: 0;
+    text-align: left;
+    border: 1px solid Green;
+    background-image: url('../Img/bg-form3.jpg');
+    background-repeat: repeat;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.gcMenu
+{
+    height: 90px;
+    width: 1052px;
+    background-image: url(../Img/bg-content2.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.gcMainCtns fieldset
+{
+    margin: 0px;
+}
+.gcMainCtns fieldset input
+{
+    height: 12px;
+}
+.MCMS_MainItem
+{
+}
+
+.gcFieldAuto
+{
+    float: left;
+    padding: 5px;
+    display: inline-block !important;
+}
+.gcLabelAuto
+{
+    float: left;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+
+.gcFieldCheck1
+{
+    float: left;
+    padding: 2px;
+    width: 25px;
+    display: inline-block !important;
+}
+.gcLabelCheck1
+{
+    float: left;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+
+.InfoExtern
+{
+    border: solid 1px green;
+    padding: 2px;
+    margin-bottom: 0px;
+    background-color: #d5e8f2;
+    font-weight: bold;
+}
+.gcFieldInfo
+{
+    float: left;
+    padding: 5px;
+    width: 400px;
+}
+.gcField
+{
+    float: left;
+    padding: 2px;
+    width: 210px;
+    margin-left: 07px;
+    display: inline-block !important;
+}
+.gcField200
+{
+    float: left;
+    padding: 2px;
+    width: 200px;
+    display: inline-block !important;
+}
+.gcField250
+{
+    float: left;
+    padding: 2px;
+    width: 250px;
+    display: inline-block !important;
+}
+.gcField310
+{
+    float: left;
+    padding: 2px;
+    width: 310px;
+    display: inline-block !important;
+}
+.gcField150
+{
+    float: left;
+    padding: 2px;
+    width: 150px;
+    display: inline-block !important;
+}
+.gcField120
+{
+    float: left;
+    padding: 2px;
+    width: 120px;
+    display: inline-block !important;
+}
+.gcField110
+{
+    float: left;
+    padding: 2px;
+    width: 110px;
+    display: inline-block !important;
+}
+.gcField100
+{
+    float: left;
+    padding: 2px;
+    width: 100px;
+    display: inline-block !important;
+}
+.gcField80
+{
+    float: left;
+    padding: 2px;
+    width: 80px;
+    display: inline-block !important;
+}
+.gcField60
+{
+    float: left;
+    padding: 2px;
+    width: 60px;
+    display: inline-block !important;
+}
+.gcFieldW
+{
+    float: left;
+    padding: 2px;
+    width: auto;
+    display: inline-block !important;
+}
+.gcFieldWChk
+{
+    float: left;
+    padding: 0px;
+    width: auto;
+    display: inline-block !important;
+    background-color: #ECECD8;
+    border: solid 1px green;
+    margin-left: 10px;
+}
+.gcFieldN
+{
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+}
+.gcFieldNL
+{
+    float: left;
+    padding-left: 2px;
+    padding-right: 10px;
+    width: auto;
+}
+.gcFieldE
+{
+    float: left;
+    padding-top: 2px;
+    padding-left: 2px;
+    margin-left: 2px;
+    width: 210px;
+}
+.gcFieldS
+{
+    float: left;
+    padding: 2px;
+    width: 120px;
+}
+.gcFieldEx
+{
+    float: left;
+    padding-top: 6px;
+    padding-left: 0px;
+    margin-left: 2px;
+    width: 210px;
+}
+.gcClear
+{
+    clear: both !important;
+}
+.gcLabelN
+{
+    float: left;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabel
+{
+    float: left;
+    width: 80px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabel100
+{
+    float: left;
+    width: 100px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabel120
+{
+    float: left;
+    width: 120px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabel60
+{
+    float: left;
+    width: 60px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabel40
+{
+    float: left;
+    width: 40px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabel150
+{
+    float: left;
+    width: 150px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+    text-align: right;
+}
+.gcLabelHole
+{
+    float: left;
+    width: 40px;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-right: 10px;
+    margin: auto;
+}
+.gc1Row
+{
+    width: auto;
+    position: relative;
+    display: inline-block !important;
+    z-index: 0;
+    text-align: right;
+    padding: 1px;
+}
+/*.gc1Row:hover{border:1px solid #96a0a2;	background:none repeat scroll 0 0 #d0b9d6;}*/
+.gc1RowForForm
+{
+    width: auto;
+    position: relative;
+    display: inline-block !important;
+    z-index: 0;
+    text-align: right;
+    padding: 1px;
+}
+/*----------------end css for programming--------------*/
+
+.gcLabelNMy
+{
+    float: left;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: -10px;
+    margin-left: 32px;
+    text-align: right;
+}
+.gcFieldWMy
+{
+    float: left;
+    padding: 2px;
+    width: auto;
+    display: inline-block !important;
+    margin-left: 15px;
+}
+
+
+/*---------------end main layout------------*/
+/*Auto complete List Item Main DIV*/
+.gcLAC
+{
+    width: inherit;
+    height: auto !important;
+    display: inline-block !important;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5em;
+    min-width: 250px;
+    padding-right: 15px;
+}
+/*Auto complete List Item First DIV*/
+.gcLAC1
+{
+    height: auto !important;
+    display: inline-block !important;
+    min-width: 40px;
+    float: left;
+    text-align: left;
+}
+/*Auto complete List Item Second DIV*/
+.gcLAC2
+{
+    width: 80px;
+    float: left;
+    text-align: left;
+}
+/*Auto complete List Item Third DIV*/
+.gcLAC3
+{
+    width: 120px;
+    float: left;
+    text-align: left;
+}
+/*Auto complete List Item Div End*/
+.gcLACE
+{
+    height: auto !important;
+    display: inline-block !important;
+    width: auto;
+    float: left;
+}
+/*Auto complete LI tag*/
+.gcAUCMeNu
+{
+    background: none repeat scroll 0 0 #EBF2F8;
+    border: 1px solid #BFD1E1;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    font: arial,sans-serif;
+    border-bottom-style: none;
+    color: Black;
+    height: auto;
+}
+/*Auto complete*/
+.gcAUCMeNuhover
+{
+    background: none repeat scroll 0 0 #b9d0d6;
+    cursor: pointer;
+    color: #ffffff;
+    height: auto;
+}
+/*Auto complete*/
+.gcAUCMeNu:hover
+{
+    background: none repeat scroll 0 0 #b9d0d6;
+    cursor: pointer;
+    color: #ffffff;
+    height: auto;
+}
+/*Auto complete LI tag*/
+.gcAUC
+{
+    border-color: #eee;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-style: none;
+    background-color: window;
+    color: Black;
+    padding: 5px;
+    height: auto;
+}
+.rau
+{
+    border-color: #eee;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-style: none;
+    background-color: rgb(186, 255, 202);
+    padding: 5px;
+    height: auto;
+}
+/*Auto complete*/
+.gcAUChover
+{
+    background-color: #778877;
+    padding: 5px;
+    height: auto;
+}
+/*Auto complete*/
+.gcAUC:hover
+{
+    background-color: #778877;
+    padding: 5px;
+    height: auto;
+}
+.rau:hover
+{
+    background-color: #778877;
+    padding: 5px;
+    height: auto;
+}
+/*Auto complete LI tag*/
+.gcAUCNew
+{
+    border-color: #eee;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-style: none;
+    background-color: window;
+    color: Black;
+    padding: 5px;
+    height: auto;
+}
+/*Auto complete*/
+.gcAUCNew:hover
+{
+    background-color: #778877;
+    padding: 5px;
+    height: auto;
+    color: #aff019;
+}
+
+.gcAUCC
+{
+    /* background-color: #99aa99; */
+    color: Black;
+    padding: 5px;
+    padding-right: 2px;
+    height: auto;
+    border-bottom: 1px solid #eee;
+    min-width: 120px;
+}
+.gcAUCC:hover
+{
+    background-color: #333;
+    border-color: #eee;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-style: none;
+    color: yellow;
+    padding: 5px;
+    height: auto;
+}
+
+/*Auto complete Header*/
+.gcAUCH
+{
+    color: #ffffff;
+    background-color: #ed9c28;
+    border-color: #d58512;
+    width: auto;
+    height: 32px;
+    padding: 2px;
+    padding-right: 0px;
+    font-weight: bold;
+    position: relative;
+    z-index: 99999;
+}
+.gcDIVShowMathSelect
+{
+    position: absolute;
+    z-index: 10;
+    margin: 0px !important;
+    background-color: #fff;
+    color: windowtext;
+    font-weight: normal;
+    border: #aaa; /*#66bb66;*/
+    border-width: 1px;
+    border-style: solid;
+    border-top-color: White;
+    cursor: default;
+    height: auto;
+    width: auto;
+    display: none;
+    text-align: left;
+    list-style-type: none;
+}
+
+/*DIV show */
+.gcDIVShow
+{
+    min-width: 200px;
+    position: absolute;
+    z-index: 99990;
+    margin: 0px !important;
+    background-color: #fff;
+    color: windowtext;
+    font-weight: normal;
+    border: #aaa; /*#66bb66;*/
+    border-width: 1px;
+    border-style: solid;
+    border-top-color: White;
+    cursor: default;
+    height: auto;
+    width: auto;
+    display: none;
+    text-align: left;
+    list-style-type: none;
+}
+.gcDIVShow2
+{
+    position: relative;
+    margin: 0px !important;
+    background-color: #fff;
+    color: windowtext;
+    font-weight: normal;
+    z-index: 99990;
+    cursor: default;
+    overflow: auto;
+    min-height: 100px;
+    max-height: 300px; /* width: auto; */
+    max-width: 700px; /* min-width: 190px; */
+    text-align: left;
+    list-style-type: none;
+    border: 1px solid #7EA014;
+}
+/*DIV footer*/
+.gcDIVF
+{
+    position: relative;
+    color: #ffffff;
+    background-color: #ed9c28;
+    border-color: #d58512;
+    margin: 0px !important;
+    color: Black;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    padding-left: 2px;
+    padding-right: 0px;
+    min-width: 100px;
+    width: auto;
+    height: 30px;
+    font-weight: bold;
+    z-index: 99990;
+}
+/*--------------Start form nhap lieu--------*/
+
+/*DINHHUNG*/
+.dhu_frame
+{
+    padding: 5px 5px 5px 5px;
+    border-color: Green;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    margin: 0px 0px -1px 0px;
+}
+.dhu_rpt_Warning
+{
+    text-align: right;
+    background-color: #ddFFbb;
+    font-size: 12px;
+    padding: 4px;
+    font-family: Arial;
+}
+.dhu_rpt_Warning2
+{
+    text-align: right;
+    background-color: #EEbb66;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.dhu_rpt_TextLeft
+{
+    text-align: left;
+    background-color: #fff;
+    border-spacing: 0;
+    background-color: #fff;
+    font-family: Tahoma;
+    font-size: 12px;
+    padding-left: 5px;
+    margin: 0px;
+    border: 1px solid #555;
+}
+.dhu_rpt_TextRight
+{
+    text-align: right;
+    background-color: #fff;
+    border-spacing: 0;
+    font-family: Tahoma;
+    font-size: 12px;
+    padding-right: 5px;
+    margin: 0px;
+    border: 1px solid #555;
+}
+.dhu_rpt_TextRightBold
+{
+    text-align: right;
+    background-color: #fff;
+    border-spacing: 0;
+    font-family: Tahoma;
+    font-size: 12px;
+    padding-right: 5px;
+    margin: 0px;
+    font-weight: bold;
+    border: 1px solid #555;
+}
+
+.dhu_rpt_TextCenter
+{
+    text-align: center;
+    background-color: #fff;
+    border-spacing: 0;
+    background-color: #fff;
+    border: 1px solid #555;
+    margin: 0px;
+    border-style: solid;
+    border-width: 1px;
+}
+.dhu_rpt_TextCenterBgr
+{
+    font-weight: bolder;
+    background-color: #dfd;
+    text-align: center;
+    border-spacing: 0;
+    border: 1px solid #555;
+    margin: 0px;
+    padding: 2px;
+    border-style: solid;
+    border-width: 1px;
+}
+.dhu_rpt_TextCenterBgrNew
+{
+    font-weight: bolder;
+    background-color: #d5d;
+    text-align: center;
+    border-spacing: 0;
+    border: 1px solid #555;
+    margin: 0px;
+    padding: 2px;
+    border-style: solid;
+    border-width: 1px;
+}
+.dhu_rpt_BoldRightBgrTOTAL
+{
+    font-weight: bolder;
+    background-color: #dcd;
+    text-align: right;
+    border-spacing: 0;
+    margin: 0px;
+    padding: 2px;
+}
+
+.dhu_rpt_BoldRightBgr
+{
+    font-weight: bolder;
+    background-color: #dfd;
+    text-align: right;
+    border-spacing: 0;
+    border: 1px solid #555;
+    margin: 0px;
+    padding: 2px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.dhu_rpt_BoldRight
+{
+    font-weight: bold;
+    background-color: #fff;
+    text-align: right;
+    border-spacing: 0;
+    font-family: Tahoma;
+    font-size: 13px;
+    margin: 0;
+    border: 1px solid #555;
+    padding-right: 5px;
+}
+.dhu_rpt_BoldCenter
+{
+    font-weight: bolder;
+    background-color: #fff;
+    text-align: center;
+    border-width: 1px;
+    margin: 0px;
+}
+.dhu_ReportContents
+{
+    width: 700px;
+    margin: auto;
+    padding: auto;
+    border: 1px solid #000;
+}
+.dhu_rpt_Portrail
+{
+    width: 800px;
+    margin: auto;
+    padding: auto;
+    border: 1px solid #000;
+}
+.dhu_rpt_Landscape
+{
+    width: 1000px;
+    margin: auto;
+    padding: auto;
+    border: 0px solid #000;
+}
+.dhu_Contents
+{
+    width: 100%;
+    text-align: center;
+    padding: auto;
+    display: block;
+}
+
+.dhu_rptTable
+{
+    width: 100%;
+    font: 14px Arial,Tahoma, Verdana;
+    background-color: #FFF;
+}
+
+.dhu_rpt_tpl_TitleTDName
+{
+    width: 40%;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_TitleTDCode
+{
+    width: 20%;
+    text-align: center;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_TitleTDPattern
+{
+    width: 40%;
+    text-align: center;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_Padding
+{
+    width: 100%;
+    padding-left: 100px;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_Header
+{
+    width: 100%;
+    font-size: 16pt;
+    font-weight: bolder;
+    text-align: center;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_Header_Times
+{
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_HeaderPhieuThu
+{
+    font: bold 16pt Arial, Tahoma, Verdana;
+    width: 60%;
+    text-align: center;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_HeaderPhieuThu_Times
+{
+    width: 60%;
+    text-align: center;
+    vertical-align: top;
+}
+.dhu_rpt_tpl_HeaderTK
+{
+    width: 20%;
+    vertical-align: top;
+    text-align: right;
+    padding-right: 20px;
+}
+.dhu_rptTable .dhu_rpt_tpl_FooterTD
+{
+    width: 20%;
+    height: 100px;
+    vertical-align: top;
+    padding-top: 20px;
+    text-align: center;
+}
+.dhu_rpt_tpl_KTSS_Footer
+{
+    text-align: center;
+    width: 33%;
+    height: 70px;
+    font-size: 14px;
+}
+.dhu_rpt_tpl_KTSS_Footer4
+{
+    text-align: center;
+    width: 25%;
+    height: 70px;
+    font-size: 14px;
+}
+.dhu_rpt_tpl_KTSS_Footer5
+{
+    text-align: center;
+    width: 20%;
+    height: 70px;
+    font-size: 14px;
+}
+
+.dhu_rpt_tpl_KTSS_HeaderNoteName
+{
+    font-size: 14pt;
+    text-align: center;
+    font-style: oblique;
+}
+.dhu_rpt_tpl_KTSS_HeaderDate
+{
+    text-align: center;
+}
+/*END DINHHUNG*/
+/*DINHHUNG Cham cong*/
+.dhu_CC_TableReport
+{
+    border: 1px solid #000;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.dhu_CC_TableReport .Header
+{
+    background-color: #eeeeee;
+}
+.dhu_CC_TableReport .Header_Holiday
+{
+    background-color: #ff3333;
+    width: 30px;
+}
+.dhu_CC_TableReport .Header_TD
+{
+    width: 30px;
+    height: 30px;
+}
+.dhu_CC_TableReport .STT
+{
+    width: 20px;
+    height: 30px;
+}
+.dhu_CC_TableReport .Header_SumCook
+{
+    width: 30px;
+    vertical-align: middle;
+}
+/*body*/
+.dhu_div_chamcong
+{
+    width: 100%;
+}
+.dhu_CC_TableReport .TD
+{
+    width: 30px;
+    height: 40px;
+}
+.dhu_CC_TableReport .TenNV
+{
+    width: 100px;
+    text-align: left;
+}
+.dhu_CC_TableReport .NoInfo
+{
+    background-color: #aaffaa;
+    height: 40px;
+    width: 30px;
+}
+.dhu_CC_TableReport .Work
+{
+    background-color: #ffaaaa;
+    height: 40px;
+    width: 30px;
+}
+.dhu_CC_TableReport .DontWork
+{
+    background-color: Lime;
+    height: 40px;
+    width: 30px;
+}
+.dhu_CC_TableReport .SumCook
+{
+    width: 40px;
+    background-color: Yellow;
+}
+.dhu_CC_TableReport .textSumCook
+{
+    width: 40px;
+}
+
+.SumCook
+{
+    width: 80px;
+    background-color: Yellow;
+}
+.cell
+{
+    width: 100%;
+    vertical-align: middle;
+    height: 20px;
+}
+.LeftBottomDiv
+{
+}
+.BottomDiv
+{
+    font-weight: bold;
+}
+.MiddleBottomDiv
+{
+    color: #444;
+}
+.gcCCInfo
+{
+    color: black;
+    background-color: #de66de;
+    font-weight: bold;
+    width: 20px;
+    float: left;
+    padding: 2px;
+}
+.textSumCook
+{
+    width: 80px;
+}
+
+.rptSumGroupBy
+{
+    font-weight: bold;
+    background-color: #ee33ee;
+}
+.rptContentGroupBy
+{
+    font-weight: bold;
+    background-color: #e08ce0;
+}
+.rptTDContentGroupBy
+{
+    font-weight: normal;
+    background-color: #fdd;
+    font-size: 15px;
+    padding: 3px;
+    font-family: Arial;
+}
+.rptTable
+{
+    width: 100%;
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #382400;
+    background-color: #c080c0;
+    margin: auto;
+    padding: auto;
+    border-collapse: collapse; /* border:  1px solid 1; */
+}
+.rptTableNew
+{
+    width: 100%;
+    background-color: #c080c0;
+}
+.rptTDbk
+{
+    background-color: #fff;
+    border-color: Black;
+    border-spacing: 0px;
+    border-style: solid;
+    border-width: 1px;
+    color: #000;
+    font-family: Tahoma;
+    font-size: 10px;
+}
+.rptTDExtern
+{
+    border-spacing: 0;
+    background-color: #fff;
+    padding: 4px;
+    color: #000;
+    font-family: Tahoma;
+    font-size: 12px;
+    margin: 10px;
+    -moz-border-radius: 0px;
+    text-align: left;
+}
+.rptTD
+{
+    border-spacing: 0;
+    background-color: #fff;
+    padding: 4px;
+    color: #000;
+    font-family: Tahoma;
+    font-size: 12px;
+    margin: 0px;
+    -moz-border-radius: 0px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #555;
+}
+.rptTDNew
+{
+    background-color: #ffccff;
+}
+.rptTDHeader
+{
+    height: 30px;
+    color: Black;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    background-color: rgb(216, 228, 188);
+    border-collapse: collapse;
+    border: 1px solid #666;
+    padding-top: 7px;
+}
+.dhu_rpt_TextCenterSubTotal
+{
+    background-color: rgb(235, 241, 222);
+    border: 1px solid #555;
+    border-spacing: 0;
+    font-weight: bolder;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+.dhu_rpt_TextCenterSumary
+{
+    background-color: rgb(216, 228, 188);
+    border: 1px solid #555;
+    border-spacing: 0;
+    font-weight: bolder;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+.dhu_rpt_TextCenterTotal
+{
+    background-color: rgb(146, 208, 80);
+    border: 1px solid #555;
+    border-spacing: 0;
+    font-weight: bolder;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+table.space
+{
+    border-spacing: 0px;
+}
+.clear
+{
+    clear: both;
+}
+#myTab
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.br-phanloai .nav-tabs
+{
+    border-bottom: 1px solid #26bdef;
+}
+.br-phanloai .nav-tabs > li.active > a, .br-phanloai .nav-tabs > li.active > a:hover, .br-phanloai .nav-tabs > li.active > a:focus
+{
+    color: #555555;
+    cursor: default; /* background-color: #e2e8ee; */ /* border: 1px solid #BBBBBB; */
+    background-color: #FFFFFF;
+    border: 1px solid #4AAECF;
+    border-top: 3px solid #26bdef;
+    border-bottom-color: rgba(225, 146, 146, 0);
+    cursor: pointer;
+    line-height: 18px;
+}
+.btn-navy
+{
+    color: #ffffff;
+    background-color: #3767a6;
+    border-color: #3767a6;
+}
+
+.btn-navy:hover, .btn-navy:focus, .btn-navy:active, .btn-navy.active, .open .dropdown-toggle.btn-info
+{
+    color: #ffffff;
+    background-color: #3767a6;
+    border-color: #3767a6;
+}
+
+.btn-navy:active, .btn-navy.active, .open .dropdown-toggle.btn-info
+{
+    background-image: none;
+}
+
+.btn-nayv.disabled, .btn-navy[disabled], fieldset[disabled] .btn-info, .btn-navy.disabled:hover, .btn-navy[disabled]:hover, fieldset[disabled] .btn-navy:hover, .btn-navy.disabled:focus, .btn-navy[disabled]:focus, fieldset[disabled] .btn-navy:focus, .btn-navy.disabled:active, .btn-navy[disabled]:active, fieldset[disabled] .btn-navy:active, .btn-navy.disabled.active, .btn-navy[disabled].active, fieldset[disabled] .btn-navy.active
+{
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.btn-navy .caret
+{
+    border-top-color: #fff;
+}
+#ShowSoDoBan .nav
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* style block*/
+.ct-articleBox.ct-articleBox--thumbnail
+{
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.ct-articleBox
+{
+    position: relative;
+    margin-bottom: 60px;
+    max-width: 100%;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail:after
+{
+    z-index: 4;
+    position: absolute;
+    bottom: -12.5px;
+    left: 50%;
+    margin-left: -12.5px;
+    width: 25px;
+    height: 25px;
+    background-color: #555555;
+    color: #ffffff;
+    content: "\f067";
+    font-family: fontawesome;
+    -webkit-border-top-right-radius: 50%;
+    -webkit-border-bottom-right-radius: 50%;
+    -webkit-border-bottom-left-radius: 50%;
+    -webkit-border-top-left-radius: 50%;
+    -moz-border-radius-topright: 50%;
+    -moz-border-radius-bottomright: 50%;
+    -moz-border-radius-bottomleft: 50%;
+    -moz-border-radius-topleft: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    text-align: center;
+    line-height: 25px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+    display: none;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail:hover .ct-articleBox-media
+{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.ct-articleBox.ct-articleBox--thumbnail .ct-articleBox-media
+{
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.ct-articleBox .ct-articleBox-media, .ct-articleBox .ct-articleBox-date
+{
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail
+{
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail .ct-articleBox-titleBox
+{
+    padding: 25px 10px;
+    border: 1px solid #d3d3d3;
+    border-bottom: none;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail:hover .ct-articleBox-description
+{
+    max-height: 500px;
+    padding: 0 25px 25px 25px;
+    font-size: 16px;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail .ct-articleBox-description
+{
+    position: relative;
+    max-height: none;
+    padding-bottom: 25px;
+}
+
+.ct-articleBox.ct-articleBox--default .ct-articleBox-description
+{
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+}
+
+
+
+.ct-articleBox.ct-articleBox--thumbnail .ct-articleBox-description
+{
+    z-index: 3;
+    position: absolute;
+    max-height: 0px;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-top: none;
+    padding: 0 25px 0 25px;
+    overflow: hidden;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    font-size: 16px;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail:hover:after
+{
+    bottom: 0;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.br-block
+{
+    width: 16.5%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    height: 288px;
+}
+
+.ct-articleBox .ct-articleBox-titleBox h4
+{
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.ct-articleBox .ct-articleBox-titleBox h4:hover
+{
+    color: rgb(240, 45, 232);
+}
+
+.ct-articleBox .ct-articleBox-titleBox a
+{
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail .ct-articleBox-media img
+{
+    width: 100%;
+    height: 121px;
+}
+
+.ct-articleBox.ct-articleBox--thumbnail:hover:after
+{
+    bottom: 0;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-transition-delay: 0s; /* Safari */
+    transition-delay: 0s;
+}
+
+/* end style block*/
+
+.ErrorMsgServerCaption
+{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: rgb(24, 168, 226);
+}
+
+.gc-gb-right-toolbar
+{
+    display: none;
+}
+
+.btn-group
+{
+    display: table;
+}
+
+.br-inputBtnBottomV2
+{
+    border: 1px solid rgb(213, 223, 187);
+    background: rgb(247, 240, 240);
+    padding: 15px 10px;
+    webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: -11px;
+    margin-right: -11px;
+    margin-bottom: -5px;
+}
+
+@media (min-width: 1200px)
+{
+    .container
+    {
+        max-width: 100% !important;
+    }
+
+    .br-block
+    {
+        width: 16.5%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-left: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+        height: 288px;
+    }
+
+}
+
+.icon-remoce-jtable
+{
+    border: medium none;
+    cursor: pointer;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: url("../jsGobalLib/Scripts/jtable/themes/lightcolor/delete.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 16px;
+    width: 16px;
+}
+table.reportDiemDanh, .reportDiemDanh tr, .reportDiemDanh td, .reportDiemDanh th
+{
+    border: 1px solid #ddd;
+}
+.dhu_rpt_TextCenterXgr
+{
+    background-color: #ddd;
+    border: 1px solid #555;
+    border-spacing: 0;
+    font-weight: bolder;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+a
+{
+    cursor: pointer;
+}

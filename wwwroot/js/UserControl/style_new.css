@@ -1,0 +1,8 @@
+.jtable-main-container .jtable-title
+{
+    display: none;
+}
+.jtable-data-row
+{
+    border: 1px solid #bbb;    
+}

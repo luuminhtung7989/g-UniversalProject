@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebCore</title>
+<<<<<<< HEAD
+
+    @*<link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>*@
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/solar/bootstrap.min.css" />*@
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/bootstrap-callout.css?a=1212" />
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/Common/qrcode.min.js?f=sdddfs8"></script>
+    <script src="~/js/Common/gcGlobal.js?f=sdddf8"></script>
+    
+    <script src="~/js/DataTables/anchor.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/select2-bootstrap.css?a=1212dddd12" />
+
+
+
+
+
+    <style>
+        .cssBoldColum {
+            font-weight: bold;
+            color: orange;
+            text-align: right;
+        }
+
+        .cssBoldGreen {
+            font-weight: bold;
+            color: green;
+            text-align: right;
+        }
+
+        .cssBoldBlue {
+            font-weight: bold;
+            color: dodgerblue;
+            text-align: right;
+        }
+
+        .gcformfixed {
+            margin-top: 0 !important;
+        }
+
+        
+ 
+
+
+
+        .smalldrop {
+            min-width: 113px !important;
+            max-width: 336px !important;
+        }
+
+        .mergeCss {
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        /* Phần này mở rộng cho Dialog tự croll nội dung*/
+        .modal-dialog.full-screen {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+
+            .modal-dialog.full-screen .modal-content {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                top: 0px;
+                bottom: 0px;
+            }
+
+                .modal-dialog.full-screen .modal-content .modal-header {
+                    height: 55px;
+                }
+
+                .modal-dialog.full-screen .modal-content .modal-body {
+                    overflow-y: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin-top: 55px;
+                    margin-bottom: 80px;
+                }
+
+                .modal-dialog.full-screen .modal-content .modal-footer {
+                    height: 80px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+
+        .modal.modal-fullscreen .modal-dialog {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            max-width: none;
+        }
+
+        .modal.modal-fullscreen .modal-content {
+            height: auto;
+            height: 100vh;
+            border-radius: 0;
+            border: none;
+        }
+
+
+        .modal.modal-fullscreen .modal-body {
+            overflow-y: auto;
+        }
+
+        .modal-header-success {
+            color: #fff;
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #5cb85c;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .modal-header-warning {
+            color: #fff;
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #f0ad4e;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .modal-header-danger {
+            color: #fff;
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #d9534f;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .modal-header-info {
+            color: #fff;
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #5bc0de;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .modal-header-primary {
+            color: #fff;
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #1b6ec2;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        /*End croll dialog*/
+    </style>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+
+
+
+    @*Bạn học cách Import a module trong môi trường viết không phụ thuộc*@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <link rel="stylesheet" href="~/js/DataTables/datatables.css">
+         @* <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">  *@
+
+    @* <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" defer></script> *@
+    <script type="text/javascript" src="~/js/DataTables/datatables.js" defer></script>
+ @* <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js" defer></script>  *@
+
+  
+
+    <script type="text/javascript" src="~/js/jsGobalLib/xdate.js"></script>
+
+</head>
+
+=======
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap-collapse.js"></script>
+  
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+  
+
+
+</head>
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+<body style="font-size:0.8rem !important">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+<<<<<<< HEAD
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/marker--v2.png" />
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp</a>
+=======
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebCore</a>
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+<<<<<<< HEAD
+                    <ul class="navbar-nav flex-grow-1" id="ulGobalMenu">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-controller="Home" asp-action="Privacy" id="AdminGroup"><i class="bi bi-wrench" style="color:orange"></i>Admin</a>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " objectname="AdminGroup" href="#" id="navmenu_link_BanHang"><i class="bi bi-server" style="color:orange"></i>Bán hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " objectname="SellerGroup" href="#" id="navmenu_link_MuaHang">Mua hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " href="#" id="b">Quản lý kho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Privacy">Nhân sự</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Privacy">Nhà cung cấp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Privacy">SMS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Privacy">Báo cáo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Privacy">Tiện ích</a>
+                        </li>
+                        <li class="nav-item" style="padding:0 !important; margin:0 !important;">
+                            <a class="nav-link text-dark bs-callout bs-callout-info" style="padding:7px !important; " asp-area="" asp-controller="Home" asp-action="Privacy">Phân tích dữ liệu</a>
+                        </li>
+                        <!--<li class="nav-item">-->
+                        <!-- Example single danger button -->
+                        <!--<div class="btn-group">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+
+
+=======
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - WebCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+<<<<<<< HEAD
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/Common/gc_ShowDivData.js?f=2sddd8"></script>
+
+    <script src="~/js/Common/gcGlobalForm.js?f=12dd34"></script>
+    @*<script src="~/js/ClassCore/KernelTwoLine.js?f=aafsadfsdfsad"></script>*@
+    <script src="~/js/ClassCore/KernelCell.js?a=fsdddddd9"></script>
+    <script src="~/js/ClassCore/CanteenDb.js?a=s0ads"></script>
+    <script src="~/js/ClassCore/CanteenDb_langFull.js?a=idddo"></script>
+    <script src="~/js/Instances/allObject.js?d=ddefdddd9"></script>
+    <script src="~/js/Instances/allObjectParserSpace.js?a=ddd8"></script>
+
+
+=======
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+>>>>>>> 2259ee8d43418ea3d3553f03a79a2d5f0ffcbdea
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

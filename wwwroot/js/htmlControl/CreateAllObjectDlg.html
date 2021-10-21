@@ -1,0 +1,65 @@
+﻿<div class="modal fade modal-fullscreen" id="__ModalObjectSettingCreateAllObj" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog full-screen" role="document">
+		<div class="modal-content">
+			<div class="modal-header modal-header-primary">
+				<h5 class="modal-title" id="exampleModalLabel">Object Setting</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body " id="ObjectBodyHtml_div_CreateAllObj">
+				<form>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="mb-3">
+								<div class="form-group">
+									<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+									<label class="col-form-label">Field Info</label>
+								</div>
+								<label for="recipient-name-obj" class="col-form-label">Form Setting:</label>
+								<input type="text" class="form-control" id="recipient-name">
+								<label for="recipient-name-obj-33" class="col-form-label">Language Setting:</label>
+								<input type="text" class="form-control" id="recipient-name33">
+							</div>
+
+
+						</li>
+
+					</ul>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-warning" id="CreateObject_CreateAllObj">Create Object</button>
+
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+				<!--<button type="button" class="btn btn-primary" id="SaveObject_CreateAllObj">Save Object</button>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    $("#SaveObject_CreateAllObj").click(function () {
+
+        __CreateObjectModal.saveToObject();
+        $('#__ModalObjectSettingCreateAllObj').modal('hide');
+
+        
+    });
+
+    $("#CreateObject_CreateAllObj").click(function () {
+
+        __CreateObjectModal.createObject();
+        $('#__ModalObjectSettingCreateAllObj').modal('hide');
+    });
+
+    $("#open_CreateAllObj_Dialog").click(function () {
+        $('#ObjectBodyHtml_div_CreateAllObj').html('');
+		
+
+        __CreateObjectModal.set().show($('#ObjectBodyHtml_div_CreateAllObj'), "Dev");
+        $('#__ModalObjectSettingCreateAllObj').modal('show');
+    });
+
+</script>

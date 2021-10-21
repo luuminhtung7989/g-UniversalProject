@@ -1,0 +1,3 @@
+[submodule "speed/benchmark.js"]
+	path = speed/benchmark.js
+	url = git://github.com/bestiejs/benchmark.js.git
